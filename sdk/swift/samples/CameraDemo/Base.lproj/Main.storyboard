@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CameraDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czx-EH-zH8">
+                                <rect key="frame" x="183" y="230" width="235" height="30"/>
+                                <state key="normal" title="Connect"/>
+                                <connections>
+                                    <action selector="onConnectBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="obN-fY-zC4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="YICameraSDK Demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0t-ib-fYd">
+                                <rect key="frame" x="183" y="20" width="235" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zg8-iZ-VwG">
+                                <rect key="frame" x="183" y="49" width="235" height="135"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="235" id="wyq-Zm-h1I"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Disconnected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFy-BC-DsE">
+                                <rect key="frame" x="183" y="192" width="235" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="BJ0-Vq-14H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNX-F0-w45">
+                                <rect key="frame" x="183" y="261" width="235" height="30"/>
+                                <state key="normal" title="Start Recording"/>
+                                <connections>
+                                    <action selector="onRecordingBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="93Q-sb-swV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zg8-iZ-VwG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6H3-Gc-tG6"/>
+                            <constraint firstItem="czx-EH-zH8" firstAttribute="top" secondItem="bFy-BC-DsE" secondAttribute="bottom" constant="17" id="8Wd-4C-T81"/>
+                            <constraint firstItem="Zg8-iZ-VwG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="C2j-Ee-vVc"/>
+                            <constraint firstItem="czx-EH-zH8" firstAttribute="width" secondItem="Zg8-iZ-VwG" secondAttribute="width" id="Dxp-cT-Bxs"/>
+                            <constraint firstItem="czx-EH-zH8" firstAttribute="leading" secondItem="Zg8-iZ-VwG" secondAttribute="leading" id="H8e-s9-zCR"/>
+                            <constraint firstItem="HNX-F0-w45" firstAttribute="width" secondItem="Zg8-iZ-VwG" secondAttribute="width" id="OlQ-zM-jzU"/>
+                            <constraint firstItem="czx-EH-zH8" firstAttribute="leading" secondItem="HNX-F0-w45" secondAttribute="leading" id="W5Y-vo-4wP"/>
+                            <constraint firstItem="bFy-BC-DsE" firstAttribute="top" secondItem="Zg8-iZ-VwG" secondAttribute="bottom" constant="8" symbolic="YES" id="WhK-iZ-X0I"/>
+                            <constraint firstItem="i0t-ib-fYd" firstAttribute="leading" secondItem="bFy-BC-DsE" secondAttribute="leading" id="XUD-yl-Etu"/>
+                            <constraint firstItem="i0t-ib-fYd" firstAttribute="leading" secondItem="Zg8-iZ-VwG" secondAttribute="leading" id="Xyr-Qg-vJ1"/>
+                            <constraint firstItem="i0t-ib-fYd" firstAttribute="width" secondItem="Zg8-iZ-VwG" secondAttribute="width" id="afw-Dl-SjW"/>
+                            <constraint firstItem="czx-EH-zH8" firstAttribute="trailing" secondItem="Zg8-iZ-VwG" secondAttribute="trailing" id="cCR-Hy-8OJ"/>
+                            <constraint firstItem="Zg8-iZ-VwG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="212" id="drV-f5-Zx5"/>
+                            <constraint firstItem="i0t-ib-fYd" firstAttribute="trailing" secondItem="bFy-BC-DsE" secondAttribute="trailing" id="mbo-E5-BsL"/>
+                            <constraint firstItem="Zg8-iZ-VwG" firstAttribute="top" secondItem="i0t-ib-fYd" secondAttribute="bottom" constant="8" symbolic="YES" id="rpn-CQ-0F5"/>
+                            <constraint firstItem="HNX-F0-w45" firstAttribute="top" secondItem="czx-EH-zH8" secondAttribute="bottom" constant="8" id="vRh-u2-PgA"/>
+                            <constraint firstItem="HNX-F0-w45" firstAttribute="trailing" secondItem="czx-EH-zH8" secondAttribute="trailing" id="xGc-P9-CRl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mCameraImg" destination="Zg8-iZ-VwG" id="XbL-uf-QVk"/>
+                        <outlet property="mConnectBtn" destination="czx-EH-zH8" id="omq-Yf-YIs"/>
+                        <outlet property="mRecordingBtn" destination="HNX-F0-w45" id="zlA-Z0-Wxa"/>
+                        <outlet property="mStatusLabel" destination="bFy-BC-DsE" id="CkO-nM-hQF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="338" y="355"/>
+        </scene>
+    </scenes>
+</document>
