@@ -1,8 +1,0 @@
-output: html
-clean: true
-source_directory: ../src
-module: YICameraSDK
-module_version: 0.1
-copyright: 2016 &copy; [xiaoyi.com](http://www.xiaoyi.com)
-readme: introduction.md
-hide_documentation_coverage: true

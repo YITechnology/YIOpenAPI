@@ -349,7 +349,8 @@ SWIFT_PROTOCOL("_TtP11YICameraSDK13DispatchQueue_")
 
 /// Put a task to the queue.
 ///
-/// <em>Note: This method must be thread safe.</em>
+/// <em>Note: This method must be thread safe and <code>task
+/// </code> must be executed out of current call stack.</em>
 ///
 /// \param task The task will be executed from the message loop.
 - (void)dispatchWithTask:(void (^ _Nonnull)(void))task;
@@ -515,6 +516,9 @@ typedef SWIFT_ENUM(NSInteger, Status) {
 
 /// Camera is idle.
   StatusIdle = 1,
+
+/// Camera is recording.
+  StatusRecording = 2,
 };
 
 
