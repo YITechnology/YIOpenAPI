@@ -17,7 +17,9 @@
 
 package com.xiaoyi.yi360demo;
 
+import android.os.Looper;
 import android.util.*;
+import android.os.Handler;
 import com.xiaoyi.action.*;
 import com.xiaoyi.action.Error;
 import java.util.Date;
@@ -36,6 +38,7 @@ class Camera extends ActionCameraListener {
     private ActionCamera mCamera;
     private String mIP;
     private String mHostname;
+    private Handler mUIHandler;
 
     //region Properties
     public CameraState getState() {
@@ -52,6 +55,7 @@ class Camera extends ActionCameraListener {
     //endregion
 
     public Camera(GridActivity context, String ip, String hostname) {
+        mUIHandler = new Handler(Looper.getMainLooper());
         mContext = context;
         mState = CameraState.Disconnected;
         mIP = ip;
@@ -68,7 +72,7 @@ class Camera extends ActionCameraListener {
         mCamera = new ActionCamera(this, new DispatchQueue() {
             @Override
             public void dispatch(Runnable task) {
-                mContext.runOnUiThread(task);
+                mUIHandler.post(task);
             }
         });
 
@@ -85,16 +89,19 @@ class Camera extends ActionCameraListener {
     public void startRecording(Date startTime) {
         if (mState == CameraState.Connected) {
             updateState(CameraState.StartRecording);
-            mCamera.stopViewFinder(null, null).stopRecording(null, null)
-                    .startRecording(startTime.getHours(), startTime.getMinutes(), startTime.getSeconds(), null, new ActionCameraCommandCallback1<Error>() {
-                        @Override
-                        public void onInvoke(Error val) {
-                            Log.i("YiCamera", "Start recording failed");
-                            if (mState == CameraState.StartRecording) {
-                                updateState(CameraState.Connected);
-                            }
-                        }
-                    });
+            mCamera.stopViewFinder(null, null).stopRecording(null, null).setSystemMode(SystemMode.Record, null, null)
+                   .startCommandGroup()
+                   .setDateTime(new Date(), null, null)
+                   .startRecording(startTime.getHours(), startTime.getMinutes(), startTime.getSeconds(), null, null)
+                   .submitCommandGroup(null, new ActionCameraCommandCallback1<Error>() {
+                       @Override
+                       public void onInvoke(Error val) {
+                           Log.i("YiCamera", "Start recording failed");
+                           if (mState == CameraState.StartRecording) {
+                               updateState(CameraState.Connected);
+                           }
+                       }
+                   });
         }
     }
 
@@ -109,35 +116,26 @@ class Camera extends ActionCameraListener {
     public void onConnected() {
         updateState(CameraState.Connected);
 
-        final Camera obj = this;
-        mCamera.setDateTime(new Date(),
-            new ActionCameraCommandCallback() {
-               @Override
-               public void onInvoke() {
-                   // Ready to use add self to cameras if there is free slot remove self from
-                   // pending list
-                   mContext.pendingCameras.remove(obj);
+        // Ready to use, add self to cameras if there is free slot remove self from pending list
+        mContext.pendingCameras.remove(this);
 
-                   // add self to cameras if there is free slot
-                   for (int i = 0; i < mContext.cameras.size(); ++i) {
-                       if (mContext.cameras.get(i).getIp().isEmpty()) {
-                           mContext.cameras.set(i, obj);
-                           mContext.gridAdapter.notifyDataSetChanged();
-                           return;
-                       }
-                   }
-
-                   // no free slot, disconnect it
-                   mCamera.disconnect();
-               }
-            },
-            new ActionCameraCommandCallback1<Error>() {
-               @Override
-               public void onInvoke(Error val) {
-                   // prepare failed, disconnect
-                   mCamera.disconnect();
-               }
-           });
+        // add self to cameras if there is free slot
+        for (int i = 0; i < mContext.cameras.size(); ++i) {
+            if (mContext.cameras.get(i).getIp().isEmpty()) {
+                mContext.cameras.set(i, this);
+                mContext.gridAdapter.notifyDataSetChanged();
+                // check current status
+                mCamera.getSetting(new ActionCameraCommandCallback1<ActionCameraSetting>() {
+                    @Override
+                    public void onInvoke(ActionCameraSetting actionCameraSetting) {
+                        if (actionCameraSetting.status == Status.Recording) {
+                            updateState(CameraState.Recording);
+                        }
+                    }
+                }, null);
+                return;
+            }
+        }
     }
 
     @Override
