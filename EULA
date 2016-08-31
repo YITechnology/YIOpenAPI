@@ -1,116 +1,121 @@
 YI Technologies, Inc. End User License Agreement
 
-This is a legal agreement between you (an individual or a single entity) (“you”) and YI Technologies, Inc. ("YI"). 
-Before installing and using the YI Open API Software Development Kit and any updates to it that we may at our discretion 
-provide to you (collectively, the "SDK"). PLEASE READ THIS SOFTWARE LICENSE AGREEMENT ("LICENSE") CAREFULLY BEFORE USING 
-THE SDK SOFTWARE. BY USING THE SDK SOFTWARE, YOU ARE AGREEING TO BE BOUND BY THE TERMS OF THIS LICENSE. IF YOU DO NOT AGREE 
-TO THE TERMS OF THIS LICENSE, DO NOT USE THE SOFTWARE. YI may change this agreement at any time and it is your responsibility 
-to review the most updated version of it on YI’s website at https://api.yitechnology.com. By continuing to use the SDK 
-following such changes, you agree to be bound by them. 
-
-1. Grant of License. Subject to the terms of this agreement, you are hereby granted a limited, terminable, non-transferable, 
-non-exclusive license and right to use the SDK only in conjunction with: (a) those YI cameras listed at 
-http://yitechnology.com/actioncamera (as such list may be amended by YI at any time and from time to time) and owned by you; 
-and (b) the images derived from such cameras. 
-
+This is a legal agreement between you (an individual or a single entity) ("you") and YI Technologies, Inc. ("YI"). 
+PLEASE READ THIS SOFTWARE LICENSE AGREEMENT ("LICENSE") CAREFULLY BEFORE USING 
+THE YI OPEN API SOFTWARE DEVELOPMENT KIT AND ANY UPDATES TO IT THAT WE MAY AT OUR DISCRETION PROVIDE TO YOU (COLLECTIVELY, 
+THE "SDK"). BY CLICKING "I AGREE" OR OTHERWISE DOWNLOADING OR USING THE SDK, YOU ARE AGREEING TO BE BOUND BY THE TERMS OF 
+THIS LICENSE. IF YOU DO NOT AGREE TO THE TERMS OF THIS LICENSE, DO NOT USE THE SDK. 
+ 
+1. Grant of License. Subject to the terms and conditions of this agreement, you are hereby granted a limited, terminable, 
+non-transferable, non-exclusive license and right to use the SDK solely internally and only in conjunction with: (a) those YI 
+cameras listed at http://yitechnology.com/actioncamera (as such list may be amended by YI at any time and from time to time) 
+and owned by you; and (b) the images derived from such cameras. 
+ 
 2. Free and Open Source Components. Notwithstanding anything to the contrary herein, use, copying and distribution of 
-components of the SDK licensed under free and open source license agreements are governed solely by the terms of those 
-license agreements (which are contained in the electronic documentation for the SDK) and not this agreement. 
-
+components of the SDK that are licensed under open source license agreements are governed solely by the terms of those 
+license agreements, not this agreement. 
+ 
 3. Restrictions. Except as (and only if) explicitly permitted by Section 4 below, you will not, and will not permit any third 
 parties to: (a) copy the SDK, other than a reasonable number of backup copies for your own use only, and such backup copies 
 together with the original will be kept in your possession and control; (b) provide or disclose the SDK to any third party; 
 (c) alter, modify, reverse engineer, decompile or disassemble the SDK, or attempt to do any of the foregoing; (d) grant 
 sublicenses, leases, or any other rights in the SDK to any third party; or (e) remove, alter or obscure any proprietary 
-rights notices (including any copyright and trademark notices) on and in the SDK. 
-
+rights notices (including any copyright and trademark notices) on and in the SDK. If the foregoing prohibition on reverse 
+engineering violates applicable local law, you shall notify YI in writing at least 90 days prior to any proposed action in 
+contravention of this paragraph.  Such written notice shall provide the parties an opportunity to discuss the scope of any 
+necessary reverse engineering required to be permitted under local law.
+ 
 4. Additional OEM Rights. If you are an original equipment manufacturer, then in addition to the rights set out in Section 1 
-above you are hereby granted a limited, terminable, non-transferable, non-exclusive license and right to use the SDK for the 
-sole additional purpose of incorporating the libraries found in the SDK (collectively, the “Libraries”) into new products 
-developed by you, in whole or in part, using the SDK (collectively, the “Derivative Products”) provided that you: (a) ensure 
-that the components of any Derivative Product that derive functionality from any of the Libraries may only be used with YI 
-products, including the SDK, and images derived from such products; (b) may only redistribute drivers (.inf and .sys), 
+Above, you are hereby granted a limited, terminable, non-transferable, non-exclusive license and right to use the SDK for the 
+sole additional purpose of incorporating the libraries found in the SDK (collectively, the "Libraries") into new products 
+developed by you, in whole or in part, using the SDK (collectively, the “Derivative Products”), on condition that you: (a) 
+ensure that the components of any Derivative Product that derive functionality from any of the Libraries may only be used with
+YI products, including the SDK, and images derived from such products; (b) may only redistribute drivers (.inf and .sys), 
 dynamically linked libraries (.dlls and .so), executables (.exe) and documentation (.doc, .txt, .pdf and .chm) and only to 
 the extent necessary to support your Derivative Products. For clarity, headers (.h), source (.c,.cpp,.java,.swift,.m) and 
-statically linked libraries (.lib,.jar and .a) cannot be redistributed; (c) will prohibit any, and ensure that there is no, 
-redistribution of any of the Libraries by any third party, including any end user customers; and (d) will include any YI and 
+statically linked libraries (.lib,.jar and .a) may not be redistributed; (c) will prohibit any, and ensure that there is no, 
+redistribution of any of the libraries by any third party, including any end user customers; and (d) will include any YI and 
 third party proprietary rights legends or notices (including copyright and trademark notices), unaltered and unobscured, on 
 all Derivative Products. 
-
-5. Ownership. YI and third parties are the owners of and retain title to all proprietary and intellectual property rights 
-(including all patent, copyright, trade secret and trademark rights) in and to the SDK. You have no right, title or interest 
-in the SDK, except as specifically set forth herein, and no rights in any trade-marks of YI. All rights not explicitly 
-granted herein are hereby reserved. 
-
-6. Indemnification. You assume the entire risk relating to, and will indemnify, hold harmless and defend YI from and against 
-any claims, actions, lawsuits, or proceedings, and any losses, liabilities, damages and expenses (including attorney’s fees 
-and expenses) that arise or result from your activities under this agreement, including the distribution or use of the SDK 
-(including the Libraries) and/or the development, distribution or use of any Derivative Product (including any intellectual 
-property infringement claims relating thereto). 
-
+ 
+5. Ownership. YI and third parties are the owners of and retain all right, title and interest in and to the SDK and all 
+related or associated proprietary and intellectual property rights (including all patent, copyright, trade secret and 
+trademark rights). You have no right, title or interest in the SDK, except as specifically set forth herein, and no rights in 
+any trademarks of YI. All rights not explicitly granted herein to you are hereby reserved by YI. There are no implied rights.
+ 
+6. Indemnification. You assume the entire risk relating to, and hereby agree to indemnify, hold harmless and defend YI from 
+and against any claims, actions, lawsuits, or proceedings, and any losses, liabilities, damages, costs and expenses 
+(including attorneys' fees and expenses) that arise or result from any of your activities under this agreement, including the
+distribution or use of the SDK (including the libraries) or the development, distribution or use of any Derivative Product 
+(including any intellectual property infringement claims relating thereto). 
+ 
 7.Disclaimer of Warranties. YOU EXPRESSLY ACKNOWLEDGE AND AGREE THAT USE OF THE SDK IS AT YOUR SOLE RISK AND THAT THE ENTIRE 
-RISK AS TO SATISFACTORY QUALITY, PERFORMANCE, ACCURACY AND EFFORT IS WITH YOU. EXCEPT FOR THE LIMITED WARRANTY ON MEDIA SET 
-FORTH ABOVE AND TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SDK PROVIDED "AS IS", WITH ALL FAULTS AND WITHOUT 
-WARRANTY OF ANY KIND, AND YI AND YI'S LICENSORS (COLLECTIVELY REFERRED TO AS "YI" ) HEREBY DISCLAIM ALL WARRANTIES AND 
-CONDITIONS WITH RESPECT TO THE SDK, EITHER EXPRESS, IMPLIED OR STATUTORY,INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-AND/OR CONDITIONS OF MERCHANTABILITY, OF SATISFACTORY QUALITY, OF FITNESS FOR A PARTICULAR PURPOSE, OF ACCURACY, OF QUIET 
-ENJOYMENT, AND NON-INFRINGEMENT OF THIRD PARTY RIGHTS. YI DOES NOT WARRANT AGAINST INTERFERENCE WITH YOUR ENJOYMENT OF THESDK,
-THAT THE FUNCTIONS CONTAINED IN THE SDK WILL YOU’RE YOUR REQUIREMENTS, THAT THE OPERATION OF THE SDK WILL BE UNINTERRUPTED OR 
-ERROR-FREE, OR THAT DEFECTS IN THE SDK WILL BE CORRECTED. YOU FURTHER ACKNOWLEDGE THAT THE SDK IS NOT INTENDED OR SUITABLE 
-FOR USE IN SITUATIONS OR ENVIRONMENTS WHERE THE FAILURE OF, OR ERRORS OR INACCURACIES IN THE CONTENT, DATA OR INFORMATION 
-PROVIDED BY, THE SDK COULD LEAD TO DEATH, PERSONAL INJURY, OR SEVERE PHYSICAL OR ENVIRONMENTAL DAMAGE, INCLUDING WITHOUT 
-LIMITATION THE OPERATION OF NUCLEAR FACILITIES, AIRCRAFT NAVIGATION OR COMMUNICATION SYSTEMS, AIR TRAFFIC CONTROL, LIFE 
-SUPPORT OR WEAPONS SYSTEMS. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY APPLE OR AN YI AUTHORIZED REPRESENTATIVE SHALL 
-CREATE A WARRANTY. SHOULD THE SDK PROVE DEFECTIVE, YOU ASSUME THE ENTIRE COST OF ALL NECESSARY SERVICING, REPAIR OR 
-CORRECTION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES OR LIMITATIONS ON APPLICABLE STATUTORY RIGHTS 
-OF A CONSUMER, SO THE ABOVE EXCLUSION AND LIMITATIONS MAY NOT APPLY TO YOU.
-
-8. Limitation of Liability. Notwithstanding any other provision herein, to the maximum extent permitted by applicable law, YI
-will not under any circumstances be liable for any direct, indirect, incidental, consequential, punitive or special losses or 
+RISK AS TO SATISFACTORY QUALITY, PERFORMANCE, ACCURACY AND EFFORT IS WITH YOU. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE 
+LAW, THE SDK PROVIDED "AS IS", WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND, AND YI AND YI'S LICENSORS (COLLECTIVELY 
+REFERRED TO AS "YI") HEREBY DISCLAIM AND EXCLUDE ALL WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT 
+LIMITED TO, THE IMPLIED WARRANTIES AND/OR CONDITIONS OF MERCHANTABILITY, OF SATISFACTORY QUALITY, OF FITNESS FOR A PARTICULAR 
+PURPOSE, OF ACCURACY, OF QUIET ENJOYMENT, AND NON-INFRINGEMENT OF THIRD PARTY RIGHTS. YI DOES NOT WARRANT AGAINST INTERFERENCE
+WITH YOUR ENJOYMENT OF THESDK, THAT THE FUNCTIONS CONTAINED IN THE SDK WILL MEET YOUR NEEDS OR REQUIREMENTS, THAT THE 
+OPERATION OF THE SDK WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN THE SDK WILL BE CORRECTED. YOU FURTHER 
+ACKNOWLEDGE THAT THE SDK IS NOT INTENDED OR SUITABLE FOR USE IN SITUATIONS OR ENVIRONMENTS WHERE THE FAILURE OF, OR ERRORS OR 
+INACCURACIES IN THE CONTENT, DATA OR INFORMATION PROVIDED BY THE SDK COULD LEAD TO DEATH, PERSONAL INJURY, OR PHYSICAL OR 
+ENVIRONMENTAL DAMAGE, INCLUDING WITHOUT LIMITATION THE OPERATION OF NUCLEAR FACILITIES, AIRCRAFT NAVIGATION OR COMMUNICATION 
+SYSTEMS, AIR TRAFFIC CONTROL, LIFE SUPPORT OR WEAPONS SYSTEMS. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY APPLE OR AN 
+YI AUTHORIZED REPRESENTATIVE SHALL CREATE A WARRANTY. SHOULD THE SDK PROVE DEFECTIVE, YOU ASSUME THE ENTIRE COST OF ALL 
+NECESSARY SERVICING, REPAIR OR CORRECTION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES OR LIMITATIONS 
+ON APPLICABLE STATUTORY RIGHTS OF A CONSUMER, SO THE ABOVE EXCLUSION AND LIMITATIONS MAY NOT APPLY TO YOU.
+ 
+8. Limitation of Liability. Notwithstanding any other provision herein, to the maximum extent permitted by applicable law, 
+YI will not under any circumstances be liable for any indirect, incidental, consequential, punitive or special losses or 
 damages (including damages for bodily injury or death, business interruption, loss or corruption of business information or 
 data, loss of opportunity, loss of privacy, cost of recovery, financial loss, loss of revenue or loss of profits for any 
-reason whatsoever) whether or not YI has been advised or should have been aware of the possibility of any such losses or 
-damage arising, and in no event will the aggregate and cumulative liability of YI for any matters arising under this agreement
-or otherwise exceed $25. 
-
-9. Changes and Support. YI may at its sole discretion elect to provide you with limited support services related to the SDK 
-for such period of time as YI at its sole discretion elects. YI may change or cease to provide the SDK and the limited Support
+reason whatsoever), whether sounding in contract, tort (including negligence) or otherwise, and regardless of whether or not 
+YI has been advised or should have been aware of the possibility of any such losses or damage arising, and not withstanding 
+any failure of the essential purpose of this agreement or any limited remedy hereunder. in no event will the aggregate and 
+cumulative liability of YI for any matters arising out of or relating to this agreement or otherwise exceed $25. 
+ 
+9. Changes and Support. YI may, at its sole discretion, elect to provide you with limited support services related to the SDK 
+for such period of time as YI at its sole discretion elects. YI may change or cease to provide the SDK and the limited support
 at any time and from time to time without notice to you and that YI is not obligated to provide the SDK or any support. YI may
-use any technical information, feedback or ideas you provide to YI for YI’s business purposes, including product support and 
+use any technical information, feedback or ideas you provide to YI for YI's business purposes, including product support and 
 development. 
+ 
+10. Termination. This agreement will automatically and immediately terminate without notice from YI to you if you breach or 
+violate any of the terms of this agreement. Either party may also terminate this agreement for convenience provided that 30 
+days' notice is delivered to the other party. Any notice given by YI hereunder will be effective when sent by YI to the email 
+address you provided to YI when you registered for a download account. Notice to YI must be sent to: [add].  Upon termination,
+for any reason, your rights hereunder will cease, all licenses will automatically terminate, and you must immediately destroy 
+or return all copies of the SDK to YI. Sections 6-8, 10 and 12 and 13 will survive any termination hereof. 
+ 
+11. Export Laws; US Government Rights. This agreement involves products and/or technical data that may be controlled under 
+laws and regulations of the United States and other countries, including the United States Export Administration Regulations, 
+or any other applicable law, regulation, rule, guideline or order (collectively, "Export Laws"). You will comply with all 
+Export Laws to ensure that the SDK is not exported, directly or indirectly, in contravention of the Export Laws. You 
+represent and warrant to YI that you are not a person barred from receiving the SDK under any Export Laws.  If you are an 
+agency or instrumentality of the United States Government, the SDK is "commercial computer software" and "commercial 
+computer software documentation", and pursuant to FAR 12.212 or DFARS 227.7202, and their successors, as applicable, use, 
+reproduction and disclosure of the SDK is governed by the terms of this agreement.
+ 
+12. General. If you are signing on behalf of an entity such as a corporation, you represent and warrant that you have the 
+authority to bind such entity. This agreement and the rights granted hereunder are personal to you and you may not transfer 
+or assign your rights under this agreement to a third party without the prior written consent of YI. Any purported assignment
+in violation of this Section 12 is void. The laws of State of Washington ("WA") govern all matters arising out of this 
+Agreement. The courts of the WA will have exclusive jurisdiction over any dispute arising under this agreement. You agree 
+that termination and/or monetary damages may not be a sufficient remedy if you breach this agreement and that YI will be 
+entitled, without waiving any other rights or remedies, to injunctive or equitable relief as may be deemed proper by a court 
+of competent jurisdiction in the event of a breach. If YI does not exercise any legal right or remedy in this agreement or 
+otherwise, this will not be taken to be a formal waiver by YI of its rights, which rights will remain available to YI. If any
+provision of this agreement is construed to be illegal or invalid, the illegal or invalid provisions will be deemed stricken 
+and deleted herefrom to the same extent and effect as if never incorporated herein, but all other provisions hereof will 
+continue in full force and effect. This agreement shall not be governed by the United Nations Convention on Contracts for the
+International Sale of Goods, the application of which is expressly excluded. If for any reason a court of competent 
+jurisdiction finds any provision, or portion thereof, to be unenforceable, the remainder of this agreement shall continue in 
+full force and effect and the unenforceable provision or portion thereof will be replaced by an enforceable provision that 
+most closely reflects the economic effect and intent of the unenforceable provision or portion thereof.
 
-10. Termination. YI may terminate this agreement immediately on notice to you if you violate any of the terms of this 
-agreement. YI may also terminate this agreement for convenience provided that 30 days’ notice is delivered to you. Any notice 
-given by YI hereunder will be effective when sent by YI to the email address you provided to YI when you registered for a 
-download account. On termination, for any reason, your rights hereunder will cease and you must immediately return all copies 
-of the SDK to YI and on termination for violation or default, you will be liable to YI for all damages suffered as a result of
-the violation or default. Sections 6-8, 10 and 12 will survive any termination hereof. 
-
-11. Export Laws. This agreement involves products and/or technical data that may be controlled under laws and regulations of 
-the United States and other countries, including the United States Export Administration Regulations, or any other applicable 
-law, regulation, rule, guideline or order (collectively, “Export Laws”). You will comply with all Export Laws to ensure that 
-the SDK is not exported, directly or indirectly, in contravention of the Export Laws. You represent and warrant to YI that you
-are not a person barred from receiving the SDK under any Export Laws. This agreement shall not be governed by the United 
-Nations Convention on Contracts for the International Sale of Goods, the application of which is expressly excluded. If for 
-any reason a court of competent jurisdiction finds any provision, or portion thereof, to be unenforceable, the remainder of 
-this License shall continue in full force and effect.
-
-12. General. This agreement is the entire agreement between you and YI with respect to the subject matter of this agreement. 
-If you are signing on behalf of an entity such as a corporation, you represent and warrant that you have the authority to 
-bind such entity. This agreement and the rights granted hereunder are personal to you and you may not assign this agreement 
-to a third party without the prior written consent of YI. This agreement is governed exclusively by and will be enforced, 
-construed, and interpreted exclusively in accordance with the laws of State of Washington (“WA”) and the laws of United States
-applicable in WA. The courts of the WA will have exclusive jurisdiction over any dispute arising under this agreement. You 
-agree that termination and/or monetary damages may not be a sufficient remedy if you breach this agreement and that YI will 
-be entitled, without waiving any other rights or remedies, to injunctive or equitable relief as may be deemed proper by a 
-court of competent jurisdiction in the event of a breach. If YI does not exercise any legal right or remedy in this agreement 
-or otherwise, this will not be taken to be a formal waiver by YI of its rights, which rights will remain available to YI. If 
-any provision of this agreement is construed to be illegal or invalid, the illegal or invalid provisions will be deemed 
-stricken and deleted herefrom to the same extent and effect as if never incorporated herein, but all other provisions hereof 
-will continue in full force and effect.
-
-13. Complete Agreement; Governing Language. This License constitutes the entire agreement between the parties with respect 
-to the use of the SDK licensed hereunder and supersedes all prior or contemporaneous understandings regarding such subject 
-matter. No amendment to or modification of this License will be binding unless in writing and signed by YI. Any translation 
-of this License is done for local requirements and in the event of a dispute between the English and any non-English versions,
-the English version of this License shall govern.
+13. Complete Agreement; Governing Language. This agreement is the entire agreement between you and YI with respect to the 
+subject matter of this agreement, and supersedes all prior or contemporaneous understandings regarding such subject matter. 
+No amendment to or modification of this License will be binding unless in a writing that both identifies itself as an 
+amendment to this agreement and is signed by an officer of YI. Any translation of this agreement is done for reference only 
+and will have no legal or other effect. In the event of a dispute between the English and any non-English versions, the 
+English version of this agreement shall govern.
