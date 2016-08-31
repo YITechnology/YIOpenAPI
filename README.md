@@ -24,8 +24,8 @@ The APIs currently provide support to the following 3 areas
 
 If you have a VR/360 rig or a multi-cameras system, you can have the cameras connected to a wi-fi network or a hotspot, and then control the cameras from your application (built using the YI Open API SDK), by following the steps below: 
 
-1. update firmware (/bin/firmware_force.bin)
-   * copy firmware_force.bin onto a microSD card
+1. update firmware (/bin/{country code}/firmware.bin)
+   * copy firmware.bin onto a microSD card
    * start the camera with the microSD card
    * wait until the sound of starting music
 
