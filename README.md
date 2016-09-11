@@ -29,7 +29,7 @@ If you have a VR/360 rig or a multi-cameras system, you can have the cameras con
    * start the camera with the microSD card
    * wait until the sound of starting music
 
-2. setup config file (/bin/sta.conf)
+2. setup config file (/bin/{country code}/sta.conf)
    * provide correct SSID and password for accessing the wi-fi network or the hotspot
    * give each camera a different device name
    * set the correct country code (e.g. CN for China, US for United States etc)
