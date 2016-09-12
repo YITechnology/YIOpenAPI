@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dph-sk-P2F">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controlller-->
+        <scene sceneID="5ZD-jJ-M4X">
+            <objects>
+                <navigationController id="Dph-sk-P2F" customClass="NavigationControlller" customModule="YI360Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="65Y-3e-Xe2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lrt-WO-dCa" kind="relationship" relationship="rootViewController" id="dmh-GJ-oJW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kvn-oY-SAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1071" y="348"/>
+        </scene>
+        <!--CameraSelection-->
+        <scene sceneID="LdY-Vm-RpI">
+            <objects>
+                <viewController title="CameraSelection" id="lrt-WO-dCa" customClass="CameraSelectionViewController" customModule="YI360Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lE4-Rj-62B"/>
+                        <viewControllerLayoutGuide type="bottom" id="lVq-S1-hmB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sas-au-wQO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inactive_camera" translatesAutoresizingMaskIntoConstraints="NO" id="aOb-ct-DSn">
+                                <rect key="frame" x="220" y="84" width="160" height="111"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="111" id="5fu-gN-IpP"/>
+                                    <constraint firstAttribute="width" constant="160" id="cTd-gU-vld"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ugE-aZ-HSG">
+                                <rect key="frame" x="220" y="203" width="160" height="160"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbP-4n-X0s">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                                        <state key="normal" title="6 CAMERAS"/>
+                                        <connections>
+                                            <action selector="on6CamerasSelected" destination="lrt-WO-dCa" eventType="touchUpInside" id="eea-GW-Cg7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFL-p9-Zh8">
+                                        <rect key="frame" x="0.0" y="40" width="160" height="40"/>
+                                        <state key="normal" title="7 CAMERAS"/>
+                                        <connections>
+                                            <action selector="on7CamerasSelected" destination="lrt-WO-dCa" eventType="touchUpInside" id="axV-k6-fSu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXu-dw-8mD">
+                                        <rect key="frame" x="0.0" y="80" width="160" height="40"/>
+                                        <state key="normal" title="10 CAMERAS"/>
+                                        <connections>
+                                            <action selector="on10CamerasSelected" destination="lrt-WO-dCa" eventType="touchUpInside" id="zFf-8P-ixn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEw-SD-v4U">
+                                        <rect key="frame" x="0.0" y="120" width="160" height="40"/>
+                                        <state key="normal" title="24 CAMERAS"/>
+                                        <connections>
+                                            <action selector="on24CamerasSelected" destination="lrt-WO-dCa" eventType="touchUpInside" id="8PX-pL-v3d"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SXu-dw-8mD" firstAttribute="height" secondItem="MbP-4n-X0s" secondAttribute="height" id="Pzy-D9-czB"/>
+                                    <constraint firstAttribute="height" constant="160" id="Qd3-5H-PFs"/>
+                                    <constraint firstItem="PFL-p9-Zh8" firstAttribute="height" secondItem="MbP-4n-X0s" secondAttribute="height" id="ZJ9-Dl-dRj"/>
+                                    <constraint firstAttribute="width" constant="160" id="cxW-gf-6WI"/>
+                                    <constraint firstItem="zEw-SD-v4U" firstAttribute="height" secondItem="MbP-4n-X0s" secondAttribute="height" id="kfl-EP-48z"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ugE-aZ-HSG" firstAttribute="top" secondItem="aOb-ct-DSn" secondAttribute="bottom" constant="8" symbolic="YES" id="4nc-mp-UPK"/>
+                            <constraint firstItem="aOb-ct-DSn" firstAttribute="top" secondItem="lE4-Rj-62B" secondAttribute="bottom" constant="20" id="OVn-es-Ewy"/>
+                            <constraint firstItem="aOb-ct-DSn" firstAttribute="centerX" secondItem="Sas-au-wQO" secondAttribute="centerX" id="UtU-wU-dWl"/>
+                            <constraint firstItem="ugE-aZ-HSG" firstAttribute="leading" secondItem="aOb-ct-DSn" secondAttribute="leading" id="Zbx-UY-lvY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rd6-NT-a0b"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showCameraGrid" id="uD2-Ye-9CA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="347-4l-yPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-282" y="348"/>
+        </scene>
+        <!--Camera Grid View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="cameraGridView" id="BYZ-38-t0r" customClass="CameraGridViewController" customModule="YI360Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="suw-UK-RoX"/>
+                        <viewControllerLayoutGuide type="bottom" id="LK8-b1-Tmj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vp4-p2-dj9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jvy-SD-fV5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="2" id="9AX-Wi-XCQ">
+                                    <size key="itemSize" width="120" height="108"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cameraCell" id="JkY-lk-HjG" customClass="CameraCell" customModule="YI360Demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="120" height="108"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dgC-76-sAy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="192.178.42.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kal-W7-6gf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="18" id="8Pj-Mj-Q9f"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gBp-PR-fpO">
+                                                            <rect key="frame" x="9" y="18" width="102" height="72"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="72" id="H1e-qN-wBz"/>
+                                                                <constraint firstAttribute="width" constant="102" id="TLZ-ff-yGp"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Connecting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kI-9d-ttB">
+                                                            <rect key="frame" x="28" y="90" width="65" height="18"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="gBp-PR-fpO" firstAttribute="centerX" secondItem="dgC-76-sAy" secondAttribute="centerX" id="24y-bW-nhZ"/>
+                                                        <constraint firstItem="3kI-9d-ttB" firstAttribute="height" secondItem="kal-W7-6gf" secondAttribute="height" id="LUK-s1-HDY"/>
+                                                        <constraint firstAttribute="trailing" secondItem="kal-W7-6gf" secondAttribute="trailing" id="O1E-9a-ts1"/>
+                                                        <constraint firstItem="kal-W7-6gf" firstAttribute="top" secondItem="dgC-76-sAy" secondAttribute="top" id="eGo-az-W7k"/>
+                                                        <constraint firstItem="kal-W7-6gf" firstAttribute="leading" secondItem="dgC-76-sAy" secondAttribute="leading" id="nOK-R9-Inm"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="dgC-76-sAy" firstAttribute="leading" secondItem="JkY-lk-HjG" secondAttribute="leading" id="1ZS-eM-oEV"/>
+                                            <constraint firstAttribute="bottom" secondItem="dgC-76-sAy" secondAttribute="bottom" id="CdH-hU-F0d"/>
+                                            <constraint firstAttribute="trailing" secondItem="dgC-76-sAy" secondAttribute="trailing" id="QWL-4E-SVe"/>
+                                            <constraint firstItem="dgC-76-sAy" firstAttribute="top" secondItem="JkY-lk-HjG" secondAttribute="top" id="mDc-gY-unG"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="mCameraImage" destination="gBp-PR-fpO" id="xFc-8h-Z5a"/>
+                                            <outlet property="mNameLabel" destination="kal-W7-6gf" id="2a4-fF-vnO"/>
+                                            <outlet property="mStateLabel" destination="3kI-9d-ttB" id="ZGe-ls-Tb2"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="nAb-7o-p55"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="pkq-cZ-4Vb"/>
+                                </connections>
+                            </collectionView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnr-wA-FgI">
+                                <rect key="frame" x="380" y="64" width="200" height="120"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yW2-Sf-MC3">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="120"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLn-7l-83n">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                                <state key="normal" title="Start Recording"/>
+                                                <connections>
+                                                    <action selector="onStartRecordingBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6WX-yK-abh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lat-4L-2EI">
+                                                <rect key="frame" x="0.0" y="40" width="200" height="40"/>
+                                                <state key="normal" title="Stop Recording"/>
+                                                <connections>
+                                                    <action selector="onStopRecordingBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DSR-6l-oV5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXI-l1-Tw6">
+                                                <rect key="frame" x="0.0" y="80" width="200" height="40"/>
+                                                <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <action selector="onExitBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dew-X5-5aJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="lat-4L-2EI" firstAttribute="height" secondItem="NLn-7l-83n" secondAttribute="height" id="Mqu-cV-VG6"/>
+                                            <constraint firstItem="MXI-l1-Tw6" firstAttribute="height" secondItem="lat-4L-2EI" secondAttribute="height" id="pwR-2h-5lD"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="yW2-Sf-MC3" secondAttribute="trailing" id="6Ul-E3-wmb"/>
+                                    <constraint firstAttribute="height" constant="120" id="VGh-iO-k7x"/>
+                                    <constraint firstItem="yW2-Sf-MC3" firstAttribute="leading" secondItem="vnr-wA-FgI" secondAttribute="leading" id="eVb-qw-MFN"/>
+                                    <constraint firstItem="yW2-Sf-MC3" firstAttribute="top" secondItem="vnr-wA-FgI" secondAttribute="top" id="k56-ok-hih"/>
+                                    <constraint firstAttribute="width" constant="200" id="sxv-Om-CEd"/>
+                                    <constraint firstAttribute="bottom" secondItem="yW2-Sf-MC3" secondAttribute="bottom" id="v6h-HD-05r"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="vnr-wA-FgI" secondAttribute="trailing" id="Ler-en-orV"/>
+                            <constraint firstItem="Jvy-SD-fV5" firstAttribute="bottom" secondItem="LK8-b1-Tmj" secondAttribute="top" id="bgZ-6Z-reG"/>
+                            <constraint firstItem="Jvy-SD-fV5" firstAttribute="top" secondItem="vp4-p2-dj9" secondAttribute="top" id="dCZ-kU-XMu"/>
+                            <constraint firstItem="Jvy-SD-fV5" firstAttribute="leading" secondItem="vp4-p2-dj9" secondAttribute="leading" id="n1g-pj-XsX"/>
+                            <constraint firstAttribute="trailing" secondItem="Jvy-SD-fV5" secondAttribute="trailing" id="uzG-1z-F7X"/>
+                            <constraint firstItem="vnr-wA-FgI" firstAttribute="top" secondItem="suw-UK-RoX" secondAttribute="bottom" id="w8R-pE-7xR"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="w5K-d1-lTb" appends="YES" id="PJi-jd-mlD"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="lb1-pb-F0p">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Jpg-RY-cuC">
+                            <connections>
+                                <action selector="onMenuBtnClicked:" destination="BYZ-38-t0r" id="kQx-Ig-Tmh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mActionMenu" destination="vnr-wA-FgI" id="OPF-vq-6hX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="w5K-d1-lTb">
+                    <connections>
+                        <action selector="onGestureRecognizer:" destination="BYZ-38-t0r" id="f2f-Sq-vpG"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="441" y="326"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="inactive_camera" width="320" height="222"/>
+    </resources>
+</document>

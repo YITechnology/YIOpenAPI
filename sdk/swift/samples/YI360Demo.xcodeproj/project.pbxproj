@@ -1,0 +1,361 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10A3566A1D7944D600210D8B /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A356671D7944D600210D8B /* CocoaAsyncSocket.framework */; };
+		10A3566B1D7944D600210D8B /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10A356671D7944D600210D8B /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10A3566C1D7944D600210D8B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A356681D7944D600210D8B /* SwiftyJSON.framework */; };
+		10A3566D1D7944D600210D8B /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10A356681D7944D600210D8B /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10A3566E1D7944D600210D8B /* YICameraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A356691D7944D600210D8B /* YICameraSDK.framework */; };
+		10A3566F1D7944D600210D8B /* YICameraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10A356691D7944D600210D8B /* YICameraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10AC16F11D7525D10008F13F /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AC16F01D7525D10008F13F /* Camera.swift */; };
+		10AC17111D7931AA0008F13F /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AC17101D7931AA0008F13F /* NSDateExtension.swift */; };
+		10B462B91D6D45410058A18B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B462B81D6D45410058A18B /* AppDelegate.swift */; };
+		10B462BB1D6D45410058A18B /* CameraGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B462BA1D6D45410058A18B /* CameraGridViewController.swift */; };
+		10B462BE1D6D45410058A18B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B462BC1D6D45410058A18B /* Main.storyboard */; };
+		10B462C01D6D45410058A18B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10B462BF1D6D45410058A18B /* Assets.xcassets */; };
+		10B462C31D6D45410058A18B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B462C11D6D45410058A18B /* LaunchScreen.storyboard */; };
+		10B462CD1D6D49130058A18B /* CameraCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B462CC1D6D49130058A18B /* CameraCell.swift */; };
+		10B462CF1D6DBC970058A18B /* NavigationControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B462CE1D6DBC970058A18B /* NavigationControlller.swift */; };
+		10B462D11D6DBD340058A18B /* CameraSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B462D01D6DBD340058A18B /* CameraSelectionViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		10A356701D7944D600210D8B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				10A3566D1D7944D600210D8B /* SwiftyJSON.framework in Embed Frameworks */,
+				10A3566B1D7944D600210D8B /* CocoaAsyncSocket.framework in Embed Frameworks */,
+				10A3566F1D7944D600210D8B /* YICameraSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		10A356671D7944D600210D8B /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../framework/iphonesimulator/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		10A356681D7944D600210D8B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../framework/iphonesimulator/SwiftyJSON.framework; sourceTree = "<group>"; };
+		10A356691D7944D600210D8B /* YICameraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YICameraSDK.framework; path = ../framework/iphonesimulator/YICameraSDK.framework; sourceTree = "<group>"; };
+		10AC16F01D7525D10008F13F /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		10AC17101D7931AA0008F13F /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
+		10B462B51D6D45410058A18B /* YI360Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YI360Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		10B462B81D6D45410058A18B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		10B462BA1D6D45410058A18B /* CameraGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraGridViewController.swift; sourceTree = "<group>"; };
+		10B462BD1D6D45410058A18B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		10B462BF1D6D45410058A18B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		10B462C21D6D45410058A18B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		10B462C41D6D45410058A18B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10B462CC1D6D49130058A18B /* CameraCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraCell.swift; sourceTree = "<group>"; };
+		10B462CE1D6DBC970058A18B /* NavigationControlller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControlller.swift; sourceTree = "<group>"; };
+		10B462D01D6DBD340058A18B /* CameraSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraSelectionViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		10B462B21D6D45410058A18B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10A3566C1D7944D600210D8B /* SwiftyJSON.framework in Frameworks */,
+				10A3566A1D7944D600210D8B /* CocoaAsyncSocket.framework in Frameworks */,
+				10A3566E1D7944D600210D8B /* YICameraSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10B462AC1D6D45410058A18B = {
+			isa = PBXGroup;
+			children = (
+				10A356671D7944D600210D8B /* CocoaAsyncSocket.framework */,
+				10A356681D7944D600210D8B /* SwiftyJSON.framework */,
+				10A356691D7944D600210D8B /* YICameraSDK.framework */,
+				10B462B71D6D45410058A18B /* YI360Demo */,
+				10B462B61D6D45410058A18B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		10B462B61D6D45410058A18B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10B462B51D6D45410058A18B /* YI360Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		10B462B71D6D45410058A18B /* YI360Demo */ = {
+			isa = PBXGroup;
+			children = (
+				10B462B81D6D45410058A18B /* AppDelegate.swift */,
+				10B462BA1D6D45410058A18B /* CameraGridViewController.swift */,
+				10B462BC1D6D45410058A18B /* Main.storyboard */,
+				10B462BF1D6D45410058A18B /* Assets.xcassets */,
+				10B462C11D6D45410058A18B /* LaunchScreen.storyboard */,
+				10B462C41D6D45410058A18B /* Info.plist */,
+				10B462CC1D6D49130058A18B /* CameraCell.swift */,
+				10B462CE1D6DBC970058A18B /* NavigationControlller.swift */,
+				10B462D01D6DBD340058A18B /* CameraSelectionViewController.swift */,
+				10AC16F01D7525D10008F13F /* Camera.swift */,
+				10AC17101D7931AA0008F13F /* NSDateExtension.swift */,
+			);
+			path = YI360Demo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		10B462B41D6D45410058A18B /* YI360Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10B462C71D6D45410058A18B /* Build configuration list for PBXNativeTarget "YI360Demo" */;
+			buildPhases = (
+				10B462B11D6D45410058A18B /* Sources */,
+				10B462B21D6D45410058A18B /* Frameworks */,
+				10B462B31D6D45410058A18B /* Resources */,
+				10A356701D7944D600210D8B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YI360Demo;
+			productName = YI360Demo;
+			productReference = 10B462B51D6D45410058A18B /* YI360Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		10B462AD1D6D45410058A18B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = xyb;
+				TargetAttributes = {
+					10B462B41D6D45410058A18B = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 10B462B01D6D45410058A18B /* Build configuration list for PBXProject "YI360Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 10B462AC1D6D45410058A18B;
+			productRefGroup = 10B462B61D6D45410058A18B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				10B462B41D6D45410058A18B /* YI360Demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		10B462B31D6D45410058A18B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10B462C31D6D45410058A18B /* LaunchScreen.storyboard in Resources */,
+				10B462C01D6D45410058A18B /* Assets.xcassets in Resources */,
+				10B462BE1D6D45410058A18B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		10B462B11D6D45410058A18B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10AC16F11D7525D10008F13F /* Camera.swift in Sources */,
+				10B462CD1D6D49130058A18B /* CameraCell.swift in Sources */,
+				10B462BB1D6D45410058A18B /* CameraGridViewController.swift in Sources */,
+				10B462CF1D6DBC970058A18B /* NavigationControlller.swift in Sources */,
+				10AC17111D7931AA0008F13F /* NSDateExtension.swift in Sources */,
+				10B462D11D6DBD340058A18B /* CameraSelectionViewController.swift in Sources */,
+				10B462B91D6D45410058A18B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		10B462BC1D6D45410058A18B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10B462BD1D6D45410058A18B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		10B462C11D6D45410058A18B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				10B462C21D6D45410058A18B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		10B462C51D6D45410058A18B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		10B462C61D6D45410058A18B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		10B462C81D6D45410058A18B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../framework/iphonesimulator",
+				);
+				INFOPLIST_FILE = YI360Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoyi.yi360demo;
+				PRODUCT_NAME = YI360Demo;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		10B462C91D6D45410058A18B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../framework/iphonesimulator",
+				);
+				INFOPLIST_FILE = YI360Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoyi.yi360demo;
+				PRODUCT_NAME = YI360Demo;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		10B462B01D6D45410058A18B /* Build configuration list for PBXProject "YI360Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10B462C51D6D45410058A18B /* Debug */,
+				10B462C61D6D45410058A18B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10B462C71D6D45410058A18B /* Build configuration list for PBXNativeTarget "YI360Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10B462C81D6D45410058A18B /* Debug */,
+				10B462C91D6D45410058A18B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 10B462AD1D6D45410058A18B /* Project object */;
+}
