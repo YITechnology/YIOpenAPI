@@ -20,7 +20,7 @@ The APIs currently provide support to the following 3 areas
 - camera settings (datetime, video resolution, photo size, video standard, etc)
 - camera state (record started/completed, video finder started etc)
 
-## VR/360
+## VR/360/multi-camera system
 
 If you have a VR/360 rig or a multi-cameras system, you can have the cameras connected to a wi-fi network or a hotspot, and then control the cameras from your application (built using the YI Open API SDK), by following the steps below: 
 
@@ -30,13 +30,18 @@ If you have a VR/360 rig or a multi-cameras system, you can have the cameras con
    * wait until the sound of starting music
 
 2. setup config file (/bin/{country code}/sta.conf)
-   * provide correct SSID and password for accessing the wi-fi network or the hotspot
+   * provide correct SSID and password for accessing the Wi-Fi network or the hotspot
    * give each camera a different device name
    * set the correct country code (e.g. CN for China, US for United States etc)
    * save the changes to sta.conf and copy it onto the microSD card
    * start the camera with the microSD card
 
-3. tryout YI360Demo sample (/sdk/java/samples/YI360Demo)
+3. turn on wifi on camera
+   * go to camera settings -> Wi-Fi
+   * pick the Wi-Fi frequency matching to the one broadcasting from your Wi-Fi network or hotspot
+   * turn on Wi-Fi (note that the ON button is green)
+    
+4. tryout YI360Demo sample (/sdk/java/samples/YI360Demo)
    * open a hotspot on your Android phone, using the same SSID and password provided earlier to sta.conf
    * build and launch the sample app
 
