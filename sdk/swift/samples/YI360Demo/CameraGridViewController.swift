@@ -166,7 +166,7 @@ class CameraGridViewController: UIViewController, UICollectionViewDataSource, Ca
             dispatch_async(dispatch_get_main_queue()) {
                 var ips = [String]();
                 // If iPhone is used as wifi hotspot, the client ip range is 172.20.10.1~172.20.10.10
-                for (var i = 1; i <= 10; ++i) {
+                for (var i = 1; i <= 10; i += 1) {
                     ips.append("172.20.10.\(i)");
                     ips.append("172.20.10.\(i)");
                 }
