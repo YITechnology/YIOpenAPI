@@ -11,6 +11,7 @@ The following is the tree structure of this repository:
 * /sdk/java/doc -- documentation
 * /sdk/java/libs -- SDK library for building your applications
 * /sdk/java/samples -- samples demonstrating the use of SDK APIs
+* /specs -- reference specs
 
 ## Features
 
