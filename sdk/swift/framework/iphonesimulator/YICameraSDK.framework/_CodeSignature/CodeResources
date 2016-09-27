@@ -4,9 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>.DS_Store</key>
+		<data>
+		Mu3m1SBPy6XHtN2CbgJgfn3HTJs=
+		</data>
 		<key>Headers/YICameraSDK-Swift.h</key>
 		<data>
-		fJvckEAsQhEKLjEE0x1V3tqeO0A=
+		lON4tLbE3onLZdBdwB8TO1coaYA=
 		</data>
 		<key>Headers/YICameraSDK.h</key>
 		<data>
@@ -18,11 +22,11 @@
 		</data>
 		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		sa1fC7d4zUKxuCae2wGwYdCA1j0=
+		36PB+tWD7W9Hqw3awl3xFGBHQhs=
 		</data>
 		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		V/PLQY6i+C1h5PjJf24wRJfB3bQ=
+		ng5VzBRmmy484hasU4s1eTWt7eA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -35,11 +39,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fJvckEAsQhEKLjEE0x1V3tqeO0A=
+			lON4tLbE3onLZdBdwB8TO1coaYA=
 			</data>
 			<key>hash2</key>
 			<data>
-			SuiFMe37JOqk2xGTLYdLdftO/BboRjIT1GWIzkbNMrQ=
+			VwE97WemmofO3p3rXRP0/fRccCNFeU8Y1wGc5wy1iaw=
 			</data>
 		</dict>
 		<key>Headers/YICameraSDK.h</key>
@@ -57,22 +61,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sa1fC7d4zUKxuCae2wGwYdCA1j0=
+			36PB+tWD7W9Hqw3awl3xFGBHQhs=
 			</data>
 			<key>hash2</key>
 			<data>
-			hybmmu1qjxLheVSrcuiGJGY0SvhMcHLiUk+bA6poN8s=
+			oxP0wxjCqUxXmWSN/EfTPQXs3L9o8/FENN6eHQpSdr8=
 			</data>
 		</dict>
 		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			V/PLQY6i+C1h5PjJf24wRJfB3bQ=
+			ng5VzBRmmy484hasU4s1eTWt7eA=
 			</data>
 			<key>hash2</key>
 			<data>
-			9QBCPGihTKJu3Qy2K8fd9MtTCwEDXOkkX92TXhk4vWU=
+			dkXctbwVL/NGA55QFG8MwtsgjgmZn0hcUlkgqTlatOA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
