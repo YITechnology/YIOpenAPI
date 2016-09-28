@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		PuG+X55ftffeIiFhH045p+b/FbU=
+		+wrDBAF3u+mgY0Kna/I+WbSj9V4=
 		</data>
 		<key>Modules/SwiftyJSON.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		LHfX8V/I43+b0BkCQgkP9t9XDTo=
+		gL8Kw6VXXCFbhqhN4wblXDNsZcg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -68,11 +68,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LHfX8V/I43+b0BkCQgkP9t9XDTo=
+			gL8Kw6VXXCFbhqhN4wblXDNsZcg=
 			</data>
 			<key>hash2</key>
 			<data>
-			4yCxMermVvW2c6wsnmAcI7EQ/G7y0+A/oxqYBU5n/90=
+			3+y1NQ6RhRWxgPKW0s/B2veH5HwFFUZwQhZ+RA5LhHk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -104,6 +104,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -149,6 +154,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^Info\.plist$</key>
 		<dict>

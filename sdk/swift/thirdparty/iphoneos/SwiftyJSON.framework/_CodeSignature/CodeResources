@@ -14,15 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		S4KZ1VZzW1ZKJe4QlKf889423O8=
-		</data>
-		<key>Modules/SwiftyJSON.swiftmodule/arm.swiftdoc</key>
-		<data>
-		VvSrAj6ze/GStEHGLU52PUeTlN8=
-		</data>
-		<key>Modules/SwiftyJSON.swiftmodule/arm.swiftmodule</key>
-		<data>
-		zTFDWZsPV5521KxkB6cBsfu47g4=
+		4/ayPsBAI7mdYxmRO9tzp/Ce+dE=
 		</data>
 		<key>Modules/SwiftyJSON.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -30,7 +22,7 @@
 		</data>
 		<key>Modules/SwiftyJSON.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		SSf0dt4DarqnF0SnFWhkppaelwo=
+		h6EksNY4iPvm38nEHmkRBa0rrOw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -61,28 +53,6 @@
 			M2OjYkxpoO+TClJr/SQwTn1Iek0syyx7oMccHdaK8MQ=
 			</data>
 		</dict>
-		<key>Modules/SwiftyJSON.swiftmodule/arm.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			VvSrAj6ze/GStEHGLU52PUeTlN8=
-			</data>
-			<key>hash2</key>
-			<data>
-			T+z1S2x7T+GKwFHRPB7Tv+OkPxAUHhm9DG8+NjJhKiQ=
-			</data>
-		</dict>
-		<key>Modules/SwiftyJSON.swiftmodule/arm.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			zTFDWZsPV5521KxkB6cBsfu47g4=
-			</data>
-			<key>hash2</key>
-			<data>
-			9E6qRVk/UsGxXnoS2n+/cfPRP5UaHBHChu7bMQgG+uc=
-			</data>
-		</dict>
 		<key>Modules/SwiftyJSON.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
@@ -98,11 +68,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SSf0dt4DarqnF0SnFWhkppaelwo=
+			h6EksNY4iPvm38nEHmkRBa0rrOw=
 			</data>
 			<key>hash2</key>
 			<data>
-			41k5O9SgCDNQSLxQ54AoAJZ7Tn77ICVAHWut2r0C9go=
+			dhNhNAsYBRIxRhbXZr+H3GqDYoDFXXjmq3Hnoh/wBco=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -134,6 +104,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -179,6 +154,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^Info\.plist$</key>
 		<dict>

@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>.DS_Store</key>
+		<data>
+		+/pSlzmIV0TU1eDLCOaZ05Jnb1E=
+		</data>
 		<key>Headers/AsyncSocket.h</key>
 		<data>
 		vQCufVwen6Ajj0Ti0w60iSan3DE=
@@ -26,7 +30,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		BGxCL75+97mZFrVNkBmlxeivu38=
+		fX1G6JCjumiN9Kaurm4psyQJwEs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -120,6 +124,11 @@
 			<key>weight</key>
 			<real>1100</real>
 		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
+		</dict>
 		<key>^version.plist$</key>
 		<true/>
 	</dict>
@@ -164,6 +173,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^Info\.plist$</key>
 		<dict>

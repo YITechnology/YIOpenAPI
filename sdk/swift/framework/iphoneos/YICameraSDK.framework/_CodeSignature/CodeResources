@@ -4,101 +4,86 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/AsyncSocket.h</key>
+		<key>Headers/YICameraSDK-Swift.h</key>
 		<data>
-		vQCufVwen6Ajj0Ti0w60iSan3DE=
+		RGWrKGuXYIFTSo+O/mjercWR1r8=
 		</data>
-		<key>Headers/AsyncUdpSocket.h</key>
+		<key>Headers/YICameraSDK.h</key>
 		<data>
-		qqC4cvVJU9/76V8UFaktJeG3SOY=
-		</data>
-		<key>Headers/CocoaAsyncSocket.h</key>
-		<data>
-		fwx/DHzHzUQhtlfC9ffKAK+SFx0=
-		</data>
-		<key>Headers/GCDAsyncSocket.h</key>
-		<data>
-		1HDXCah6kGOXWoWutvtEL9T7a8w=
-		</data>
-		<key>Headers/GCDAsyncUdpSocket.h</key>
-		<data>
-		mN0BX8QGrZbUAmev1TexMEH1Ros=
+		wjrsdF0nbkR+MawHycrmHHi9QYs=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		WYk12wfb7mebr6GmDp8QEObSWcM=
+		2HHxjf+8fmS5B0SlG1GAASjBHT0=
+		</data>
+		<key>Modules/YICameraSDK.swiftmodule/arm64.swiftdoc</key>
+		<data>
+		J5rEXSbwIkR/SZaakU1UgYFdcVE=
+		</data>
+		<key>Modules/YICameraSDK.swiftmodule/arm64.swiftmodule</key>
+		<data>
+		EtaXCQ6DHwAFTEi0WXuuniLr9lg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		+n94rYTWDjekX3imyh+PSyA9vgA=
+		FkgImG4fzAAPav5HbTiJCSx4mH4=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/AsyncSocket.h</key>
+		<key>Headers/YICameraSDK-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vQCufVwen6Ajj0Ti0w60iSan3DE=
+			RGWrKGuXYIFTSo+O/mjercWR1r8=
 			</data>
 			<key>hash2</key>
 			<data>
-			R3736LSX5z8RLRp9l2T8khkcHmQ3stoG7+v5ZSZaclQ=
+			GVq6mThdNcQGqFGDofP6d2ajcAYbTrSn7kSHSGy/izA=
 			</data>
 		</dict>
-		<key>Headers/AsyncUdpSocket.h</key>
+		<key>Headers/YICameraSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qqC4cvVJU9/76V8UFaktJeG3SOY=
+			wjrsdF0nbkR+MawHycrmHHi9QYs=
 			</data>
 			<key>hash2</key>
 			<data>
-			vf+GiELz6/O8x9n5phpbOqx1Gji1zyrRWI5SxdQTsHQ=
+			FMtzwYhkAcDxu1Vd5v3gXpJ1v2VeARFjQMQ9IHLI91U=
 			</data>
 		</dict>
-		<key>Headers/CocoaAsyncSocket.h</key>
+		<key>Modules/YICameraSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			fwx/DHzHzUQhtlfC9ffKAK+SFx0=
+			J5rEXSbwIkR/SZaakU1UgYFdcVE=
 			</data>
 			<key>hash2</key>
 			<data>
-			OeCNZd4h1R70nH11jcrFn8m1hnTuvTAHjDhMuhI/3Ao=
+			CjkB4vclJ5i7mdc9KJE23vwRrhZ/q92E4bTdzm5EtMs=
 			</data>
 		</dict>
-		<key>Headers/GCDAsyncSocket.h</key>
+		<key>Modules/YICameraSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1HDXCah6kGOXWoWutvtEL9T7a8w=
+			EtaXCQ6DHwAFTEi0WXuuniLr9lg=
 			</data>
 			<key>hash2</key>
 			<data>
-			7dV5qGIjB0OSFw/BYzoH/wrJ09FECXznihYFR5MuGbo=
-			</data>
-		</dict>
-		<key>Headers/GCDAsyncUdpSocket.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			mN0BX8QGrZbUAmev1TexMEH1Ros=
-			</data>
-			<key>hash2</key>
-			<data>
-			2Pf7uADYzvSf8/lcSiVKsioPAbW/xXqVVCZ0Z6hVlyg=
+			KX0LTIZLrxRf24/mxGrvybVcV9ovYwVoLuV7gwISLv4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+n94rYTWDjekX3imyh+PSyA9vgA=
+			FkgImG4fzAAPav5HbTiJCSx4mH4=
 			</data>
 			<key>hash2</key>
 			<data>
-			RoVn8xMeEnU3Izg0DtYjYL/krI8V7qw0sa7Ggf+08Rs=
+			KFc7duVari8/Dc8btuTYIkZVUzo5982YVzxMhe7pKrA=
 			</data>
 		</dict>
 	</dict>

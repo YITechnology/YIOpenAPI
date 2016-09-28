@@ -4,13 +4,9 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>.DS_Store</key>
-		<data>
-		Mu3m1SBPy6XHtN2CbgJgfn3HTJs=
-		</data>
 		<key>Headers/YICameraSDK-Swift.h</key>
 		<data>
-		lON4tLbE3onLZdBdwB8TO1coaYA=
+		RGWrKGuXYIFTSo+O/mjercWR1r8=
 		</data>
 		<key>Headers/YICameraSDK.h</key>
 		<data>
@@ -18,15 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		K5xs6yTAHbybw0kXvufETM3L1y4=
+		J3nul42fjKGIjebSqKzXWJ/Dv+I=
 		</data>
 		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		36PB+tWD7W9Hqw3awl3xFGBHQhs=
+		MoDfQ7fOVr3Hy5iXX2XehpGJp74=
 		</data>
 		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		ng5VzBRmmy484hasU4s1eTWt7eA=
+		CRn7e9DFJlue+MkwRHthKX046cA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -39,11 +35,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lON4tLbE3onLZdBdwB8TO1coaYA=
+			RGWrKGuXYIFTSo+O/mjercWR1r8=
 			</data>
 			<key>hash2</key>
 			<data>
-			VwE97WemmofO3p3rXRP0/fRccCNFeU8Y1wGc5wy1iaw=
+			GVq6mThdNcQGqFGDofP6d2ajcAYbTrSn7kSHSGy/izA=
 			</data>
 		</dict>
 		<key>Headers/YICameraSDK.h</key>
@@ -61,22 +57,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			36PB+tWD7W9Hqw3awl3xFGBHQhs=
+			MoDfQ7fOVr3Hy5iXX2XehpGJp74=
 			</data>
 			<key>hash2</key>
 			<data>
-			oxP0wxjCqUxXmWSN/EfTPQXs3L9o8/FENN6eHQpSdr8=
+			eMss/p+wpR4ISOUgdsmVLRCg1M+4KabXtVe5xxjW1lk=
 			</data>
 		</dict>
 		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ng5VzBRmmy484hasU4s1eTWt7eA=
+			CRn7e9DFJlue+MkwRHthKX046cA=
 			</data>
 			<key>hash2</key>
 			<data>
-			dkXctbwVL/NGA55QFG8MwtsgjgmZn0hcUlkgqTlatOA=
+			wR1QcHxnRq+y5O8uubrNT6JmxVBv67QeXSHf/jnXXZ0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -108,6 +104,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -153,6 +154,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^Info\.plist$</key>
 		<dict>

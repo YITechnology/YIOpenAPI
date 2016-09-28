@@ -157,6 +157,9 @@ SWIFT_CLASS("_TtC11YICameraSDK12ActionCamera")
 /// will be set.
 - (void)connectWithConnectionString:(NSString * _Nonnull)connectionString;
 
+/// Get rtsp url of camera. If camera is not connected, will return nil.
+- (NSString * _Nullable)getRtspURL;
+
 /// Cancel current download task.
 - (ActionCamera * _Nonnull)cancelDownlad;
 - (void)URLSession:(NSURLSession * _Nonnull)session downloadTask:(NSURLSessionDownloadTask * _Nonnull)downloadTask didFinishDownloadingToURL:(NSURL * _Nonnull)location;
@@ -180,99 +183,8 @@ SWIFT_CLASS("_TtC11YICameraSDK12ActionCamera")
 - (void)disconnect;
 @end
 
-@class Error;
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-
-/// Delete file from camera.
-///
-/// \param fileName Filename you want to delete from camera.
-///
-/// \param success If command executes success, this callback will be invoked.
-///
-/// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)deleteFileWithFileName:(NSString * _Nonnull)fileName success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
-@end
-
-@class NSDate;
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-
-/// Set datetime to camera.
-///
-/// \param datetime The datetime you want to set to camera.
-///
-/// \param success If command executes success, this callback will be invoked.
-///
-/// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)setDateTimeWithDatetime:(NSDate * _Nonnull)datetime success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
-@end
-
-enum VideoResolution : NSInteger;
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-
-/// Get current video resolution.
-///
-/// \param success If command executes success, this callback will be invoked and parameter is
-/// current video resolution.
-///
-/// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)getVideoResolutionWithSuccess:(void (^ _Nullable)(enum VideoResolution))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
-@end
-
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-
-/// Get current video resolution.
-///
-/// \param success If command executes success, this callback will be invoked and parameter is
-/// current video resolution.
-///
-/// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)setVideoResolutionWithResolution:(enum VideoResolution)resolution success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
-@end
-
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-
-/// Take a picture on camera.
-///
-/// \param success If command executes success, this callback will be invoked.
-///
-/// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)takeCaptureWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
-@end
-
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-@end
-
-@class ActionCameraSettings;
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-
-/// Get camera settings.
-///
-/// \param success If command executes success, this callback will be invoked and parameter is
-/// the settings of camera.
-///
-/// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)getSettingsWithSuccess:(void (^ _Nullable)(ActionCameraSettings * _Nonnull))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
-@end
-
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-
-/// Stop recording on camera.
-///
-/// \param success If command executes success, this callback wil be invoked.
-///
-/// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)stopRecordingWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
-@end
-
 enum SystemMode : NSInteger;
+@class Error;
 
 @interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
 
@@ -286,17 +198,17 @@ enum SystemMode : NSInteger;
 - (ActionCamera * _Nonnull)setSystemModeWithMode:(enum SystemMode)mode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 @end
 
-enum PhotoSize : NSInteger;
+enum PhotoResolution : NSInteger;
 
 @interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
 
-/// Get current photo size.
+/// Get current photo resolution.
 ///
 /// \param success If command executes success, this callback will be invoked and parameter is
 /// current photo size.
 ///
 /// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)getPhotoSizeWithSuccess:(void (^ _Nullable)(enum PhotoSize))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getPhotoResolutionWithSuccess:(void (^ _Nullable)(enum PhotoResolution))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 @end
 
 enum Status : NSInteger;
@@ -315,13 +227,126 @@ enum Status : NSInteger;
 
 @interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
 
+/// Stop recording on camera.
+///
+/// \param success If command executes success, this callback wil be invoked.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)stopRecordingWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
+/// Stop view finder.
+///
+/// \param success If command executes success, this callback will be invoked.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)stopViewFinderWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+enum VideoResolution : NSInteger;
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
 /// Get current video resolution.
 ///
 /// \param success If command executes success, this callback will be invoked and parameter is
 /// current video resolution.
 ///
 /// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)setPhotoSizeWithPhotoSize:(enum PhotoSize)photoSize success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setVideoResolutionWithResolution:(enum VideoResolution)resolution success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+@class NSDate;
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
+/// Set datetime to camera.
+///
+/// \param datetime The datetime you want to set to camera.
+///
+/// \param success If command executes success, this callback will be invoked.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setDateTimeWithDatetime:(NSDate * _Nonnull)datetime success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
+/// Delete file from camera.
+///
+/// \param fileName Filename you want to delete from camera.
+///
+/// \param success If command executes success, this callback will be invoked.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)deleteFileWithFileName:(NSString * _Nonnull)fileName success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
+/// Get current photo resolution.
+///
+/// \param success If command executes success, this callback will be invoked and parameter is
+/// current video resolution.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setPhotoResolutionWithPhotoResolution:(enum PhotoResolution)photoResolution success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+@end
+
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
+/// Take a picture on camera.
+///
+/// \param success If command executes success, this callback will be invoked.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)capturePhotoWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
+/// Get current video resolution.
+///
+/// \param success If command executes success, this callback will be invoked and parameter is
+/// current video resolution.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getVideoResolutionWithSuccess:(void (^ _Nullable)(enum VideoResolution))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+@class ActionCameraSettings;
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
+/// Get camera settings.
+///
+/// \param success If command executes success, this callback will be invoked and parameter is
+/// the settings of camera.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getSettingsWithSuccess:(void (^ _Nullable)(ActionCameraSettings * _Nonnull))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
+/// Start view finder.
+///
+/// \param success If command executes success, this callback will be invoked.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)startViewFinderWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 @end
 
 
@@ -633,8 +658,23 @@ SWIFT_CLASS("_TtC11YICameraSDK20ActionCameraListener")
 /// When capture is stopped on camera, this callback will be invoked.
 - (void)onCaptureStopped;
 
-/// When video finder started, this callback will be invoked. After received this event, you can start play video stream vi rtsp protocol.
-- (void)onVideoFinderStarted;
+/// When view finder started, this callback will be invoked. After received this event, you can start play video stream vi rtsp protocol.
+- (void)onViewFinderStarted;
+
+/// When view finder stoped, this callback will be invoked.
+- (void)onViewFinderStopped;
+
+/// When battery life is changed, this callback will be invoked.
+- (void)onBatteryLifeChangedWithRestBattery:(NSInteger)restBattery;
+
+/// When burst photo finished, this callback will be invoked.
+- (void)onBurstPhotoFinished:(NSString * _Nonnull)fileName;
+
+/// When timelapse photo finished, this callback will be invoked.
+- (void)onTimelapsePhotoFinished:(NSString * _Nonnull)fileName;
+
+/// When capturing photo in video is finished, this callback will be invoked.
+- (void)onPhotoCapturedInVideoFinished:(NSString * _Nonnull)fileName;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -676,7 +716,7 @@ SWIFT_CLASS("_TtC11YICameraSDK20ActionCameraSettings")
 @property (nonatomic) enum Quality videoQuality;
 
 /// Current picture resolution.
-@property (nonatomic) enum PhotoSize photoSize;
+@property (nonatomic) enum PhotoResolution photoResolution;
 
 /// Current photo white balance.
 @property (nonatomic) enum WhiteBalance photoWhiteBalance;
@@ -963,25 +1003,25 @@ typedef SWIFT_ENUM(NSInteger, MeteringMode) {
 
 
 /// Picture resolution supported by YI action camera.
-typedef SWIFT_ENUM(NSInteger, PhotoSize) {
+typedef SWIFT_ENUM(NSInteger, PhotoResolution) {
 
 /// Unknown
-  PhotoSizeUnknown = 0,
+  PhotoResolutionUnknown = 0,
 
 /// Photo size is 12MP (4000x3000 4:3) fov:w
-  PhotoSizep_12MP_4000x3000_4x3_w = 1,
+  PhotoResolutionp_12MP_4000x3000_4x3_w = 1,
 
 /// Photo size is 7MP (3008x2256 4:3) fov:w
-  PhotoSizep_7MP_3008x2256_4x3_w = 2,
+  PhotoResolutionp_7MP_3008x2256_4x3_w = 2,
 
 /// Photo size is 7MP (3008x2256 4:3) fov:m
-  PhotoSizep_7MP_3008x2256_4x3_m = 3,
+  PhotoResolutionp_7MP_3008x2256_4x3_m = 3,
 
 /// Photo size is 5MP (2560x1920 4:3) fov:m
-  PhotoSizep_5MP_2560x1920_4x3_m = 4,
+  PhotoResolutionp_5MP_2560x1920_4x3_m = 4,
 
 /// Photo size is 8MP (3840x2160 16:9) fov:w
-  PhotoSizep_8MP_3840x2160_16x9_w = 5,
+  PhotoResolutionp_8MP_3840x2160_16x9_w = 5,
 };
 
 
@@ -1082,7 +1122,7 @@ typedef SWIFT_ENUM(NSInteger, Status) {
   StatusRecording = 2,
 
 /// RTSP service is started.
-  StatusVideoFinderStarted = 3,
+  StatusViewFinderStarted = 3,
 };
 
 
