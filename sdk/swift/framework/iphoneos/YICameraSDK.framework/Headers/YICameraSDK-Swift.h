@@ -666,15 +666,6 @@ SWIFT_CLASS("_TtC11YICameraSDK20ActionCameraListener")
 
 /// When battery life is changed, this callback will be invoked.
 - (void)onBatteryLifeChangedWithRestBattery:(NSInteger)restBattery;
-
-/// When burst photo finished, this callback will be invoked.
-- (void)onBurstPhotoFinished:(NSString * _Nonnull)fileName;
-
-/// When timelapse photo finished, this callback will be invoked.
-- (void)onTimelapsePhotoFinished:(NSString * _Nonnull)fileName;
-
-/// When capturing photo in video is finished, this callback will be invoked.
-- (void)onPhotoCapturedInVideoFinished:(NSString * _Nonnull)fileName;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
