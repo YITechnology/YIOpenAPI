@@ -15,7 +15,7 @@ The following is the tree structure of this repository:
 
 ## Features
 
-The APIs currently provide support to the following 3 areas
+The APIs currently provide support to the following 4 areas
 
 - camera control (start/stop recording video, capture photo, turn on/off viewfinder, etc)
 - camera settings (datetime, video resolution, photo size, video standard, etc)
@@ -44,7 +44,6 @@ If you have a VR/360 rig or a multi-cameras system, you can have the cameras con
    * turn on Wi-Fi (note that the ON button is green)
     
 4. tryout YI360Demo sample (/sdk/{java, swift}/samples/YI360Demo)
-   * open a hotspot on your Android phone or iPhone, using the same SSID and password provided earlier to sta.conf
    * build and launch the sample app
 
 ## Join the YI Open API community
