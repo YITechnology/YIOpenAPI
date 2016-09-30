@@ -1,5 +1,5 @@
 # YI Open API
-YI Open API provides a set of APIs in the form of SDKs of different languages for software developers and hardware makers to build cool apps and products with YI Action Camera or YI 4K Action Camera. 
+YI Open API provides a set of APIs in the form of SDKs of different languages for software developers and hardware makers to build cool apps and products with YI 4K Action Camera. 
 
 This repository contains the libraries, samples and documentation for using the APIs.
 
@@ -17,9 +17,10 @@ The following is the tree structure of this repository:
 
 The APIs currently provide support to the following 3 areas
 
-- camera control (start/stop recording, capture picture, turn on/off viewfinder, etc)
+- camera control (start/stop recording video, capture photo, turn on/off viewfinder, etc)
 - camera settings (datetime, video resolution, photo size, video standard, etc)
 - camera state (record started/completed, video finder started etc)
+- media management (browse files stored on media, download, delete file)
 
 ## VR/360/multi-camera system
 
@@ -42,8 +43,8 @@ If you have a VR/360 rig or a multi-cameras system, you can have the cameras con
    * pick the Wi-Fi frequency matching to the one broadcasting from your Wi-Fi network or hotspot
    * turn on Wi-Fi (note that the ON button is green)
     
-4. tryout YI360Demo sample (/sdk/java/samples/YI360Demo)
-   * open a hotspot on your Android phone, using the same SSID and password provided earlier to sta.conf
+4. tryout YI360Demo sample (/sdk/{java, swift}/samples/YI360Demo)
+   * open a hotspot on your Android phone or iPhone, using the same SSID and password provided earlier to sta.conf
    * build and launch the sample app
 
 ## Join the YI Open API community
