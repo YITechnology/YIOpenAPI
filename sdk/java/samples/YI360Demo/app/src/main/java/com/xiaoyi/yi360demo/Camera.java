@@ -125,9 +125,9 @@ class Camera extends ActionCameraListener {
                 mContext.cameras.set(i, this);
                 mContext.gridAdapter.notifyDataSetChanged();
                 // check current status
-                mCamera.getSetting(new ActionCameraCommandCallback1<ActionCameraSetting>() {
+                mCamera.getSettings(new ActionCameraCommandCallback1<ActionCameraSettings>() {
                     @Override
-                    public void onInvoke(ActionCameraSetting actionCameraSetting) {
+                    public void onInvoke(ActionCameraSettings actionCameraSetting) {
                         if (actionCameraSetting.status == Status.Recording) {
                             updateState(CameraState.Recording);
                         }
