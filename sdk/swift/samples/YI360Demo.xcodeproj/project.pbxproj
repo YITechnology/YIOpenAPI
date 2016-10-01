@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10A3566A1D7944D600210D8B /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A356671D7944D600210D8B /* CocoaAsyncSocket.framework */; };
-		10A3566B1D7944D600210D8B /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10A356671D7944D600210D8B /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		10A3566C1D7944D600210D8B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A356681D7944D600210D8B /* SwiftyJSON.framework */; };
-		10A3566D1D7944D600210D8B /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10A356681D7944D600210D8B /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		10A3566E1D7944D600210D8B /* YICameraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A356691D7944D600210D8B /* YICameraSDK.framework */; };
-		10A3566F1D7944D600210D8B /* YICameraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10A356691D7944D600210D8B /* YICameraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10230EDB1DA03430001F70FB /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10230ED81DA03430001F70FB /* CocoaAsyncSocket.framework */; };
+		10230EDC1DA03430001F70FB /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10230ED81DA03430001F70FB /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10230EDD1DA03430001F70FB /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10230ED91DA03430001F70FB /* SwiftyJSON.framework */; };
+		10230EDE1DA03430001F70FB /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10230ED91DA03430001F70FB /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		10230EDF1DA03430001F70FB /* YICameraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10230EDA1DA03430001F70FB /* YICameraSDK.framework */; };
+		10230EE01DA03430001F70FB /* YICameraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10230EDA1DA03430001F70FB /* YICameraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		10AC16F11D7525D10008F13F /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AC16F01D7525D10008F13F /* Camera.swift */; };
 		10AC17111D7931AA0008F13F /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AC17101D7931AA0008F13F /* NSDateExtension.swift */; };
 		10B462B91D6D45410058A18B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B462B81D6D45410058A18B /* AppDelegate.swift */; };
@@ -26,15 +26,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		10A356701D7944D600210D8B /* Embed Frameworks */ = {
+		10230ED71DA03415001F70FB /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				10A3566D1D7944D600210D8B /* SwiftyJSON.framework in Embed Frameworks */,
-				10A3566B1D7944D600210D8B /* CocoaAsyncSocket.framework in Embed Frameworks */,
-				10A3566F1D7944D600210D8B /* YICameraSDK.framework in Embed Frameworks */,
+				10230EDE1DA03430001F70FB /* SwiftyJSON.framework in Embed Frameworks */,
+				10230EDC1DA03430001F70FB /* CocoaAsyncSocket.framework in Embed Frameworks */,
+				10230EE01DA03430001F70FB /* YICameraSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,9 +42,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		10A356671D7944D600210D8B /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../framework/iphonesimulator/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		10A356681D7944D600210D8B /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../framework/iphonesimulator/SwiftyJSON.framework; sourceTree = "<group>"; };
-		10A356691D7944D600210D8B /* YICameraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YICameraSDK.framework; path = ../framework/iphonesimulator/YICameraSDK.framework; sourceTree = "<group>"; };
+		10230ED81DA03430001F70FB /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../framework/iphonesimulator/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		10230ED91DA03430001F70FB /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../framework/iphonesimulator/SwiftyJSON.framework; sourceTree = "<group>"; };
+		10230EDA1DA03430001F70FB /* YICameraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YICameraSDK.framework; path = ../framework/iphonesimulator/YICameraSDK.framework; sourceTree = "<group>"; };
 		10AC16F01D7525D10008F13F /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		10AC17101D7931AA0008F13F /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		10B462B51D6D45410058A18B /* YI360Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YI360Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,9 +64,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10A3566C1D7944D600210D8B /* SwiftyJSON.framework in Frameworks */,
-				10A3566A1D7944D600210D8B /* CocoaAsyncSocket.framework in Frameworks */,
-				10A3566E1D7944D600210D8B /* YICameraSDK.framework in Frameworks */,
+				10230EDD1DA03430001F70FB /* SwiftyJSON.framework in Frameworks */,
+				10230EDB1DA03430001F70FB /* CocoaAsyncSocket.framework in Frameworks */,
+				10230EDF1DA03430001F70FB /* YICameraSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,9 +76,9 @@
 		10B462AC1D6D45410058A18B = {
 			isa = PBXGroup;
 			children = (
-				10A356671D7944D600210D8B /* CocoaAsyncSocket.framework */,
-				10A356681D7944D600210D8B /* SwiftyJSON.framework */,
-				10A356691D7944D600210D8B /* YICameraSDK.framework */,
+				10230ED81DA03430001F70FB /* CocoaAsyncSocket.framework */,
+				10230ED91DA03430001F70FB /* SwiftyJSON.framework */,
+				10230EDA1DA03430001F70FB /* YICameraSDK.framework */,
 				10B462B71D6D45410058A18B /* YI360Demo */,
 				10B462B61D6D45410058A18B /* Products */,
 			);
@@ -120,7 +120,7 @@
 				10B462B11D6D45410058A18B /* Sources */,
 				10B462B21D6D45410058A18B /* Frameworks */,
 				10B462B31D6D45410058A18B /* Resources */,
-				10A356701D7944D600210D8B /* Embed Frameworks */,
+				10230ED71DA03415001F70FB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
