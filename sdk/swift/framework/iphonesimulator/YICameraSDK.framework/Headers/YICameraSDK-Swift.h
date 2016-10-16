@@ -100,6 +100,9 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
 @class ActionCameraListener;
 @protocol DispatchQueue;
+enum BroadcastResolution : NSInteger;
+enum BroadcastBitrate : NSInteger;
+@class CIImage;
 @class NSURLSession;
 @class NSURLSessionDownloadTask;
 @class NSURL;
@@ -162,6 +165,21 @@ SWIFT_CLASS("_TtC11YICameraSDK12ActionCamera")
 
 /// Cancel current download task.
 - (ActionCamera * _Nonnull)cancelDownlad;
+
+/// Generate live broadcast QRCode
+///
+/// \param ssid The SSID of the WIFI.
+///
+/// \param password The password of the WIFI.
+///
+/// \param resolution The resolution of live broadcast.
+///
+/// \param bitrate The bitrate of live broadcast.
+///
+/// \param duration The duration of live broadcast (unit is second). 0 means forever.
+///
+/// \param rtmpUrl The rtmp url of live broadcast. Should be started with "rtmp://".
+- (CIImage * _Nullable)generateLiveBoardcastQRCodeWithSsid:(NSString * _Nonnull)ssid password:(NSString * _Nonnull)password resolution:(enum BroadcastResolution)resolution bitrate:(enum BroadcastBitrate)bitrate duration:(NSInteger)duration rtmpUrl:(NSString * _Nonnull)rtmpUrl error:(NSError * _Nullable * _Null_unspecified)error;
 - (void)URLSession:(NSURLSession * _Nonnull)session downloadTask:(NSURLSessionDownloadTask * _Nonnull)downloadTask didFinishDownloadingToURL:(NSURL * _Nonnull)location;
 - (void)URLSession:(NSURLSession * _Nonnull)session downloadTask:(NSURLSessionDownloadTask * _Nonnull)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite;
 - (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task didCompleteWithError:(NSError * _Nullable)error;
@@ -183,22 +201,8 @@ SWIFT_CLASS("_TtC11YICameraSDK12ActionCamera")
 - (void)disconnect;
 @end
 
-enum SystemMode : NSInteger;
-@class Error;
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-
-/// Set camera system mode.
-///
-/// \param mode System mode supported by YI action camera.
-///
-/// \param success If command executes success, this callback will be invoked.
-///
-/// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)setSystemModeWithMode:(enum SystemMode)mode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
-@end
-
 enum PhotoResolution : NSInteger;
+@class Error;
 
 @interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
 
@@ -224,6 +228,70 @@ enum Status : NSInteger;
 - (ActionCamera * _Nonnull)getStatusWithSuccess:(void (^ _Nullable)(enum Status))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 @end
 
+@class ActionCameraSettings;
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
+/// Get camera settings.
+///
+/// \param success If command executes success, this callback will be invoked and parameter is
+/// the settings of camera.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getSettingsWithSuccess:(void (^ _Nullable)(ActionCameraSettings * _Nonnull))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+enum VideoResolution : NSInteger;
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
+/// Get current video resolution.
+///
+/// \param success If command executes success, this callback will be invoked and parameter is
+/// current video resolution.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getVideoResolutionWithSuccess:(void (^ _Nullable)(enum VideoResolution))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
+/// Stop view finder.
+///
+/// \param success If command executes success, this callback will be invoked.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)stopViewFinderWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
+/// Get current video resolution.
+///
+/// \param success If command executes success, this callback will be invoked and parameter is
+/// current video resolution.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setVideoResolutionWithResolution:(enum VideoResolution)resolution success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
+/// Take a picture on camera.
+///
+/// \param success If command executes success, this callback will be invoked.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)capturePhotoWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+@end
+
 
 @interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
 
@@ -238,25 +306,51 @@ enum Status : NSInteger;
 
 @interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
 
-/// Stop view finder.
+/// Format sd card.
 ///
 /// \param success If command executes success, this callback will be invoked.
 ///
 /// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)stopViewFinderWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+- (ActionCamera * _Nonnull)formatSDCardWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 @end
 
-enum VideoResolution : NSInteger;
+enum SystemMode : NSInteger;
 
 @interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
 
-/// Get current video resolution.
+/// Set camera system mode.
+///
+/// \param mode System mode supported by YI action camera.
+///
+/// \param success If command executes success, this callback will be invoked.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setSystemModeWithMode:(enum SystemMode)mode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
+/// Get current photo resolution.
 ///
 /// \param success If command executes success, this callback will be invoked and parameter is
 /// current video resolution.
 ///
 /// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)setVideoResolutionWithResolution:(enum VideoResolution)resolution success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setPhotoResolutionWithPhotoResolution:(enum PhotoResolution)photoResolution success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+
+/// Delete file from camera.
+///
+/// \param fileName Filename you want to delete from camera.
+///
+/// \param success If command executes success, this callback will be invoked.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)deleteFileWithFileName:(NSString * _Nonnull)fileName success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 @end
 
 @class NSDate;
@@ -276,77 +370,16 @@ enum VideoResolution : NSInteger;
 
 @interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
 
-/// Delete file from camera.
-///
-/// \param fileName Filename you want to delete from camera.
-///
-/// \param success If command executes success, this callback will be invoked.
-///
-/// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)deleteFileWithFileName:(NSString * _Nonnull)fileName success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
-@end
-
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-
-/// Get current photo resolution.
-///
-/// \param success If command executes success, this callback will be invoked and parameter is
-/// current video resolution.
-///
-/// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)setPhotoResolutionWithPhotoResolution:(enum PhotoResolution)photoResolution success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
-@end
-
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-@end
-
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-
-/// Take a picture on camera.
-///
-/// \param success If command executes success, this callback will be invoked.
-///
-/// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)capturePhotoWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
-@end
-
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-
-/// Get current video resolution.
-///
-/// \param success If command executes success, this callback will be invoked and parameter is
-/// current video resolution.
-///
-/// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)getVideoResolutionWithSuccess:(void (^ _Nullable)(enum VideoResolution))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
-@end
-
-@class ActionCameraSettings;
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-
-/// Get camera settings.
-///
-/// \param success If command executes success, this callback will be invoked and parameter is
-/// the settings of camera.
-///
-/// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)getSettingsWithSuccess:(void (^ _Nullable)(ActionCameraSettings * _Nonnull))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
-@end
-
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-
 /// Start view finder.
 ///
 /// \param success If command executes success, this callback will be invoked.
 ///
 /// \param fail If command executes fail, this callback will be invoked.
 - (ActionCamera * _Nonnull)startViewFinderWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+@end
+
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
 @end
 
 
@@ -373,10 +406,6 @@ enum VideoResolution : NSInteger;
 - (ActionCamera * _Nonnull)startRecordingWithHour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 @end
 
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-@end
-
 enum WhiteBalance : NSInteger;
 enum ISO : NSInteger;
 enum ExposureValue : NSInteger;
@@ -388,6 +417,17 @@ enum ColorMode : NSInteger;
 enum Sharpness : NSInteger;
 enum Enabled : NSInteger;
 enum Timestamp : NSInteger;
+enum LEDMode : NSInteger;
+enum VideoStandard : NSInteger;
+enum ScreenAutoLock : NSInteger;
+enum AutoPowerOff : NSInteger;
+enum VideoRotate : NSInteger;
+enum BuzzerVolume : NSInteger;
+enum RecordMode : NSInteger;
+enum CaptureMode : NSInteger;
+enum TimeLapseVideoInterval : NSInteger;
+enum TimeLapsePhotoInterval : NSInteger;
+enum TimeLapseVideoDuration : NSInteger;
 
 @interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
 
@@ -628,6 +668,174 @@ enum Timestamp : NSInteger;
 ///
 /// \param fail If command executes fail, this callback will be invoked.
 - (ActionCamera * _Nonnull)setPhotoTimestampWithTimestamp:(enum Timestamp)timestamp success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Get video mute enabled status.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getVideoMuteEnabledWithSuccess:(void (^ _Nullable)(enum Enabled))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Set video mute enabled status.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setVideoMuteEnabledWithEnabled:(enum Enabled)enabled success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Get LED mode.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getLEDModeWithSuccess:(void (^ _Nullable)(enum LEDMode))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Set LED mode.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setLEDModeWithLedMode:(enum LEDMode)ledMode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Get video standard.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getVideoStandardWithSuccess:(void (^ _Nullable)(enum VideoStandard))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Set video standard.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setVideoStandardWithVideoStandard:(enum VideoStandard)videoStandard success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Get screen auto lock
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getScreenAutoLockWithSuccess:(void (^ _Nullable)(enum ScreenAutoLock))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Set screen auto lock.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setScreenAutoLockWithScreenAutoLock:(enum ScreenAutoLock)screenAutoLock success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Get auto power off.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getAutoPowerOffWithSuccess:(void (^ _Nullable)(enum AutoPowerOff))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Set auto power off.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setAutoPowerOffWithAutoPowerOff:(enum AutoPowerOff)autoPowerOff success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Get video rotate.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getVideoRotateWithSuccess:(void (^ _Nullable)(enum VideoRotate))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Set video rotate.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setVideoRotateWithVideoRotate:(enum VideoRotate)videoRotate success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Get buzzer volume.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getBuzzerVolumeWithSuccess:(void (^ _Nullable)(enum BuzzerVolume))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Set buzzer volume.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setBuzzerVolumeWithBuzzerVolume:(enum BuzzerVolume)buzzerVolume success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Get record mode.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getRecordModeWithSuccess:(void (^ _Nullable)(enum RecordMode))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Set record mode.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setRecordModeWithRecordMode:(enum RecordMode)recordMode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Get capture mode.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getCaptureModeWithSuccess:(void (^ _Nullable)(enum CaptureMode))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Set capture mode.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setCaptureModeWithCaptureMode:(enum CaptureMode)captureMode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Get time lapse video interval.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getTimeLapseVideoIntervalWithSuccess:(void (^ _Nullable)(enum TimeLapseVideoInterval))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Set time lapse video interval.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setTimeLapseVideoIntervalWithInterval:(enum TimeLapseVideoInterval)interval success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Get time lapse photo interval.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getTimeLapsePhotoIntervalWithSuccess:(void (^ _Nullable)(enum TimeLapsePhotoInterval))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Set time lapse video interval.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setTimeLapsePhotoIntervalWithInterval:(enum TimeLapsePhotoInterval)interval success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Get time lapse video duration.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)getTimeLapseVideoDurationWithSuccess:(void (^ _Nullable)(enum TimeLapseVideoDuration))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+
+/// Set time lapse video duration.
+///
+/// \param success If command execute success, this callback will be invoked.
+///
+/// \param fail If command execute fail, this callback will be invoked.
+- (ActionCamera * _Nonnull)setTimeLapseVideoDurationWithDuration:(enum TimeLapseVideoDuration)duration success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 @end
 
 
@@ -666,10 +874,12 @@ SWIFT_CLASS("_TtC11YICameraSDK20ActionCameraListener")
 
 /// When battery life is changed, this callback will be invoked.
 - (void)onBatteryLifeChangedWithRestBattery:(NSInteger)restBattery;
+
+/// When formatting sd card finished, this callback will be invoked.
+- (void)onSDCardFormatted;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-enum VideoStandard : NSInteger;
 
 
 /// Define the camera settings.
@@ -756,7 +966,116 @@ SWIFT_CLASS("_TtC11YICameraSDK20ActionCameraSettings")
 
 /// Current photo timestamp.
 @property (nonatomic) enum Timestamp photoTimestamp;
+
+/// Is video mute enabled.
+@property (nonatomic) enum Enabled videoMuteEnabled;
+
+/// LED mode
+@property (nonatomic) enum LEDMode ledMode;
+
+/// ScreenAutoLock
+@property (nonatomic) enum ScreenAutoLock screenAutoLock;
+
+/// AutoPowerOff
+@property (nonatomic) enum AutoPowerOff autoPowerOff;
+
+/// VideoRotate
+@property (nonatomic) enum VideoRotate videoRotate;
+
+/// BuazzerVolume
+@property (nonatomic) enum BuzzerVolume buzzerVolume;
+
+/// RecordMode
+@property (nonatomic) enum RecordMode recordMode;
+
+/// CaptureMode
+@property (nonatomic) enum CaptureMode captureMode;
+
+/// Time lapse video interval
+@property (nonatomic) enum TimeLapseVideoInterval timeLapseVideoInterval;
+
+/// Time lapse photo interval
+@property (nonatomic) enum TimeLapsePhotoInterval timeLapsePhotoInterval;
+
+/// Time lapse video duration
+@property (nonatomic) enum TimeLapseVideoDuration timeLapseVideoDuration;
 @end
+
+
+/// AutoPowerOff supported by YI action camera.
+typedef SWIFT_ENUM(NSInteger, AutoPowerOff) {
+
+/// Unknown
+  AutoPowerOffUnknown = 0,
+
+/// Off
+  AutoPowerOffa_Off = 1,
+
+/// 3 minutes
+  AutoPowerOffa_3m = 2,
+
+/// 5 minutes
+  AutoPowerOffa_5m = 3,
+
+/// 10 minutes
+  AutoPowerOffa_10m = 4,
+};
+
+typedef SWIFT_ENUM(NSInteger, BroadcastBitrate) {
+
+/// Auto
+  BroadcastBitrateAuto = 0,
+
+/// Low
+  BroadcastBitrateLow = 1,
+
+/// Middle
+  BroadcastBitrateMiddle = 2,
+
+/// High
+  BroadcastBitrateHigh = 3,
+};
+
+typedef SWIFT_ENUM(NSInteger, BroadcastResolution) {
+
+/// 480p
+  BroadcastResolutionr_480p = 0,
+
+/// 720p
+  BroadcastResolutionr_720p = 1,
+
+/// 1080p
+  BroadcastResolutionr_1080p = 2,
+};
+
+
+/// Buzzer volume supported by YI action camera.
+typedef SWIFT_ENUM(NSInteger, BuzzerVolume) {
+
+/// Unknown
+  BuzzerVolumeUnknown = 0,
+
+/// High
+  BuzzerVolumeHigh = 1,
+
+/// Low
+  BuzzerVolumeLow = 2,
+
+/// Mute
+  BuzzerVolumeMute = 3,
+};
+
+typedef SWIFT_ENUM(NSInteger, CaptureMode) {
+
+/// Unknown
+  CaptureModeUnknown = 0,
+
+/// Normal
+  CaptureModeNormal = 1,
+
+/// Timelapse
+  CaptureModeTimelapse = 2,
+};
 
 
 /// Color mode supported by YI action camera.
@@ -982,6 +1301,23 @@ typedef SWIFT_ENUM(NSInteger, ISO) {
 };
 
 
+/// LED mode supported by YI action camera.
+typedef SWIFT_ENUM(NSInteger, LEDMode) {
+
+/// Unknown
+  LEDModeUnknown = 0,
+
+/// AllOn
+  LEDModeAllOn = 1,
+
+/// Status Light Only
+  LEDModeStatusLightOnly = 2,
+
+/// All Off
+  LEDModeAllOff = 3,
+};
+
+
 
 /// Define the log interface.
 ///
@@ -1092,6 +1428,38 @@ typedef SWIFT_ENUM(NSInteger, Quality) {
   QualityHigh = 3,
 };
 
+typedef SWIFT_ENUM(NSInteger, RecordMode) {
+
+/// Unknown
+  RecordModeUnknown = 0,
+
+/// Normal
+  RecordModeNormal = 1,
+
+/// Timelapse
+  RecordModeTimelapse = 2,
+};
+
+
+/// ScreenAutoLock supported by YI action camera.
+typedef SWIFT_ENUM(NSInteger, ScreenAutoLock) {
+
+/// Unknown
+  ScreenAutoLockUnknown = 0,
+
+/// Never
+  ScreenAutoLocks_Never = 1,
+
+/// 30
+  ScreenAutoLocks_30s = 2,
+
+/// 60
+  ScreenAutoLocks_60s = 3,
+
+/// 120
+  ScreenAutoLocks_120s = 4,
+};
+
 
 /// Sharpness supported by YI action camera.
 typedef SWIFT_ENUM(NSInteger, Sharpness) {
@@ -1164,6 +1532,114 @@ typedef SWIFT_ENUM(NSInteger, SystemMode) {
 
 /// Picture mode.
   SystemModeCapture = 2,
+};
+
+
+/// Time lapse photo interval supported by Yi Action.
+typedef SWIFT_ENUM(NSInteger, TimeLapsePhotoInterval) {
+
+/// Unknown
+  TimeLapsePhotoIntervalUnknown = 0,
+
+/// Continue;
+  TimeLapsePhotoIntervalt_Continue = 1,
+
+/// 0.5s
+  TimeLapsePhotoIntervalt_0_5s = 2,
+
+/// 1s
+  TimeLapsePhotoIntervalt_1s = 3,
+
+/// 2s
+  TimeLapsePhotoIntervalt_2s = 4,
+
+/// 5s
+  TimeLapsePhotoIntervalt_5s = 5,
+
+/// 10s
+  TimeLapsePhotoIntervalt_10s = 6,
+
+/// 30s
+  TimeLapsePhotoIntervalt_30s = 7,
+
+/// 60s
+  TimeLapsePhotoIntervalt_60s = 8,
+
+/// 2m
+  TimeLapsePhotoIntervalt_2m = 9,
+
+/// 5m
+  TimeLapsePhotoIntervalt_5m = 10,
+
+/// 10m
+  TimeLapsePhotoIntervalt_10m = 11,
+
+/// 30m
+  TimeLapsePhotoIntervalt_30m = 12,
+
+/// 60m
+  TimeLapsePhotoIntervalt_60m = 13,
+};
+
+
+/// Time lapse video duration supported by YI Action.
+typedef SWIFT_ENUM(NSInteger, TimeLapseVideoDuration) {
+
+/// Unknown
+  TimeLapseVideoDurationUnknown = 0,
+
+/// Off;
+  TimeLapseVideoDurationt_Off = 1,
+
+/// 6s
+  TimeLapseVideoDurationt_6s = 2,
+
+/// 8s
+  TimeLapseVideoDurationt_8s = 3,
+
+/// 10s
+  TimeLapseVideoDurationt_10s = 4,
+
+/// 20s
+  TimeLapseVideoDurationt_20s = 5,
+
+/// 30s
+  TimeLapseVideoDurationt_30s = 6,
+
+/// 60s
+  TimeLapseVideoDurationt_60s = 7,
+
+/// 120s
+  TimeLapseVideoDurationt_120s = 8,
+};
+
+
+/// Time lapse interval supported by YI Action.
+typedef SWIFT_ENUM(NSInteger, TimeLapseVideoInterval) {
+
+/// Unknown
+  TimeLapseVideoIntervalUnknown = 0,
+
+/// 0.5s
+  TimeLapseVideoIntervalt_0_5s = 1,
+
+/// 1s
+  TimeLapseVideoIntervalt_1s = 2,
+
+/// 2s
+  TimeLapseVideoIntervalt_2s = 3,
+
+/// 5s
+  TimeLapseVideoIntervalt_5s = 4,
+
+/// 10s
+  TimeLapseVideoIntervalt_10s = 5,
+
+/// 30s
+  TimeLapseVideoIntervalt_30s = 6,
+
+/// 60s
+  TimeLapseVideoIntervalt_60s = 7,
 };
 
 
@@ -1246,6 +1722,23 @@ typedef SWIFT_ENUM(NSInteger, VideoResolution) {
 };
 
 
+/// Video rotate supported by YI action camera.
+typedef SWIFT_ENUM(NSInteger, VideoRotate) {
+
+/// Unknown
+  VideoRotateUnknown = 0,
+
+/// Off
+  VideoRotateOff = 1,
+
+/// On
+  VideoRotateOn = 2,
+
+/// Auto
+  VideoRotateAuto = 3,
+};
+
+
 /// Video standard supported by YICamera.
 typedef SWIFT_ENUM(NSInteger, VideoStandard) {
 
@@ -1267,19 +1760,19 @@ typedef SWIFT_ENUM(NSInteger, WhiteBalance) {
   WhiteBalanceUnknown = 0,
 
 /// Auto
-  WhiteBalancewb_Auto = 1,
+  WhiteBalanceAuto = 1,
 
 /// Native
-  WhiteBalancewb_Native = 2,
+  WhiteBalanceNative = 2,
 
-/// 3000k
-  WhiteBalancewb_3000k = 3,
+/// Tungsten
+  WhiteBalanceTungsten = 3,
 
-/// 5500k
-  WhiteBalancewb_5500k = 4,
+/// Daylight
+  WhiteBalanceDaylight = 4,
 
-/// 6500k
-  WhiteBalancewb_6500k = 5,
+/// Cloudy
+  WhiteBalanceCloudy = 5,
 };
 
 #pragma clang diagnostic pop
