@@ -46,6 +46,18 @@ If you have a VR/360 rig or a multi-cameras system, you can have the cameras con
 4. tryout YI360Demo sample (/sdk/{java, swift}/samples/YI360Demo)
    * build and launch the sample app
 
+## Live Video
+
+Interested in doing live video in your application using your YI 4K Action Camera? Try out our API for live video support. This is how it works:
+
+1. update firmware (see above for details).
+
+2. call generateLiveBroadcastQRCode to generate an binary array and save it as an image. the information needed would include ssid, password, resolution, bitrate, duration, rtmpurl, and the size of the QR code image in pixels. 
+
+3. start your YI 4K Action Camera and choose Live mode (at the bottom of the shooting mode selection screen), you will be prompted to provide the QR code to scan.
+
+4. scan the QR code image using the camera. few seconds later, your live video stream from the camera will be pushed to the rtmp url that you provided.
+
 ## Join the YI Open API community
 
 * Website: https://www.facebook.com/groups/YIOpenAPI/
