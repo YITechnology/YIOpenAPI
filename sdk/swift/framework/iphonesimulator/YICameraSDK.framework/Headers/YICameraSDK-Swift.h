@@ -100,14 +100,12 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
 @class ActionCameraListener;
 @protocol DispatchQueue;
-enum BroadcastResolution : NSInteger;
-enum BroadcastBitrate : NSInteger;
+enum LiveVideoResolution : NSInteger;
+enum LiveVideoBitrate : NSInteger;
 @class CIImage;
 @class NSURLSession;
 @class NSURLSessionDownloadTask;
 @class NSURL;
-@class NSURLSessionTask;
-@class NSError;
 
 
 /// Present an YI action camera.
@@ -127,7 +125,7 @@ enum BroadcastBitrate : NSInteger;
 /// execution result, you can pass <code>nil
 /// </code>.
 SWIFT_CLASS("_TtC11YICameraSDK12ActionCamera")
-@interface ActionCamera : NSObject <NSURLSessionDownloadDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate>
+@interface ActionCamera : NSObject <NSURLSessionDownloadDelegate>
 
 /// Constructor of ActionCamera.
 ///
@@ -166,7 +164,7 @@ SWIFT_CLASS("_TtC11YICameraSDK12ActionCamera")
 /// Cancel current download task.
 - (ActionCamera * _Nonnull)cancelDownlad;
 
-/// Generate live broadcast QRCode
+/// Build QR code for doing live video
 ///
 /// \param ssid The SSID of the WIFI.
 ///
@@ -179,10 +177,8 @@ SWIFT_CLASS("_TtC11YICameraSDK12ActionCamera")
 /// \param duration The duration of live broadcast (unit is second). 0 means forever.
 ///
 /// \param rtmpUrl The rtmp url of live broadcast. Should be started with "rtmp://".
-- (CIImage * _Nullable)generateLiveBoardcastQRCodeWithSsid:(NSString * _Nonnull)ssid password:(NSString * _Nonnull)password resolution:(enum BroadcastResolution)resolution bitrate:(enum BroadcastBitrate)bitrate duration:(NSInteger)duration rtmpUrl:(NSString * _Nonnull)rtmpUrl error:(NSError * _Nullable * _Null_unspecified)error;
+- (CIImage * _Nullable)buildLiveVideoQRCodeWithSsid:(NSString * _Nonnull)ssid password:(NSString * _Nonnull)password resolution:(enum LiveVideoResolution)resolution bitrate:(enum LiveVideoBitrate)bitrate duration:(NSInteger)duration rtmpUrl:(NSString * _Nonnull)rtmpUrl error:(NSError * _Nullable * _Null_unspecified)error;
 - (void)URLSession:(NSURLSession * _Nonnull)session downloadTask:(NSURLSessionDownloadTask * _Nonnull)downloadTask didFinishDownloadingToURL:(NSURL * _Nonnull)location;
-- (void)URLSession:(NSURLSession * _Nonnull)session downloadTask:(NSURLSessionDownloadTask * _Nonnull)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite;
-- (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task didCompleteWithError:(NSError * _Nullable)error;
 
 /// Disconnect from YI action camera.
 ///
@@ -215,7 +211,7 @@ enum PhotoResolution : NSInteger;
 - (ActionCamera * _Nonnull)getPhotoResolutionWithSuccess:(void (^ _Nullable)(enum PhotoResolution))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 @end
 
-enum Status : NSInteger;
+enum CameraStatus : NSInteger;
 
 @interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
 
@@ -225,7 +221,7 @@ enum Status : NSInteger;
 /// current status of camera.
 ///
 /// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)getStatusWithSuccess:(void (^ _Nullable)(enum Status))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getStatusWithSuccess:(void (^ _Nullable)(enum CameraStatus))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 @end
 
 @class ActionCameraSettings;
@@ -415,13 +411,13 @@ enum MeteringMode : NSInteger;
 enum Quality : NSInteger;
 enum ColorMode : NSInteger;
 enum Sharpness : NSInteger;
-enum Enabled : NSInteger;
+enum ToggleState : NSInteger;
 enum Timestamp : NSInteger;
 enum LEDMode : NSInteger;
 enum VideoStandard : NSInteger;
 enum ScreenAutoLock : NSInteger;
 enum AutoPowerOff : NSInteger;
-enum VideoRotate : NSInteger;
+enum VideoRotateMode : NSInteger;
 enum BuzzerVolume : NSInteger;
 enum RecordMode : NSInteger;
 enum CaptureMode : NSInteger;
@@ -627,19 +623,19 @@ enum TimeLapseVideoDuration : NSInteger;
 /// \param fail If command executes fail, this callback will be invoked.
 - (ActionCamera * _Nonnull)setPhotoSharpnessWithSharpness:(enum Sharpness)sharpness success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 
-/// Get electron image stabilization enabled status.
+/// Get electronic image stabilization state.
 ///
 /// \param success If command executes success, this callback will be invoked.
 ///
 /// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)getElectronImageStabilizationEnabledWithSuccess:(void (^ _Nullable)(enum Enabled))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getElectronicImageStabilizationStateWithSuccess:(void (^ _Nullable)(enum ToggleState))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 
-/// Set electron image stabilization enabled status.
+/// Set electronic image stabilization state.
 ///
 /// \param success If command executes success, this callback will be invoked.
 ///
 /// \param fail If command executes fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)setElectronImageStabilizationEnabledWithEnabled:(enum Enabled)enabled success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setElectronicImageStabilizationStateWithState:(enum ToggleState)state success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 
 /// Get video timestamp setting.
 ///
@@ -669,19 +665,19 @@ enum TimeLapseVideoDuration : NSInteger;
 /// \param fail If command executes fail, this callback will be invoked.
 - (ActionCamera * _Nonnull)setPhotoTimestampWithTimestamp:(enum Timestamp)timestamp success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 
-/// Get video mute enabled status.
+/// Get video mute state.
 ///
 /// \param success If command execute success, this callback will be invoked.
 ///
 /// \param fail If command execute fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)getVideoMuteEnabledWithSuccess:(void (^ _Nullable)(enum Enabled))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getVideoMuteStateWithSuccess:(void (^ _Nullable)(enum ToggleState))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 
-/// Set video mute enabled status.
+/// Set video mute state.
 ///
 /// \param success If command execute success, this callback will be invoked.
 ///
 /// \param fail If command execute fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)setVideoMuteEnabledWithEnabled:(enum Enabled)enabled success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setVideoMuteStateWithState:(enum ToggleState)state success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 
 /// Get LED mode.
 ///
@@ -739,19 +735,19 @@ enum TimeLapseVideoDuration : NSInteger;
 /// \param fail If command execute fail, this callback will be invoked.
 - (ActionCamera * _Nonnull)setAutoPowerOffWithAutoPowerOff:(enum AutoPowerOff)autoPowerOff success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 
-/// Get video rotate.
+/// Get video rotate mode.
 ///
 /// \param success If command execute success, this callback will be invoked.
 ///
 /// \param fail If command execute fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)getVideoRotateWithSuccess:(void (^ _Nullable)(enum VideoRotate))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getVideoRotateModeWithSuccess:(void (^ _Nullable)(enum VideoRotateMode))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 
-/// Set video rotate.
+/// Set video rotate mode.
 ///
 /// \param success If command execute success, this callback will be invoked.
 ///
 /// \param fail If command execute fail, this callback will be invoked.
-- (ActionCamera * _Nonnull)setVideoRotateWithVideoRotate:(enum VideoRotate)videoRotate success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setVideoRotateModeWithMode:(enum VideoRotateMode)mode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(Error * _Nonnull))fail;
 
 /// Get buzzer volume.
 ///
@@ -887,7 +883,7 @@ SWIFT_CLASS("_TtC11YICameraSDK20ActionCameraSettings")
 @interface ActionCameraSettings : NSObject
 
 /// Current status.
-@property (nonatomic) enum Status status;
+@property (nonatomic) enum CameraStatus status;
 
 /// Current datetime of camera.
 @property (nonatomic, strong) NSDate * _Nullable clock;
@@ -959,7 +955,7 @@ SWIFT_CLASS("_TtC11YICameraSDK20ActionCameraSettings")
 @property (nonatomic) enum Sharpness photoSharpness;
 
 /// Is electronic image stabilization enabled.
-@property (nonatomic) enum Enabled electronicImageStabilizationEnabled;
+@property (nonatomic) enum ToggleState electronicImageStabilizationState;
 
 /// Current video timestamp.
 @property (nonatomic) enum Timestamp videoTimestamp;
@@ -968,7 +964,7 @@ SWIFT_CLASS("_TtC11YICameraSDK20ActionCameraSettings")
 @property (nonatomic) enum Timestamp photoTimestamp;
 
 /// Is video mute enabled.
-@property (nonatomic) enum Enabled videoMuteEnabled;
+@property (nonatomic) enum ToggleState videoMuteState;
 
 /// LED mode
 @property (nonatomic) enum LEDMode ledMode;
@@ -979,8 +975,8 @@ SWIFT_CLASS("_TtC11YICameraSDK20ActionCameraSettings")
 /// AutoPowerOff
 @property (nonatomic) enum AutoPowerOff autoPowerOff;
 
-/// VideoRotate
-@property (nonatomic) enum VideoRotate videoRotate;
+/// VideoRotateMode
+@property (nonatomic) enum VideoRotateMode videoRotateMode;
 
 /// BuazzerVolume
 @property (nonatomic) enum BuzzerVolume buzzerVolume;
@@ -1002,7 +998,7 @@ SWIFT_CLASS("_TtC11YICameraSDK20ActionCameraSettings")
 @end
 
 
-/// AutoPowerOff supported by YI action camera.
+/// Contains values that specify the AutoPowerOff of a camera.
 typedef SWIFT_ENUM(NSInteger, AutoPowerOff) {
 
 /// Unknown
@@ -1021,35 +1017,8 @@ typedef SWIFT_ENUM(NSInteger, AutoPowerOff) {
   AutoPowerOffa_10m = 4,
 };
 
-typedef SWIFT_ENUM(NSInteger, BroadcastBitrate) {
 
-/// Auto
-  BroadcastBitrateAuto = 0,
-
-/// Low
-  BroadcastBitrateLow = 1,
-
-/// Middle
-  BroadcastBitrateMiddle = 2,
-
-/// High
-  BroadcastBitrateHigh = 3,
-};
-
-typedef SWIFT_ENUM(NSInteger, BroadcastResolution) {
-
-/// 480p
-  BroadcastResolutionr_480p = 0,
-
-/// 720p
-  BroadcastResolutionr_720p = 1,
-
-/// 1080p
-  BroadcastResolutionr_1080p = 2,
-};
-
-
-/// Buzzer volume supported by YI action camera.
+/// Contains values that specify the BuzzerVolume of a camera.
 typedef SWIFT_ENUM(NSInteger, BuzzerVolume) {
 
 /// Unknown
@@ -1065,6 +1034,25 @@ typedef SWIFT_ENUM(NSInteger, BuzzerVolume) {
   BuzzerVolumeMute = 3,
 };
 
+
+/// Contains values that specify the CameraStatus of a camera.
+typedef SWIFT_ENUM(NSInteger, CameraStatus) {
+
+/// Unknown.
+  CameraStatusUnknown = 0,
+
+/// Camera is idle.
+  CameraStatusIdle = 1,
+
+/// Camera is recording.
+  CameraStatusRecording = 2,
+
+/// RTSP service is started.
+  CameraStatusViewFinderStarted = 3,
+};
+
+
+/// Contains values that specify the CaptureMode of a camera.
 typedef SWIFT_ENUM(NSInteger, CaptureMode) {
 
 /// Unknown
@@ -1078,7 +1066,7 @@ typedef SWIFT_ENUM(NSInteger, CaptureMode) {
 };
 
 
-/// Color mode supported by YI action camera.
+/// Contains values that specify the ColorMode of a camera.
 typedef SWIFT_ENUM(NSInteger, ColorMode) {
 
 /// Unknown
@@ -1108,20 +1096,6 @@ SWIFT_PROTOCOL("_TtP11YICameraSDK13DispatchQueue_")
 /// \param task The task will be executed from the message loop.
 - (void)dispatchWithTask:(void (^ _Nonnull)(void))task;
 @end
-
-
-/// Color mode supported by YI action camera.
-typedef SWIFT_ENUM(NSInteger, Enabled) {
-
-/// Unknown
-  EnabledUnknown = 0,
-
-/// Enabled
-  EnabledOn = 1,
-
-/// Disabled
-  EnabledOff = 2,
-};
 
 
 
@@ -1220,7 +1194,7 @@ SWIFT_CLASS("_TtC11YICameraSDK9ErrorCode")
 @end
 
 
-/// Exposure value supported by YI action camera.
+/// Contains values that specify the ExposureValue of a camera.
 typedef SWIFT_ENUM(NSInteger, ExposureValue) {
 
 /// Unknown
@@ -1255,7 +1229,7 @@ typedef SWIFT_ENUM(NSInteger, ExposureValue) {
 };
 
 
-/// Field of view supported by YI action camera.
+/// Contains values that specify the FieldOfView of a camera.
 typedef SWIFT_ENUM(NSInteger, FieldOfView) {
 
 /// Unknown
@@ -1272,7 +1246,7 @@ typedef SWIFT_ENUM(NSInteger, FieldOfView) {
 };
 
 
-/// ISO supported by YI action camera.
+/// Contains values that specify the ISO of a camera.
 typedef SWIFT_ENUM(NSInteger, ISO) {
 
 /// Unknown
@@ -1301,7 +1275,7 @@ typedef SWIFT_ENUM(NSInteger, ISO) {
 };
 
 
-/// LED mode supported by YI action camera.
+/// Contains values that specify the LEDMode of a camera.
 typedef SWIFT_ENUM(NSInteger, LEDMode) {
 
 /// Unknown
@@ -1315,6 +1289,37 @@ typedef SWIFT_ENUM(NSInteger, LEDMode) {
 
 /// All Off
   LEDModeAllOff = 3,
+};
+
+
+/// Contains values that specify the LiveVideoBitrate of a camera.
+typedef SWIFT_ENUM(NSInteger, LiveVideoBitrate) {
+
+/// Auto
+  LiveVideoBitrateAuto = 0,
+
+/// Low
+  LiveVideoBitrateLow = 1,
+
+/// Middle
+  LiveVideoBitrateMiddle = 2,
+
+/// High
+  LiveVideoBitrateHigh = 3,
+};
+
+
+/// Contains values that specify the LiveVideoResolution of a camera.
+typedef SWIFT_ENUM(NSInteger, LiveVideoResolution) {
+
+/// 480p
+  LiveVideoResolutionr_480p = 0,
+
+/// 720p
+  LiveVideoResolutionr_720p = 1,
+
+/// 1080p
+  LiveVideoResolutionr_1080p = 2,
 };
 
 
@@ -1348,7 +1353,7 @@ SWIFT_CLASS("_TtC11YICameraSDK6Logger")
 @end
 
 
-/// Metering mode supported by YI action camera.
+/// Contains values that specify the MeteringMode of a camera.
 typedef SWIFT_ENUM(NSInteger, MeteringMode) {
 
 /// Unknown
@@ -1365,7 +1370,7 @@ typedef SWIFT_ENUM(NSInteger, MeteringMode) {
 };
 
 
-/// Picture resolution supported by YI action camera.
+/// Contains values that specify the PhotoResolution of a camera.
 typedef SWIFT_ENUM(NSInteger, PhotoResolution) {
 
 /// Unknown
@@ -1412,7 +1417,7 @@ SWIFT_CLASS("_TtC11YICameraSDK8Platform")
 @end
 
 
-/// Quality supported by YI action camera.
+/// Contains values that specify the Quality of a camera.
 typedef SWIFT_ENUM(NSInteger, Quality) {
 
 /// Unknown.
@@ -1428,6 +1433,8 @@ typedef SWIFT_ENUM(NSInteger, Quality) {
   QualityHigh = 3,
 };
 
+
+/// Contains values that specify the RecordMode of a camera.
 typedef SWIFT_ENUM(NSInteger, RecordMode) {
 
 /// Unknown
@@ -1441,7 +1448,7 @@ typedef SWIFT_ENUM(NSInteger, RecordMode) {
 };
 
 
-/// ScreenAutoLock supported by YI action camera.
+/// Contains values that specify the ScreenAutoLock of a camera.
 typedef SWIFT_ENUM(NSInteger, ScreenAutoLock) {
 
 /// Unknown
@@ -1461,7 +1468,7 @@ typedef SWIFT_ENUM(NSInteger, ScreenAutoLock) {
 };
 
 
-/// Sharpness supported by YI action camera.
+/// Contains values that specify the Sharpness of a camera.
 typedef SWIFT_ENUM(NSInteger, Sharpness) {
 
 /// Unknown
@@ -1478,7 +1485,7 @@ typedef SWIFT_ENUM(NSInteger, Sharpness) {
 };
 
 
-/// Shutter time supported by YI action camera.
+/// Contains values that specify the ShutterTime of a camera.
 typedef SWIFT_ENUM(NSInteger, ShutterTime) {
 
 /// Unknown
@@ -1504,24 +1511,7 @@ typedef SWIFT_ENUM(NSInteger, ShutterTime) {
 };
 
 
-/// Camera status.
-typedef SWIFT_ENUM(NSInteger, Status) {
-
-/// Unknown.
-  StatusUnknown = 0,
-
-/// Camera is idle.
-  StatusIdle = 1,
-
-/// Camera is recording.
-  StatusRecording = 2,
-
-/// RTSP service is started.
-  StatusViewFinderStarted = 3,
-};
-
-
-/// Camera mode supported by YI action camera.
+/// Contains values that specify the SystemMode of a camera.
 typedef SWIFT_ENUM(NSInteger, SystemMode) {
 
 /// Unknown.
@@ -1535,7 +1525,7 @@ typedef SWIFT_ENUM(NSInteger, SystemMode) {
 };
 
 
-/// Time lapse photo interval supported by Yi Action.
+/// Contains values that specify the TimeLapsePhotoInterval of a camera.
 typedef SWIFT_ENUM(NSInteger, TimeLapsePhotoInterval) {
 
 /// Unknown
@@ -1582,7 +1572,7 @@ typedef SWIFT_ENUM(NSInteger, TimeLapsePhotoInterval) {
 };
 
 
-/// Time lapse video duration supported by YI Action.
+/// Contains values that specify the TimeLapseVideoDuration of a camera.
 typedef SWIFT_ENUM(NSInteger, TimeLapseVideoDuration) {
 
 /// Unknown
@@ -1614,7 +1604,7 @@ typedef SWIFT_ENUM(NSInteger, TimeLapseVideoDuration) {
 };
 
 
-/// Time lapse interval supported by YI Action.
+/// Contains values that specify the TimeLapseVideoInterval of a camera.
 typedef SWIFT_ENUM(NSInteger, TimeLapseVideoInterval) {
 
 /// Unknown
@@ -1643,7 +1633,7 @@ typedef SWIFT_ENUM(NSInteger, TimeLapseVideoInterval) {
 };
 
 
-/// Timestamp supported by YI action camera.
+/// Contains values that specify the Timestamp of a camera.
 typedef SWIFT_ENUM(NSInteger, Timestamp) {
 
 /// Unknown
@@ -1663,7 +1653,21 @@ typedef SWIFT_ENUM(NSInteger, Timestamp) {
 };
 
 
-/// Video resolution supported by YICamera.
+/// Contains values that specify the ToggleState of a camera.
+typedef SWIFT_ENUM(NSInteger, ToggleState) {
+
+/// Unknown
+  ToggleStateUnknown = 0,
+
+/// Enabled
+  ToggleStateOn = 1,
+
+/// Disabled
+  ToggleStateOff = 2,
+};
+
+
+/// Contains values that specify the VideoResolution of a camera.
 typedef SWIFT_ENUM(NSInteger, VideoResolution) {
 
 /// Unknown
@@ -1722,24 +1726,24 @@ typedef SWIFT_ENUM(NSInteger, VideoResolution) {
 };
 
 
-/// Video rotate supported by YI action camera.
-typedef SWIFT_ENUM(NSInteger, VideoRotate) {
+/// Contains values that specify the VideoRotateMode of a camera.
+typedef SWIFT_ENUM(NSInteger, VideoRotateMode) {
 
 /// Unknown
-  VideoRotateUnknown = 0,
+  VideoRotateModeUnknown = 0,
 
 /// Off
-  VideoRotateOff = 1,
+  VideoRotateModeOff = 1,
 
 /// On
-  VideoRotateOn = 2,
+  VideoRotateModeOn = 2,
 
 /// Auto
-  VideoRotateAuto = 3,
+  VideoRotateModeAuto = 3,
 };
 
 
-/// Video standard supported by YICamera.
+/// Contains values that specify the VideoStandard of a camera.
 typedef SWIFT_ENUM(NSInteger, VideoStandard) {
 
 /// Unknown
@@ -1753,7 +1757,7 @@ typedef SWIFT_ENUM(NSInteger, VideoStandard) {
 };
 
 
-/// White balance supported by YI action camera.
+/// Contains values that specify the WhiteBalance of a camera.
 typedef SWIFT_ENUM(NSInteger, WhiteBalance) {
 
 /// Unknown

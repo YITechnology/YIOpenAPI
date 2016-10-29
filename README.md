@@ -5,13 +5,17 @@ This repository contains the libraries, samples and documentation for using the 
 
 The following is the tree structure of this repository:
 
-* /bin -- firmware and config file for VR/360
-* /sdk -- SDKs of different languages
+* /sdk -- mobile SDKs for Android and iOS
+* /sdk/bin -- firmware and config file for features provided in SDKs to work
 * /sdk/java -- YI Open API Java SDK
 * /sdk/java/doc -- documentation
 * /sdk/java/libs -- SDK library for building your applications
 * /sdk/java/samples -- samples demonstrating the use of SDK APIs
-* /specs -- reference specs
+* /spec -- reference specs
+* /vr -- documents, CAD diagrams, and firmwares for 6-camera VR rig
+* /vr/bin -- firmwares
+* /vr/CAD -- CAD diagrams
+* /vr/doc -- documents
 
 ## Features
 
@@ -22,23 +26,23 @@ The APIs currently provide support to the following 4 areas
 - camera state (record started/completed, video finder started etc)
 - media management (browse files stored on media, download, delete file)
 
-## VR/360/multi-camera system
+## VR/360/multi-camera system via Wi-Fi
 
-If you have a VR/360 rig or a multi-cameras system, you can have the cameras connected to a wi-fi network or a hotspot, and then control the cameras from your application (built using the YI Open API SDK), by following the steps below: 
+If you have a VR/360 rig or a multi-cameras system, you can have the cameras connected to a Wi-Fi network or a hotspot, and then control the cameras from your application (built using the YI Open API SDK), by following the steps below: 
 
-1. update firmware (/bin/{country code}/firmware.bin)
+1. update firmware (/sdk/bin/{country code}/firmware.bin)
    * copy firmware.bin onto a microSD card
    * start the camera with the microSD card
    * wait until the sound of starting music
 
-2. setup config file (/bin/{country code}/sta.conf)
+2. setup config file (/sdk/bin/{country code}/sta.conf)
    * provide correct SSID and password for accessing the Wi-Fi network or the hotspot
    * give each camera a different device name
    * set the correct country code (e.g. CN for China, US for United States etc)
    * save the changes to sta.conf and copy it onto the microSD card
    * start the camera with the microSD card
 
-3. turn on wifi on camera
+3. turn on Wi-Fi on camera
    * go to camera settings -> Wi-Fi
    * pick the Wi-Fi frequency matching to the one broadcasting from your Wi-Fi network or hotspot
    * turn on Wi-Fi (note that the ON button is green)

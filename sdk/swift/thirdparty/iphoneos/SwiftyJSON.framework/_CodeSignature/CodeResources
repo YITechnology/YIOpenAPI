@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		zDQ3LbDB4qTFbBqmuiwGrnp+p28=
+		HEWjTJyjoq+H3trpMzTURUyxNfM=
 		</data>
 		<key>Modules/SwiftyJSON.swiftmodule/arm.swiftdoc</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/SwiftyJSON.swiftmodule/arm.swiftmodule</key>
 		<data>
-		zTFDWZsPV5521KxkB6cBsfu47g4=
+		54J/J4HsvAl29attW7oThXI8Rpw=
 		</data>
 		<key>Modules/SwiftyJSON.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/SwiftyJSON.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		SSf0dt4DarqnF0SnFWhkppaelwo=
+		lN+B50Lrkf9dPWdXPDE40UfkPQQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -76,11 +76,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zTFDWZsPV5521KxkB6cBsfu47g4=
+			54J/J4HsvAl29attW7oThXI8Rpw=
 			</data>
 			<key>hash2</key>
 			<data>
-			9E6qRVk/UsGxXnoS2n+/cfPRP5UaHBHChu7bMQgG+uc=
+			YMpeGHH/Zi0V2EeGv1FLqNz7prHWHZN7ldqHxpSjqtM=
 			</data>
 		</dict>
 		<key>Modules/SwiftyJSON.swiftmodule/arm64.swiftdoc</key>
@@ -98,11 +98,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SSf0dt4DarqnF0SnFWhkppaelwo=
+			lN+B50Lrkf9dPWdXPDE40UfkPQQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			41k5O9SgCDNQSLxQ54AoAJZ7Tn77ICVAHWut2r0C9go=
+			AP21Zc9YNodsD8CL6YBe9tcd+q4rquH2I7ti+nPZeqc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -134,6 +134,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -179,6 +184,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^Info\.plist$</key>
 		<dict>
