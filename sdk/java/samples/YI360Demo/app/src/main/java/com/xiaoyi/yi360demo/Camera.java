@@ -21,7 +21,7 @@ import android.os.Looper;
 import android.util.*;
 import android.os.Handler;
 import com.xiaoyi.action.*;
-import com.xiaoyi.action.Error;
+import com.xiaoyi.action.YICameraSDKError;
 import java.util.Date;
 
 enum CameraState
@@ -69,7 +69,7 @@ class Camera extends ActionCameraListener {
     }
 
     public void connect() {
-        mCamera = new ActionCamera(this, new DispatchQueue() {
+        mCamera = new ActionCamera(this, new YICameraSDKDispatchQueue() {
             @Override
             public void dispatch(Runnable task) {
                 mUIHandler.post(task);
@@ -93,9 +93,9 @@ class Camera extends ActionCameraListener {
                    .startCommandGroup()
                    .setDateTime(new Date(), null, null)
                    .startRecording(startTime.getHours(), startTime.getMinutes(), startTime.getSeconds(), null, null)
-                   .submitCommandGroup(null, new ActionCameraCommandCallback1<Error>() {
+                   .submitCommandGroup(null, new ActionCameraCommandCallback1<YICameraSDKError>() {
                        @Override
-                       public void onInvoke(Error val) {
+                       public void onInvoke(YICameraSDKError val) {
                            Log.i("YiCamera", "Start recording failed");
                            if (mState == CameraState.StartRecording) {
                                updateState(CameraState.Connected);
@@ -128,7 +128,7 @@ class Camera extends ActionCameraListener {
                 mCamera.getSettings(new ActionCameraCommandCallback1<ActionCameraSettings>() {
                     @Override
                     public void onInvoke(ActionCameraSettings actionCameraSetting) {
-                        if (actionCameraSetting.status == Status.Recording) {
+                        if (actionCameraSetting.status == CameraStatus.Recording) {
                             updateState(CameraState.Recording);
                         }
                     }
@@ -139,7 +139,7 @@ class Camera extends ActionCameraListener {
     }
 
     @Override
-    public void onClosed(Error error) {
+    public void onClosed(YICameraSDKError error) {
         updateState(CameraState.Disconnected);
 
         // remove self from pending list
