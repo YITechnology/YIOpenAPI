@@ -22,8 +22,8 @@ class CameraGridViewController: UIViewController, UICollectionViewDataSource, Ca
 
     var mCapacity = 0;
     private var mScanCameraExitEvent = NSCondition();
-    private var mPendingCameras = [Camera]();
-    private var mCameras = [Camera]();
+    private var mPendingCameras: [Camera] = [];
+    private var mCameras: [Camera] = [];
     private var mCollectionView: UICollectionView!;
     
     override func viewDidLoad() {
@@ -34,17 +34,17 @@ class CameraGridViewController: UIViewController, UICollectionViewDataSource, Ca
         startScanCameras();
     }
 
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         mCollectionView = collectionView;
         return mCapacity;
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cameraCell", forIndexPath: indexPath) as! CameraCell;
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cameraCell", for: indexPath) as! CameraCell;
         if (indexPath.item < mCameras.count) {
-            cell.setCamera(mCameras[indexPath.item]);
+            cell.setCamera(camera: mCameras[indexPath.item]);
         } else {
-            cell.setCamera(nil);
+            cell.setCamera(camera: nil);
         }
         return cell;
     }
@@ -52,7 +52,7 @@ class CameraGridViewController: UIViewController, UICollectionViewDataSource, Ca
     // This function will be invoked when camera state has been changed
     func onStateChanged(camera: Camera, newState: Camera.State, oldState: Camera.State) {
         if (newState == .Connected) {
-            removeFrom(camera, queue: &mPendingCameras);
+            removeFrom(camera: camera, queue: &mPendingCameras);
             
             // do we have free slot?
             if (mCameras.count == mCapacity) {
@@ -63,60 +63,61 @@ class CameraGridViewController: UIViewController, UICollectionViewDataSource, Ca
             mCameras.append(camera);
             
             // attach to cell
-            if let cell = mCollectionView.cellForItemAtIndexPath(NSIndexPath(forItem: mCameras.count - 1, inSection: 0)) as? CameraCell {
-                cell.setCamera(camera);
+            if let cell = mCollectionView.cellForItem(at: IndexPath(index: mCameras.count - 1)) as? CameraCell {
+                cell.setCamera(camera: camera);
             }
         } else if (newState == .Disconnected) {
             // remove from pending queue
-            removeFrom(camera, queue: &mPendingCameras);
+            removeFrom(camera: camera, queue: &mPendingCameras);
             
             // remove from mCameras queue
-            if let index = mCameras.indexOf({$0.getIP() == camera.getIP()}) {
-                if let cell = mCollectionView.cellForItemAtIndexPath(NSIndexPath(forItem: index, inSection: 0)) as? CameraCell {
-                    cell.setCamera(nil);
+            if let index = mCameras.index(where: {$0.getIP() == camera.getIP()}) {
+                if let cell = mCollectionView.cellForItem(at: IndexPath(index: index)) as? CameraCell {
+                    cell.setCamera(camera: nil);
                 }
-                mCameras.removeAtIndex(index);
+                mCameras.remove(at: index);
             }
         }
     }
     
-    @IBAction func onMenuBtnClicked(sender: AnyObject) {
-        mActionMenu.hidden = !mActionMenu.hidden;
+    @IBAction func onMenuBtnClicked(_ sender: Any) {
+        mActionMenu.isHidden = !mActionMenu.isHidden;
     }
     
-    @IBAction func onGestureRecognizer(sender: AnyObject) {
-        if (!mActionMenu.hidden) {
-            mActionMenu.hidden = true;
+    @IBAction func onGestureRecognizer(_ sender: Any) {
+        if (!mActionMenu.isHidden) {
+            mActionMenu.isHidden = true;
         }
     }
     
-    @IBAction func onExitBtnClicked(sender: AnyObject) {
-        (parentViewController as! UINavigationController).popViewControllerAnimated(true);
+    @IBAction func onExitBtnClicked(_ sender: Any) {
+        (parent as! UINavigationController).popViewController(animated: true);
         stopScanCameras();
     }
     
-    @IBAction func onStartRecordingBtnClicked(sender: AnyObject) {
-        mActionMenu.hidden = true;
+    @IBAction func onStartRecordingBtnClicked(_ sender: Any) {
+        mActionMenu.isHidden = true;
         
         // Start recording after 10 seconds.
         let startTime = NSDate(timeIntervalSinceNow: 10);
-        for (var i = 0; i < mCameras.count; ++i) {
-            mCameras[i].startRecording(startTime);
+        
+        for i in 0..<mCameras.count {
+            self.mCameras[i].startRecording(startTime: startTime);
         }
-        showMessageBox("Recording will be started after 10 seconds");
+        showMessageBox(message: "Recording will be started after 10 seconds");
     }
     
-    @IBAction func onStopRecordingBtnClicked(sender: AnyObject) {
-        mActionMenu.hidden = true;
+    @IBAction func onStopRecordingBtnClicked(_ sender: Any) {
+        mActionMenu.isHidden = true;
         
-        for (var i = 0; i < mCameras.count; ++i) {
+        for i in 0..<mCameras.count {
             mCameras[i].stopRecording();
         }
     }
     
     // Start camera scan thread
     private func startScanCameras() {
-        NSThread(target: self, selector: #selector(scanCameras), object: nil).start();
+        Thread(target: self, selector: #selector(scanCameras), object: nil).start();
     }
     
     // Stop camera scan thread
@@ -127,14 +128,14 @@ class CameraGridViewController: UIViewController, UICollectionViewDataSource, Ca
     }
     
     // Remove camera from camera queue
-    private func removeFrom(camera: Camera, inout queue: [Camera]) {
-        if let index = queue.indexOf({$0.getIP() == camera.getIP()}) {
-            queue.removeAtIndex(index);
+    private func removeFrom(camera: Camera, queue: inout [Camera]) {
+        if let index = queue.index(where: {$0.getIP() == camera.getIP()}) {
+            queue.remove(at: index);
         }
     }
     
     private func processIPList(ipList: [String]) {
-        for (var i = 0; i < ipList.count; i = i + 2) {
+        for i in 0..<ipList.count {
             // if we don't have free slot, do nothing.
             if (mCapacity == mCameras.count) {
                 return;
@@ -145,13 +146,13 @@ class CameraGridViewController: UIViewController, UICollectionViewDataSource, Ca
             print("found ip: \(ip), host: \(host)");
 
             // check whether this is in pending queue or in final queue
-            var index = mPendingCameras.indexOf({$0.getIP() == ip});
+            var index = mPendingCameras.index(where: {$0.getIP() == ip});
             if (index == nil) {
-                index = mCameras.indexOf({$0.getIP() == ip});
+                index = mCameras.index(where: {$0.getIP() == ip});
                 if (index == nil) {
                     // new ip, create a camera, put to pending queue, and connect it.
                     let camera = Camera(ip: ip, host: host);
-                    camera.setListener(self);
+                    camera.setListener(listener: self);
                     mPendingCameras.append(camera);
                     camera.connect();
                 }
@@ -163,18 +164,18 @@ class CameraGridViewController: UIViewController, UICollectionViewDataSource, Ca
     @objc private func scanCameras() {
         mScanCameraExitEvent.lock();
         while (true) {
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 var ips = [String]();
                 // If iPhone is used as wifi hotspot, the client ip range is 172.20.10.1~172.20.10.10
-                for (var i = 1; i <= 10; i += 1) {
+                for i in 1...10 {
                     ips.append("172.20.10.\(i)");
                     ips.append("172.20.10.\(i)");
                 }
-                self.processIPList(ips);
+                self.processIPList(ipList: ips);
             }
             
             // wait for exit event or re-scan after 10 seconds
-            if (mScanCameraExitEvent.waitUntilDate(NSDate(timeIntervalSinceNow: 10))) {
+            if (mScanCameraExitEvent.wait(until: NSDate(timeIntervalSinceNow: 10) as Date)) {
                 // exit event is fired, exit
                 break;
             }
@@ -185,7 +186,7 @@ class CameraGridViewController: UIViewController, UICollectionViewDataSource, Ca
     private func showMessageBox(message: String) {
         let alert = UIAlertView();
         alert.message = message;
-        alert.addButtonWithTitle("Ok")
+        alert.addButton(withTitle: "Ok")
         alert.show()
     }
 }

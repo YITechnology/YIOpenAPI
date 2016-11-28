@@ -161,7 +161,7 @@ class ViewController: UIViewController {
         alert.show()
     }
     
-    @IBAction func onConnectBtnClicked(sender: AnyObject) {
+    @IBAction func onConnectBtnClicked(_ sender: Any) {
         if (mStatus == Status.Disconnected) {
             connect();
         } else {
@@ -169,7 +169,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func onRecordingBtnClicked(sender: AnyObject) {
+    @IBAction func onRecordingBtnClicked(_ sender: Any) {
         if (mStatus == Status.Connected) {
             startRecording();
         } else if (mStatus == Status.Recording) {

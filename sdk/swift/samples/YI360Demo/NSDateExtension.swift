@@ -19,14 +19,14 @@ import Foundation;
 
 extension NSDate {
     func getHours() -> Int {
-        return NSCalendar.currentCalendar().component(.Hour, fromDate: self);
+        return NSCalendar.current.component(.hour, from: self as Date);
     }
     
     func getMinutes() -> Int {
-        return NSCalendar.currentCalendar().component(.Minute, fromDate: self);
+        return NSCalendar.current.component(.minute, from: self as Date);
     }
     
     func getSeconds() -> Int {
-        return NSCalendar.currentCalendar().component(.Second, fromDate: self);
+        return NSCalendar.current.component(.second, from: self as Date);
     }
 }

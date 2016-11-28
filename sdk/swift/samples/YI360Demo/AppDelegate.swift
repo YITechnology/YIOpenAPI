@@ -22,10 +22,9 @@ import YICameraSDK;
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func applicationDidFinishLaunching(_ application: UIApplication) {
         // Override point for customization after application launch.
         Platform.initialize(logger: nil);
-        return true
     }
 
     func applicationWillResignActive(application: UIApplication) {
