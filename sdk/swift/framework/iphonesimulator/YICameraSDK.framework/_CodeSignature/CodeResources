@@ -4,9 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>.DS_Store</key>
+		<data>
+		pkwiWsCh0xyCd6DYmndO3cBsmUw=
+		</data>
 		<key>Headers/YICameraSDK-Swift.h</key>
 		<data>
-		PBFn8j/JyYFeg+VOVy7axEblt9c=
+		RipKqdOnb/Z2gG582JTHZ5Hs44k=
 		</data>
 		<key>Headers/YICameraSDK.h</key>
 		<data>
@@ -16,13 +20,17 @@
 		<data>
 		pTXMw8WXBAdYEYWdxSgkAdqPogE=
 		</data>
+		<key>Modules/.DS_Store</key>
+		<data>
+		vdw5MPZ+o21FX94X+TjtHaDchg0=
+		</data>
 		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		44WzKTnZKJhjlJ1OksBEYAz69LE=
+		0U1Iod4dyMCvPhlKW8RxsdeJC3c=
 		</data>
 		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		bkMepYcnYVLE79p96BWf5g1wOuw=
+		SMG+Siwj7HXmzTEMRQ8CsBl2I38=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -35,11 +43,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PBFn8j/JyYFeg+VOVy7axEblt9c=
+			RipKqdOnb/Z2gG582JTHZ5Hs44k=
 			</data>
 			<key>hash2</key>
 			<data>
-			zejR184MUBqDKzigshl5YDEhkG+Z5rBinsNRQ6Bmd0g=
+			FeguC5yqk/n+rd06DgmjmWPmfRd3JukWNOGXMG+B1QE=
 			</data>
 		</dict>
 		<key>Headers/YICameraSDK.h</key>
@@ -57,22 +65,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			44WzKTnZKJhjlJ1OksBEYAz69LE=
+			0U1Iod4dyMCvPhlKW8RxsdeJC3c=
 			</data>
 			<key>hash2</key>
 			<data>
-			EcE7HFPYirWGXlCGOtlyYaY2Z4H6DMRSzRPoppf0p2I=
+			fUQieTb0hpXm+5zUY7UjjopVY5UV4JiiKj8FBMgf/Eg=
 			</data>
 		</dict>
 		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bkMepYcnYVLE79p96BWf5g1wOuw=
+			SMG+Siwj7HXmzTEMRQ8CsBl2I38=
 			</data>
 			<key>hash2</key>
 			<data>
-			DhMOWEi5g+iZV+0vh/7OEwrajtjP1ilpW94+CzEztZI=
+			iyAbsLmiI+Hinx6yYPVO64N8vbdwwBRvgTydxAJxM4U=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

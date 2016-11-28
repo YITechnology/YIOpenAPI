@@ -36,7 +36,7 @@ class CameraListener: ActionCameraListener {
         mView.onConnected();
     }
     
-    override func onClosed(error: Error?) {
+    override func onClosed(error: YICameraSDKError?) {
         mView.onDisconnected();
     }
     

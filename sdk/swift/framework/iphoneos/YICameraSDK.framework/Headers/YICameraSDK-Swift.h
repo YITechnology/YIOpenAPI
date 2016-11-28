@@ -226,6 +226,7 @@ SWIFT_CLASS("_TtC11YICameraSDK12ActionCamera")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
+@class YICameraSDKError;
 
 @interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
 /**
@@ -235,7 +236,7 @@ SWIFT_CLASS("_TtC11YICameraSDK12ActionCamera")
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)stopViewFinderWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)stopViewFinderWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 @end
 
 enum VideoResolution : NSInteger;
@@ -249,7 +250,7 @@ enum VideoResolution : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setVideoResolutionWithResolution:(enum VideoResolution)resolution success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setVideoResolutionWithResolution:(enum VideoResolution)resolution success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 @end
 
 
@@ -265,7 +266,7 @@ enum VideoResolution : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)capturePhotoWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)capturePhotoWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 @end
 
 
@@ -277,7 +278,7 @@ enum VideoResolution : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)stopRecordingWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)stopRecordingWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 @end
 
 
@@ -289,11 +290,10 @@ enum VideoResolution : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)formatSDCardWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)formatSDCardWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 @end
 
 enum PhotoResolution : NSInteger;
-@class YICameraSDKError;
 
 @interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
 /**
@@ -332,7 +332,7 @@ enum CameraStatus : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setDateTimeWithDatetime:(NSDate * _Nonnull)datetime success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setDateTimeWithDatetime:(NSDate * _Nonnull)datetime success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 @end
 
 
@@ -360,7 +360,7 @@ enum SystemMode : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setSystemModeWithMode:(enum SystemMode)mode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setSystemModeWithMode:(enum SystemMode)mode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 @end
 
 @class ActionCameraSettings;
@@ -374,7 +374,7 @@ enum SystemMode : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getSettingsWithSuccess:(void (^ _Nullable)(ActionCameraSettings * _Nonnull))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getSettingsWithSuccess:(void (^ _Nullable)(ActionCameraSettings * _Nonnull))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 @end
 
 
@@ -387,7 +387,7 @@ enum SystemMode : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setPhotoResolutionWithPhotoResolution:(enum PhotoResolution)photoResolution success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setPhotoResolutionWithPhotoResolution:(enum PhotoResolution)photoResolution success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 @end
 
 
@@ -401,7 +401,7 @@ enum SystemMode : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)deleteFileWithFileName:(NSString * _Nonnull)fileName success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)deleteFileWithFileName:(NSString * _Nonnull)fileName success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 @end
 
 
@@ -413,7 +413,7 @@ enum SystemMode : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)startViewFinderWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)startViewFinderWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 @end
 
 
@@ -429,7 +429,7 @@ enum SystemMode : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)startRecordingWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)startRecordingWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Start recording at specific time.
   \param hour Start recording at this hour.
@@ -443,7 +443,7 @@ enum SystemMode : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)startRecordingWithHour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)startRecordingWithHour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 @end
 
 enum WhiteBalance : NSInteger;
@@ -477,7 +477,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getPhotoWhiteBalanceWithSuccess:(void (^ _Nullable)(enum WhiteBalance))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getPhotoWhiteBalanceWithSuccess:(void (^ _Nullable)(enum WhiteBalance))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set photo white balance.
   \param success If command executes success, this callback will be invoked.
@@ -485,7 +485,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setPhotoWhiteBalanceWithWhiteBalance:(enum WhiteBalance)whiteBalance success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setPhotoWhiteBalanceWithWhiteBalance:(enum WhiteBalance)whiteBalance success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get video white balance.
   \param success If command executes success, this callback will be invoked.
@@ -493,7 +493,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getVideoWhiteBalanceWithSuccess:(void (^ _Nullable)(enum WhiteBalance))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getVideoWhiteBalanceWithSuccess:(void (^ _Nullable)(enum WhiteBalance))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set video white balance.
   \param success If command executes success, this callback will be invoked.
@@ -501,7 +501,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setVideoWhiteBalanceWithWhiteBalance:(enum WhiteBalance)whiteBalance success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setVideoWhiteBalanceWithWhiteBalance:(enum WhiteBalance)whiteBalance success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get photo iso.
   \param success If command executes success, this callback will be invoked.
@@ -509,7 +509,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getPhotoISOWithSuccess:(void (^ _Nullable)(enum ISO))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getPhotoISOWithSuccess:(void (^ _Nullable)(enum ISO))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set photo iso.
   \param success If command executes success, this callback will be invoked.
@@ -517,7 +517,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setPhotoISOWithIso:(enum ISO)iso success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setPhotoISOWithIso:(enum ISO)iso success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get video iso.
   \param success If command executes success, this callback will be invoked.
@@ -525,7 +525,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getVideoISOWithSuccess:(void (^ _Nullable)(enum ISO))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getVideoISOWithSuccess:(void (^ _Nullable)(enum ISO))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set video iso.
   \param success If command executes success, this callback will be invoked.
@@ -533,7 +533,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setVideoISOWithIso:(enum ISO)iso success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setVideoISOWithIso:(enum ISO)iso success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get photo exposure value.
   \param success If command executes success, this callback will be invoked.
@@ -541,7 +541,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getPhotoExposureValueWithSuccess:(void (^ _Nullable)(enum ExposureValue))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getPhotoExposureValueWithSuccess:(void (^ _Nullable)(enum ExposureValue))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set photo exposure value.
   \param success If command executes success, this callback will be invoked.
@@ -549,7 +549,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setPhotoExposureValueWithEv:(enum ExposureValue)ev success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setPhotoExposureValueWithEv:(enum ExposureValue)ev success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get video exposure value.
   \param success If command executes success, this callback will be invoked.
@@ -557,7 +557,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getVideoExposureValueWithSuccess:(void (^ _Nullable)(enum ExposureValue))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getVideoExposureValueWithSuccess:(void (^ _Nullable)(enum ExposureValue))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set video exposure value.
   \param success If command executes success, this callback will be invoked.
@@ -565,7 +565,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setVideoExposureValueWithEv:(enum ExposureValue)ev success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setVideoExposureValueWithEv:(enum ExposureValue)ev success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get photo shutter time.
   \param success If command executes success, this callback will be invoked.
@@ -573,7 +573,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getPhotoShutterTimeWithSuccess:(void (^ _Nullable)(enum ShutterTime))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getPhotoShutterTimeWithSuccess:(void (^ _Nullable)(enum ShutterTime))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set photo shutter time.
   \param success If command executes success, this callback will be invoked.
@@ -581,7 +581,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setPhotoShutterTimeWithShutterTime:(enum ShutterTime)shutterTime success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setPhotoShutterTimeWithShutterTime:(enum ShutterTime)shutterTime success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get video field of view.
   \param success If command executes success, this callback will be invoked.
@@ -589,7 +589,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getVideoFieldOfViewWithSuccess:(void (^ _Nullable)(enum FieldOfView))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getVideoFieldOfViewWithSuccess:(void (^ _Nullable)(enum FieldOfView))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set video field of view.
   \param success If command executes success, this callback will be invoked.
@@ -597,7 +597,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setVideoFieldOfViewWithFieldOfView:(enum FieldOfView)fieldOfView success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setVideoFieldOfViewWithFieldOfView:(enum FieldOfView)fieldOfView success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get metering mode.
   \param success If command executes success, this callback will be invoked.
@@ -605,7 +605,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getMeteringModeWithSuccess:(void (^ _Nullable)(enum MeteringMode))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getMeteringModeWithSuccess:(void (^ _Nullable)(enum MeteringMode))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set metering mode.
   \param success If command executes success, this callback will be invoked.
@@ -613,7 +613,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setMeteringModeWithMeteringMode:(enum MeteringMode)meteringMode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setMeteringModeWithMeteringMode:(enum MeteringMode)meteringMode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get video quality.
   \param success If command executes success, this callback will be invoked.
@@ -621,7 +621,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getVideoQualityWithSuccess:(void (^ _Nullable)(enum Quality))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getVideoQualityWithSuccess:(void (^ _Nullable)(enum Quality))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set video quality.
   \param success If command executes success, this callback will be invoked.
@@ -629,7 +629,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setVideoQualityWithQuality:(enum Quality)quality success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setVideoQualityWithQuality:(enum Quality)quality success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get video color mode.
   \param success If command executes success, this callback will be invoked.
@@ -637,7 +637,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getVideoColorModeWithSuccess:(void (^ _Nullable)(enum ColorMode))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getVideoColorModeWithSuccess:(void (^ _Nullable)(enum ColorMode))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set video quality.
   \param success If command executes success, this callback will be invoked.
@@ -645,7 +645,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setVideoColorModeWithColorMode:(enum ColorMode)colorMode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setVideoColorModeWithColorMode:(enum ColorMode)colorMode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get photo color mode.
   \param success If command executes success, this callback will be invoked.
@@ -653,7 +653,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getPhotoColorModeWithSuccess:(void (^ _Nullable)(enum ColorMode))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getPhotoColorModeWithSuccess:(void (^ _Nullable)(enum ColorMode))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set photo color mode.
   \param success If command executes success, this callback will be invoked.
@@ -661,7 +661,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setPhotoColorModeWithColorMode:(enum ColorMode)colorMode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setPhotoColorModeWithColorMode:(enum ColorMode)colorMode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get video sharpness.
   \param success If command executes success, this callback will be invoked.
@@ -669,7 +669,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getVideoSharpnessWithSuccess:(void (^ _Nullable)(enum Sharpness))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getVideoSharpnessWithSuccess:(void (^ _Nullable)(enum Sharpness))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set video sharpness.
   \param success If command executes success, this callback will be invoked.
@@ -677,7 +677,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setVideoSharpnessWithSharpness:(enum Sharpness)sharpness success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setVideoSharpnessWithSharpness:(enum Sharpness)sharpness success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get photo sharpness.
   \param success If command executes success, this callback will be invoked.
@@ -685,7 +685,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getPhotoSharpnessWithSuccess:(void (^ _Nullable)(enum Sharpness))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getPhotoSharpnessWithSuccess:(void (^ _Nullable)(enum Sharpness))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set photo sharpness.
   \param success If command executes success, this callback will be invoked.
@@ -693,7 +693,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setPhotoSharpnessWithSharpness:(enum Sharpness)sharpness success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setPhotoSharpnessWithSharpness:(enum Sharpness)sharpness success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get electronic image stabilization state.
   \param success If command executes success, this callback will be invoked.
@@ -701,7 +701,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getElectronicImageStabilizationStateWithSuccess:(void (^ _Nullable)(enum ToggleState))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getElectronicImageStabilizationStateWithSuccess:(void (^ _Nullable)(enum ToggleState))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set electronic image stabilization state.
   \param success If command executes success, this callback will be invoked.
@@ -709,7 +709,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setElectronicImageStabilizationStateWithState:(enum ToggleState)state success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setElectronicImageStabilizationStateWithState:(enum ToggleState)state success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get video timestamp setting.
   \param success If command executes success, this callback will be invoked.
@@ -717,7 +717,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getVideoTimestampWithSuccess:(void (^ _Nullable)(enum Timestamp))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getVideoTimestampWithSuccess:(void (^ _Nullable)(enum Timestamp))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set video timestamp setting.
   \param success If command executes success, this callback will be invoked.
@@ -725,7 +725,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setVideoTimestampWithTimestamp:(enum Timestamp)timestamp success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setVideoTimestampWithTimestamp:(enum Timestamp)timestamp success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get photo timestamp setting.
   \param success If command executes success, this callback will be invoked.
@@ -733,7 +733,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getPhotoTimestampWithSuccess:(void (^ _Nullable)(enum Timestamp))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getPhotoTimestampWithSuccess:(void (^ _Nullable)(enum Timestamp))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set photo timestamp setting.
   \param success If command executes success, this callback will be invoked.
@@ -741,7 +741,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command executes fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setPhotoTimestampWithTimestamp:(enum Timestamp)timestamp success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setPhotoTimestampWithTimestamp:(enum Timestamp)timestamp success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get video mute state.
   \param success If command execute success, this callback will be invoked.
@@ -749,7 +749,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getVideoMuteStateWithSuccess:(void (^ _Nullable)(enum ToggleState))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getVideoMuteStateWithSuccess:(void (^ _Nullable)(enum ToggleState))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set video mute state.
   \param success If command execute success, this callback will be invoked.
@@ -757,7 +757,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setVideoMuteStateWithState:(enum ToggleState)state success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setVideoMuteStateWithState:(enum ToggleState)state success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get LED mode.
   \param success If command execute success, this callback will be invoked.
@@ -765,7 +765,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getLEDModeWithSuccess:(void (^ _Nullable)(enum LEDMode))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getLEDModeWithSuccess:(void (^ _Nullable)(enum LEDMode))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set LED mode.
   \param success If command execute success, this callback will be invoked.
@@ -773,7 +773,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setLEDModeWithLedMode:(enum LEDMode)ledMode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setLEDModeWithLedMode:(enum LEDMode)ledMode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get video standard.
   \param success If command execute success, this callback will be invoked.
@@ -781,7 +781,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getVideoStandardWithSuccess:(void (^ _Nullable)(enum VideoStandard))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getVideoStandardWithSuccess:(void (^ _Nullable)(enum VideoStandard))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set video standard.
   \param success If command execute success, this callback will be invoked.
@@ -789,7 +789,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setVideoStandardWithVideoStandard:(enum VideoStandard)videoStandard success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setVideoStandardWithVideoStandard:(enum VideoStandard)videoStandard success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get screen auto lock
   \param success If command execute success, this callback will be invoked.
@@ -797,7 +797,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getScreenAutoLockWithSuccess:(void (^ _Nullable)(enum ScreenAutoLock))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getScreenAutoLockWithSuccess:(void (^ _Nullable)(enum ScreenAutoLock))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set screen auto lock.
   \param success If command execute success, this callback will be invoked.
@@ -805,7 +805,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setScreenAutoLockWithScreenAutoLock:(enum ScreenAutoLock)screenAutoLock success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setScreenAutoLockWithScreenAutoLock:(enum ScreenAutoLock)screenAutoLock success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get auto power off.
   \param success If command execute success, this callback will be invoked.
@@ -813,7 +813,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getAutoPowerOffWithSuccess:(void (^ _Nullable)(enum AutoPowerOff))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getAutoPowerOffWithSuccess:(void (^ _Nullable)(enum AutoPowerOff))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set auto power off.
   \param success If command execute success, this callback will be invoked.
@@ -821,7 +821,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setAutoPowerOffWithAutoPowerOff:(enum AutoPowerOff)autoPowerOff success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setAutoPowerOffWithAutoPowerOff:(enum AutoPowerOff)autoPowerOff success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get video rotate mode.
   \param success If command execute success, this callback will be invoked.
@@ -829,7 +829,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getVideoRotateModeWithSuccess:(void (^ _Nullable)(enum VideoRotateMode))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getVideoRotateModeWithSuccess:(void (^ _Nullable)(enum VideoRotateMode))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set video rotate mode.
   \param success If command execute success, this callback will be invoked.
@@ -837,7 +837,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setVideoRotateModeWithMode:(enum VideoRotateMode)mode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setVideoRotateModeWithMode:(enum VideoRotateMode)mode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get buzzer volume.
   \param success If command execute success, this callback will be invoked.
@@ -845,7 +845,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getBuzzerVolumeWithSuccess:(void (^ _Nullable)(enum BuzzerVolume))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getBuzzerVolumeWithSuccess:(void (^ _Nullable)(enum BuzzerVolume))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set buzzer volume.
   \param success If command execute success, this callback will be invoked.
@@ -853,7 +853,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setBuzzerVolumeWithBuzzerVolume:(enum BuzzerVolume)buzzerVolume success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setBuzzerVolumeWithBuzzerVolume:(enum BuzzerVolume)buzzerVolume success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get record mode.
   \param success If command execute success, this callback will be invoked.
@@ -861,7 +861,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getRecordModeWithSuccess:(void (^ _Nullable)(enum RecordMode))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getRecordModeWithSuccess:(void (^ _Nullable)(enum RecordMode))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set record mode.
   \param success If command execute success, this callback will be invoked.
@@ -869,7 +869,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setRecordModeWithRecordMode:(enum RecordMode)recordMode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setRecordModeWithRecordMode:(enum RecordMode)recordMode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get capture mode.
   \param success If command execute success, this callback will be invoked.
@@ -877,7 +877,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getCaptureModeWithSuccess:(void (^ _Nullable)(enum CaptureMode))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getCaptureModeWithSuccess:(void (^ _Nullable)(enum CaptureMode))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set capture mode.
   \param success If command execute success, this callback will be invoked.
@@ -885,7 +885,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setCaptureModeWithCaptureMode:(enum CaptureMode)captureMode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setCaptureModeWithCaptureMode:(enum CaptureMode)captureMode success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get time lapse video interval.
   \param success If command execute success, this callback will be invoked.
@@ -893,7 +893,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getTimeLapseVideoIntervalWithSuccess:(void (^ _Nullable)(enum TimeLapseVideoInterval))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getTimeLapseVideoIntervalWithSuccess:(void (^ _Nullable)(enum TimeLapseVideoInterval))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set time lapse video interval.
   \param success If command execute success, this callback will be invoked.
@@ -901,7 +901,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setTimeLapseVideoIntervalWithInterval:(enum TimeLapseVideoInterval)interval success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setTimeLapseVideoIntervalWithInterval:(enum TimeLapseVideoInterval)interval success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get time lapse photo interval.
   \param success If command execute success, this callback will be invoked.
@@ -909,7 +909,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getTimeLapsePhotoIntervalWithSuccess:(void (^ _Nullable)(enum TimeLapsePhotoInterval))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getTimeLapsePhotoIntervalWithSuccess:(void (^ _Nullable)(enum TimeLapsePhotoInterval))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set time lapse video interval.
   \param success If command execute success, this callback will be invoked.
@@ -917,7 +917,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setTimeLapsePhotoIntervalWithInterval:(enum TimeLapsePhotoInterval)interval success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setTimeLapsePhotoIntervalWithInterval:(enum TimeLapsePhotoInterval)interval success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Get time lapse video duration.
   \param success If command execute success, this callback will be invoked.
@@ -925,7 +925,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)getTimeLapseVideoDurationWithSuccess:(void (^ _Nullable)(enum TimeLapseVideoDuration))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)getTimeLapseVideoDurationWithSuccess:(void (^ _Nullable)(enum TimeLapseVideoDuration))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 /**
   Set time lapse video duration.
   \param success If command execute success, this callback will be invoked.
@@ -933,7 +933,7 @@ enum TimeLapseVideoDuration : NSInteger;
   \param fail If command execute fail, this callback will be invoked.
 
 */
-- (ActionCamera * _Nonnull)setTimeLapseVideoDurationWithDuration:(enum TimeLapseVideoDuration)duration success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail;
+- (ActionCamera * _Nonnull)setTimeLapseVideoDurationWithDuration:(enum TimeLapseVideoDuration)duration success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail;
 @end
 
 
