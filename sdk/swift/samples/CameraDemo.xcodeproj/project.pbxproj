@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10230EE41DA0349A001F70FB /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10230EE11DA0349A001F70FB /* CocoaAsyncSocket.framework */; };
-		10230EE51DA0349A001F70FB /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10230EE11DA0349A001F70FB /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		10230EE61DA0349A001F70FB /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10230EE21DA0349A001F70FB /* SwiftyJSON.framework */; };
-		10230EE71DA0349A001F70FB /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10230EE21DA0349A001F70FB /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		10230EE81DA0349A001F70FB /* YICameraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10230EE31DA0349A001F70FB /* YICameraSDK.framework */; };
-		10230EE91DA0349A001F70FB /* YICameraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 10230EE31DA0349A001F70FB /* YICameraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1046E5601DEBBA4A00F8B756 /* YICameraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1046E55F1DEBBA4A00F8B756 /* YICameraSDK.framework */; };
+		1046E5611DEBBA4A00F8B756 /* YICameraSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1046E55F1DEBBA4A00F8B756 /* YICameraSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1046E5651DEBBA5700F8B756 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1046E5631DEBBA5700F8B756 /* CocoaAsyncSocket.framework */; };
+		1046E5661DEBBA5700F8B756 /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1046E5631DEBBA5700F8B756 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1046E5671DEBBA5700F8B756 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1046E5641DEBBA5700F8B756 /* SwiftyJSON.framework */; };
+		1046E5681DEBBA5700F8B756 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1046E5641DEBBA5700F8B756 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		105922421D5988310044DB8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105922411D5988310044DB8A /* AppDelegate.swift */; };
 		105922441D5988310044DB8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105922431D5988310044DB8A /* ViewController.swift */; };
 		105922471D5988310044DB8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105922451D5988310044DB8A /* Main.storyboard */; };
@@ -21,15 +21,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		10019B221D68BC52007FBFCB /* Embed Frameworks */ = {
+		1046E5621DEBBA4A00F8B756 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				10230EE71DA0349A001F70FB /* SwiftyJSON.framework in Embed Frameworks */,
-				10230EE51DA0349A001F70FB /* CocoaAsyncSocket.framework in Embed Frameworks */,
-				10230EE91DA0349A001F70FB /* YICameraSDK.framework in Embed Frameworks */,
+				1046E5661DEBBA5700F8B756 /* CocoaAsyncSocket.framework in Embed Frameworks */,
+				1046E5611DEBBA4A00F8B756 /* YICameraSDK.framework in Embed Frameworks */,
+				1046E5681DEBBA5700F8B756 /* SwiftyJSON.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,9 +37,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		10230EE11DA0349A001F70FB /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = ../framework/iphonesimulator/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		10230EE21DA0349A001F70FB /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../framework/iphonesimulator/SwiftyJSON.framework; sourceTree = "<group>"; };
-		10230EE31DA0349A001F70FB /* YICameraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YICameraSDK.framework; path = ../framework/iphonesimulator/YICameraSDK.framework; sourceTree = "<group>"; };
+		1046E55F1DEBBA4A00F8B756 /* YICameraSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YICameraSDK.framework; sourceTree = "<group>"; };
+		1046E5631DEBBA5700F8B756 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		1046E5641DEBBA5700F8B756 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = "<group>"; };
 		1059223E1D5988310044DB8A /* CameraDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		105922411D5988310044DB8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		105922431D5988310044DB8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,9 +54,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10230EE61DA0349A001F70FB /* SwiftyJSON.framework in Frameworks */,
-				10230EE41DA0349A001F70FB /* CocoaAsyncSocket.framework in Frameworks */,
-				10230EE81DA0349A001F70FB /* YICameraSDK.framework in Frameworks */,
+				1046E5651DEBBA5700F8B756 /* CocoaAsyncSocket.framework in Frameworks */,
+				1046E5601DEBBA4A00F8B756 /* YICameraSDK.framework in Frameworks */,
+				1046E5671DEBBA5700F8B756 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,9 +66,9 @@
 		105922351D5988310044DB8A = {
 			isa = PBXGroup;
 			children = (
-				10230EE11DA0349A001F70FB /* CocoaAsyncSocket.framework */,
-				10230EE21DA0349A001F70FB /* SwiftyJSON.framework */,
-				10230EE31DA0349A001F70FB /* YICameraSDK.framework */,
+				1046E5631DEBBA5700F8B756 /* CocoaAsyncSocket.framework */,
+				1046E5641DEBBA5700F8B756 /* SwiftyJSON.framework */,
+				1046E55F1DEBBA4A00F8B756 /* YICameraSDK.framework */,
 				105922401D5988310044DB8A /* CameraDemo */,
 				1059223F1D5988310044DB8A /* Products */,
 			);
@@ -105,7 +105,7 @@
 				1059223A1D5988310044DB8A /* Sources */,
 				1059223B1D5988310044DB8A /* Frameworks */,
 				1059223C1D5988310044DB8A /* Resources */,
-				10019B221D68BC52007FBFCB /* Embed Frameworks */,
+				1046E5621DEBBA4A00F8B756 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -285,13 +285,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../framework/iphonesimulator/**";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../framework/iphonesimulator/**",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CameraDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoyi.camera.CameraDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
@@ -301,13 +304,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../framework/iphonesimulator/**";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../framework/iphonesimulator/**",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CameraDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaoyi.camera.CameraDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
 		};

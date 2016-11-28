@@ -1,0 +1,10 @@
+framework module YICameraSDK {
+  umbrella header "YICameraSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module YICameraSDK.Swift {
+    header "YICameraSDK-Swift.h"
+}
