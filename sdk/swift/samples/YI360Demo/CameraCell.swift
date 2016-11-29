@@ -26,9 +26,9 @@ class CameraCell: UICollectionViewCell, CameraListener {
     
     func setCamera(camera: Camera?) {
         if (mCamera !== camera) {
-            mCamera?.setListener(nil);
+            mCamera?.setListener(listener: nil);
             mCamera = camera;
-            mCamera?.setListener(self);
+            mCamera?.setListener(listener: self);
         }
         updateView();
     }

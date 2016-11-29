@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dph-sk-P2F">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Dph-sk-P2F">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controlller-->
@@ -31,17 +35,17 @@
                         <viewControllerLayoutGuide type="bottom" id="lVq-S1-hmB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Sas-au-wQO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inactive_camera" translatesAutoresizingMaskIntoConstraints="NO" id="aOb-ct-DSn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="inactive_camera" translatesAutoresizingMaskIntoConstraints="NO" id="aOb-ct-DSn">
                                 <rect key="frame" x="220" y="84" width="160" height="111"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="111" id="5fu-gN-IpP"/>
                                     <constraint firstAttribute="width" constant="160" id="cTd-gU-vld"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ugE-aZ-HSG">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ugE-aZ-HSG">
                                 <rect key="frame" x="220" y="203" width="160" height="160"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbP-4n-X0s">
@@ -82,7 +86,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ugE-aZ-HSG" firstAttribute="top" secondItem="aOb-ct-DSn" secondAttribute="bottom" constant="8" symbolic="YES" id="4nc-mp-UPK"/>
                             <constraint firstItem="aOb-ct-DSn" firstAttribute="top" secondItem="lE4-Rj-62B" secondAttribute="bottom" constant="20" id="OVn-es-Ewy"/>
@@ -108,12 +112,12 @@
                         <viewControllerLayoutGuide type="bottom" id="LK8-b1-Tmj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vp4-p2-dj9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jvy-SD-fV5">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jvy-SD-fV5">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="2" id="9AX-Wi-XCQ">
                                     <size key="itemSize" width="120" height="108"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -122,7 +126,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cameraCell" id="JkY-lk-HjG" customClass="CameraCell" customModule="YI360Demo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="120" height="108"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="108"/>
@@ -137,7 +141,7 @@
                                                                 <constraint firstAttribute="height" constant="18" id="8Pj-Mj-Q9f"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gBp-PR-fpO">
@@ -150,7 +154,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Connecting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kI-9d-ttB">
                                                             <rect key="frame" x="28" y="90" width="65" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -163,7 +167,6 @@
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="dgC-76-sAy" firstAttribute="leading" secondItem="JkY-lk-HjG" secondAttribute="leading" id="1ZS-eM-oEV"/>
@@ -183,7 +186,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="pkq-cZ-4Vb"/>
                                 </connections>
                             </collectionView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnr-wA-FgI">
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vnr-wA-FgI">
                                 <rect key="frame" x="380" y="64" width="200" height="120"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yW2-Sf-MC3">
@@ -193,21 +196,21 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
                                                 <state key="normal" title="Start Recording"/>
                                                 <connections>
-                                                    <action selector="onStartRecordingBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6WX-yK-abh"/>
+                                                    <action selector="onStartRecordingBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YD4-GP-aIg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lat-4L-2EI">
                                                 <rect key="frame" x="0.0" y="40" width="200" height="40"/>
                                                 <state key="normal" title="Stop Recording"/>
                                                 <connections>
-                                                    <action selector="onStopRecordingBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DSR-6l-oV5"/>
+                                                    <action selector="onStopRecordingBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aXO-kk-9wJ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXI-l1-Tw6">
                                                 <rect key="frame" x="0.0" y="80" width="200" height="40"/>
                                                 <state key="normal" title="Back"/>
                                                 <connections>
-                                                    <action selector="onExitBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dew-X5-5aJ"/>
+                                                    <action selector="onExitBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6qT-9c-f2w"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -217,7 +220,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="yW2-Sf-MC3" secondAttribute="trailing" id="6Ul-E3-wmb"/>
                                     <constraint firstAttribute="height" constant="120" id="VGh-iO-k7x"/>
@@ -228,7 +231,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="vnr-wA-FgI" secondAttribute="trailing" id="Ler-en-orV"/>
                             <constraint firstItem="Jvy-SD-fV5" firstAttribute="bottom" secondItem="LK8-b1-Tmj" secondAttribute="top" id="bgZ-6Z-reG"/>
@@ -238,13 +241,13 @@
                             <constraint firstItem="vnr-wA-FgI" firstAttribute="top" secondItem="suw-UK-RoX" secondAttribute="bottom" id="w8R-pE-7xR"/>
                         </constraints>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="w5K-d1-lTb" appends="YES" id="PJi-jd-mlD"/>
+                            <outletCollection property="gestureRecognizers" destination="w5K-d1-lTb" appends="YES" id="V2s-De-yzV"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="lb1-pb-F0p">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Jpg-RY-cuC">
                             <connections>
-                                <action selector="onMenuBtnClicked:" destination="BYZ-38-t0r" id="kQx-Ig-Tmh"/>
+                                <action selector="onMenuBtnClicked:" destination="BYZ-38-t0r" id="7lr-RJ-U6l"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -255,7 +258,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="w5K-d1-lTb">
                     <connections>
-                        <action selector="onGestureRecognizer:" destination="BYZ-38-t0r" id="f2f-Sq-vpG"/>
+                        <action selector="onGestureRecognizer:" destination="BYZ-38-t0r" id="nbF-CL-6Ua"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

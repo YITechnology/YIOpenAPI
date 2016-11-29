@@ -33,10 +33,12 @@ class Camera: ActionCameraListener
         case Recording;
     }
     
-    class DQ: DispatchQueue
+    class DQ: YICameraSDKDispatchQueue
     {
-        @objc func dispatch(task task: () -> ()) {
-            dispatch_async(dispatch_get_main_queue(), task);
+        @objc func dispatch(task: @escaping () -> ()) {
+            DispatchQueue.main.async {
+                task();
+            }
         }
     }
 
@@ -45,7 +47,7 @@ class Camera: ActionCameraListener
     private var mIP = "";
     private var mHost = "";
     private var mYICamera: ActionCamera!;
-    private var mTimer: NSTimer?;
+    private var mTimer: Timer?;
     
     init(ip: String, host: String) {
         super.init();
@@ -61,32 +63,32 @@ class Camera: ActionCameraListener
     // Connect to YIActionCamera. Due to SDK doesn't support timeout in connect() currently,
     // we need handle timeout by our self.
     func connect() {
-        setState(.Connecting);
-        mTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(onConnectTimeout), userInfo: nil, repeats: false);
+        setState(state: .Connecting);
+        mTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(onConnectTimeout), userInfo: nil, repeats: false);
         mYICamera.connect(connectionString: "tcp:\(mIP):7878");
     }
     
     func startRecording(startTime: NSDate) {
         if (mState == .Connected) {
-            setState(.StartRecording);
+            setState(state: .StartRecording);
             mYICamera.stopRecording(success: nil, fail: nil)
                      .setSystemMode(mode: .Record, success: nil, fail: nil)
                      .setDateTime(
-                        datetime: NSDate(),
+                        datetime: NSDate() as Date,
                         success: {
                             self.mYICamera.startRecording(hour: startTime.getHours(), minute: startTime.getMinutes(), second: startTime.getSeconds(),
                                 success: nil,
                                 fail: { error in
                                     print("start recording failed: \(error.getCode())");
                                     if (self.mState == .StartRecording) {
-                                        self.setState(.Connected);
+                                        self.setState(state: .Connected);
                                     }
                             });
                         },
                         fail: { error in
                             print("set datetime failed: \(error.getCode())");
                             if (self.mState == .StartRecording) {
-                                self.setState(.Connected);
+                                self.setState(state: .Connected);
                             }
                      });
         }
@@ -113,11 +115,11 @@ class Camera: ActionCameraListener
     override func onConnected() {
         print("connect to camera: \(mIP)");
         mTimer?.invalidate();
-        setState(.Connected);
+        setState(state: .Connected);
         mYICamera.getStatus(
             success: { status in
                 if (status == .Recording) {
-                    self.setState(.Recording);
+                    self.setState(state: .Recording);
                 }
             },
             fail: nil);
@@ -125,17 +127,17 @@ class Camera: ActionCameraListener
     
     override func onRecordStarted() {
         print("record started");
-        setState(.Recording);
+        setState(state: .Recording);
     }
     
     override func onRecordStopped() {
         print("record stoped");
-        setState(.Connected);
+        setState(state: .Connected);
     }
     
-    override func onClosed(error error: Error?) {
+    override func onClosed(error error: YICameraSDKError?) {
         print("disconnect from camera: \(mIP)");
-        setState(.Disconnected);
+        setState(state: .Disconnected);
     }
     
     @objc private func onConnectTimeout() {
@@ -147,7 +149,7 @@ class Camera: ActionCameraListener
         if (mState != state) {
             let oldState = mState;
             mState = state;
-            mListener?.onStateChanged(self, newState: mState, oldState: oldState);
+            mListener?.onStateChanged(camera: self, newState: mState, oldState: oldState);
         }
     }
 }

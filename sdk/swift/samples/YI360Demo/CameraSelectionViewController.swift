@@ -27,29 +27,29 @@ class CameraSelectionViewController: UIViewController {
     }
     
     @IBAction func on6CamerasSelected() {
-        showCamerasView(6);
+        showCamerasView(count: 6);
     }
     
     @IBAction func on7CamerasSelected() {
-        showCamerasView(7);
+        showCamerasView(count: 7);
     }
     
     @IBAction func on10CamerasSelected() {
-        showCamerasView(10);
+        showCamerasView(count: 10);
     }
     
     @IBAction func on24CamerasSelected() {
-        showCamerasView(24);
+        showCamerasView(count: 24);
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "showCameraGrid") {
-            (segue.destinationViewController as! CameraGridViewController).mCapacity = mCameraCount;
+            (segue.destination as! CameraGridViewController).mCapacity = mCameraCount;
         }
     }
     
     private func showCamerasView(count: Int) {
         mCameraCount = count;
-        performSegueWithIdentifier("showCameraGrid", sender: self);
+        performSegue(withIdentifier: "showCameraGrid", sender: self);
     }
 }

@@ -17,9 +17,11 @@
 
 import YICameraSDK;
 
-class UIDispatchQueue: DispatchQueue {
-    @objc func dispatch(task task: () -> ()) {
-        dispatch_async(dispatch_get_main_queue(), task);
+class UIDispatchQueue: YICameraSDKDispatchQueue {
+    public func dispatch(task: @escaping () -> ()) {
+        DispatchQueue.main.async() {
+            task();
+        }
     }
 }
 
@@ -34,7 +36,7 @@ class CameraListener: ActionCameraListener {
         mView.onConnected();
     }
     
-    override func onClosed(error error: Error?) {
+    override func onClosed(error: YICameraSDKError?) {
         mView.onDisconnected();
     }
     
@@ -62,17 +64,17 @@ class ViewController: UIViewController {
     
     private var mStatus: Status!;
     private var mCamera: ActionCamera!;
-    private var mTimer: NSTimer!;
+    private var mTimer: Timer!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mCamera = ActionCamera(listener: CameraListener(view: self), dispatchQueue: UIDispatchQueue());
-        setStatus(Status.Disconnected);
+        setStatus(status: Status.Disconnected);
     }
 
     func connect() {
-        setStatus(Status.Connecting);
-        mTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(onConnectTimeout), userInfo: nil, repeats: false);
+        setStatus(status: Status.Connecting);
+        mTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(onConnectTimeout), userInfo: nil, repeats: false);
         mCamera.connect(connectionString: "tcp:192.168.42.1:7878");
     
     }
@@ -100,9 +102,9 @@ class ViewController: UIViewController {
         }
         
         // sync the datetime
-        mCamera.setDateTime(datetime: NSDate(),
+        mCamera.setDateTime(datetime: NSDate() as Date,
             success: {
-                self.setStatus(Status.Connected);
+                self.setStatus(status: Status.Connected);
             }, fail: {
                 error in
                 self.disconnect();
@@ -110,20 +112,20 @@ class ViewController: UIViewController {
     }
     
     func onDisconnected() {
-        setStatus(Status.Disconnected);
+        setStatus(status: Status.Disconnected);
     }
 
     func onConnectTimeout() {
         mCamera.disconnect();
-        showMessageBox("Connect failed, please make sure you've connected to camera's WIFI already.");
+        showMessageBox(message: "Connect failed, please make sure you've connected to camera's WIFI already.");
     }
     
     func onRecordStarted() {
-        setStatus(Status.Recording);
+        setStatus(status: Status.Recording);
     }
     
     func onRecordStopped() {
-        setStatus(Status.Connected);
+        setStatus(status: Status.Connected);
     }
     
     private func setStatus(status: Status) {
@@ -134,20 +136,20 @@ class ViewController: UIViewController {
         if (status == Status.Disconnected) {
             mCameraImg.image = UIImage(named: "inactive_camera");
             mStatusLabel.text = "Disconnected";
-            mConnectBtn.setTitle("Connect", forState: UIControlState.Normal);
-            mRecordingBtn.hidden = true;
+            mConnectBtn.setTitle("Connect", for: UIControlState.normal);
+            mRecordingBtn.isHidden = true;
         } else if (status == Status.Connecting) {
             mStatusLabel.text = "Connecting...";
-            mConnectBtn.setTitle("Disconnect", forState: UIControlState.Normal);
+            mConnectBtn.setTitle("Disconnect", for: UIControlState.normal);
         } else if (status == Status.Connected) {
             mCameraImg.image = UIImage(named: "white_camera");
             mStatusLabel.text = "Connected";
-            mRecordingBtn.setTitle("StartRecording", forState: UIControlState.Normal);
-            mRecordingBtn.hidden = false;
+            mRecordingBtn.setTitle("StartRecording", for: UIControlState.normal);
+            mRecordingBtn.isHidden = false;
         } else if (status == Status.Recording) {
             mCameraImg.image = UIImage(named: "recording_camera");
             mStatusLabel.text = "Recording";
-            mRecordingBtn.setTitle("StopRecording", forState: UIControlState.Normal);
+            mRecordingBtn.setTitle("StopRecording", for: UIControlState.normal);
         }
         mStatus = status;
     }
@@ -155,11 +157,11 @@ class ViewController: UIViewController {
     private func showMessageBox(message: String) {
         let alert = UIAlertView();
         alert.message = message;
-        alert.addButtonWithTitle("Ok")
+        alert.addButton(withTitle: "Ok")
         alert.show()
     }
     
-    @IBAction func onConnectBtnClicked(sender: AnyObject) {
+    @IBAction func onConnectBtnClicked(_ sender: Any) {
         if (mStatus == Status.Disconnected) {
             connect();
         } else {
@@ -167,7 +169,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func onRecordingBtnClicked(sender: AnyObject) {
+    @IBAction func onRecordingBtnClicked(_ sender: Any) {
         if (mStatus == Status.Connected) {
             startRecording();
         } else if (mStatus == Status.Recording) {
