@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <LinearLayout android:background="@drawable/yi_left" android:layout_height="match_parent" android:layout_width="80dp"/>
+    <LinearLayout android:orientation="vertical" android:layout_weight="1" android:layout_height="match_parent" android:layout_width="match_parent">
+        <LinearLayout android:background="@drawable/yi_top" android:layout_width="match_parent" android:layout_height="60dp"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" android:gravity="center" android:background="#000">
+            <com.xiaoyi.yivirtualcamera.GifView
+                android:id="@+id/loadingImg"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="center"
+                android:src="@drawable/loading"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
+            <ImageView
+                android:id="@+id/powerOnBtn"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:scaleType="center"
+                android:src="@drawable/power_on_button"
+                android:onClick="onConnectBtnClicked"
+                android:layout_gravity="center"/>
+            <FrameLayout
+                android:id="@+id/contentPanel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"></FrameLayout>
+        </FrameLayout>
+        <LinearLayout android:background="@drawable/yi_bottom" android:layout_width="match_parent" android:layout_height="50dp"/>
+    </LinearLayout>
+    <LinearLayout android:background="@drawable/yi_right" android:layout_height="match_parent" android:layout_width="90dp"/>
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#000">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="80dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/setting_basic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/setting_normal_video_left"/>
+        <ImageView
+            android:id="@+id/setting_setting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/setting_left"/>
+        <ImageView
+            android:id="@+id/setting_exit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/setting_exit_left"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#fff"
+        >
+        <ListView
+            android:id="@+id/setting_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+        <FrameLayout
+            android:id="@+id/loadingImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000"
+            android:visibility="invisible">
+            <com.xiaoyi.yivirtualcamera.GifView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/loading"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+    </FrameLayout>
+</LinearLayout>
