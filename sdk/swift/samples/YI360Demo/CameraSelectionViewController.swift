@@ -41,10 +41,10 @@ class CameraSelectionViewController: UIViewController {
     @IBAction func on24CamerasSelected() {
         showCamerasView(count: 24)
     }
-    
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showCameraGrid") {
-            (segue.destination as! CameraGridViewController).mCapacity = mCameraCount
+          (segue.destination as! CameraGridViewController).mCapacity = mCameraCount
         }
     }
     
