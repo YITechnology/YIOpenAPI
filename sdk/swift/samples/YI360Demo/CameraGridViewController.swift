@@ -166,9 +166,8 @@ class CameraGridViewController: UIViewController, UICollectionViewDataSource, Ca
         while (true) {
             DispatchQueue.main.async {
                 var ips = [String]()
-                // If iPhone is used as wifi hotspot, the client ip range is 172.20.10.1~172.20.10.10
-                for i in 1...10 {
-                    ips.append("172.20.10.\(i)")
+                // If iPhone is used as wifi hotspot, the client ip range is 172.20.10.1~172.20.10.99
+                for i in 1...30 {
                     ips.append("172.20.10.\(i)")
                 }
                 self.processIPList(ipList: ips)
