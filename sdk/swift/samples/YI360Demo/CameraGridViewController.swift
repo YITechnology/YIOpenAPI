@@ -63,7 +63,7 @@ class CameraGridViewController: UIViewController, UICollectionViewDataSource, Ca
             mCameras.append(camera)
             
             // attach to cell
-            if let cell = mCollectionView.cellForItem(at: IndexPath(index: mCameras.count - 1)) as? CameraCell {
+            if let cell = mCollectionView.cellForItem(at: IndexPath(item: mCameras.count-1, section: 0)) as? CameraCell {
                 cell.setCamera(camera: camera)
             }
         } else if (newState == .Disconnected) {
