@@ -142,8 +142,8 @@ class CameraGridViewController: UIViewController, UICollectionViewDataSource, Ca
             }
             
             let ip = ipList[i]
-            let host = ipList[i + 1]
-            print("found ip: \(ip), host: \(host)")
+            let host = "Host: \(ipList[i])"
+            print("found ip: \(ip), \(host)")
 
             // check whether this is in pending queue or in final queue
             var index = mPendingCameras.index(where: {$0.getIP() == ip})
