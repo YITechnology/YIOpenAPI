@@ -18,38 +18,38 @@
 import UIKit
 
 class CameraSelectionViewController: UIViewController {
-    private var mCameraCount = 0;
+    private var mCameraCount = 0
     
     override func viewDidLoad() {
-        super.viewDidLoad();
+        super.viewDidLoad()
         
-        title = "YI360Demo";
+        title = "YI360Demo"
     }
     
     @IBAction func on6CamerasSelected() {
-        showCamerasView(count: 6);
+        showCamerasView(count: 6)
     }
     
     @IBAction func on7CamerasSelected() {
-        showCamerasView(count: 7);
+        showCamerasView(count: 7)
     }
     
     @IBAction func on10CamerasSelected() {
-        showCamerasView(count: 10);
+        showCamerasView(count: 10)
     }
     
     @IBAction func on24CamerasSelected() {
-        showCamerasView(count: 24);
+        showCamerasView(count: 24)
     }
-    
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showCameraGrid") {
-            (segue.destination as! CameraGridViewController).mCapacity = mCameraCount;
+          (segue.destination as! CameraGridViewController).mCapacity = mCameraCount
         }
     }
     
     private func showCamerasView(count: Int) {
-        mCameraCount = count;
-        performSegue(withIdentifier: "showCameraGrid", sender: self);
+        mCameraCount = count
+        performSegue(withIdentifier: "showCameraGrid", sender: self)
     }
 }

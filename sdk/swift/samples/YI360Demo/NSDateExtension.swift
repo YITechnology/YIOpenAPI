@@ -15,18 +15,18 @@
 // THIS SOFTWARE OR ITS DERIVATIVES.
 //=============================================================================
 
-import Foundation;
+import Foundation
 
 extension NSDate {
     func getHours() -> Int {
-        return NSCalendar.current.component(.hour, from: self as Date);
+        return NSCalendar.current.component(.hour, from: self as Date)
     }
     
     func getMinutes() -> Int {
-        return NSCalendar.current.component(.minute, from: self as Date);
+        return NSCalendar.current.component(.minute, from: self as Date)
     }
     
     func getSeconds() -> Int {
-        return NSCalendar.current.component(.second, from: self as Date);
+        return NSCalendar.current.component(.second, from: self as Date)
     }
 }

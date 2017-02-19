@@ -15,85 +15,85 @@
 // THIS SOFTWARE OR ITS DERIVATIVES.
 //=============================================================================
 
-import UIKit;
+import UIKit
 
 class CameraCell: UICollectionViewCell, CameraListener {
-    @IBOutlet weak var mCameraImage: UIImageView!;
+    @IBOutlet weak var mCameraImage: UIImageView!
     @IBOutlet weak var mNameLabel: UILabel!
     @IBOutlet weak var mStateLabel: UILabel!
     
-    private var mCamera: Camera?;
+    private var mCamera: Camera?
     
     func setCamera(camera: Camera?) {
         if (mCamera !== camera) {
-            mCamera?.setListener(listener: nil);
-            mCamera = camera;
-            mCamera?.setListener(listener: self);
+            mCamera?.setListener(listener: nil)
+            mCamera = camera
+            mCamera?.setListener(listener: self)
         }
-        updateView();
+        updateView()
     }
     
     func onStateChanged(camera: Camera, newState: Camera.State, oldState: Camera.State) {
-        updateView();
+        updateView()
     }
     
     private func updateView() {
-        updateNameLabel();
-        updateStateLabel();
-        updateImage();
+        updateNameLabel()
+        updateStateLabel()
+        updateImage()
     }
     
     private func updateNameLabel() {
-        var name = "";
+        var name = ""
         if (mCamera != nil) {
-            name = mCamera!.getHost();
+            name = mCamera!.getHost()
             if (name == "") {
-                name = mCamera!.getIP();
+                name = mCamera!.getIP()
             }
         }
-        mNameLabel.text = name;
+        mNameLabel.text = name
     }
     
     private func updateStateLabel() {
         if (mCamera == nil) {
-            mStateLabel.text = "Connecting";
+            mStateLabel.text = "Connecting"
         } else {
             switch mCamera!.getStatus() {
             case .Disconnected, .Connecting:
-                mStateLabel.text = "Disconnected";
-                break;
+                mStateLabel.text = "Disconnected"
+                break
                     
             case .Connected:
-                mStateLabel.text = "Connected";
-                break;
+                mStateLabel.text = "Connected"
+                break
                 
             case .StartRecording:
-                mStateLabel.text = "Start Recording";
-                break;
+                mStateLabel.text = "Start Recording"
+                break
                 
             case .Recording:
-                mStateLabel.text = "Recording";
-                break;
+                mStateLabel.text = "Recording"
+                break
             }
         }
     }
     
     private func updateImage() {
         if (mCamera == nil) {
-            mCameraImage.image = UIImage(named: "inactive_camera");
+            mCameraImage.image = UIImage(named: "inactive_camera")
         } else {
             switch mCamera!.getStatus() {
             case .Disconnected, .Connecting:
-                mCameraImage.image = UIImage(named: "inactive_camera");
-                break;
+                mCameraImage.image = UIImage(named: "inactive_camera")
+                break
                 
             case .Connected, .StartRecording:
-                mCameraImage.image = UIImage(named: "white_camera");
-                break;
+                mCameraImage.image = UIImage(named: "white_camera")
+                break
                 
             case .Recording:
-                mCameraImage.image = UIImage(named: "recording_camera");
-                break;
+                mCameraImage.image = UIImage(named: "recording_camera")
+                break
             }
         }
     }

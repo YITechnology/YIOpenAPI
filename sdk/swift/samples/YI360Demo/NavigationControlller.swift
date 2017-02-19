@@ -15,7 +15,7 @@
 // THIS SOFTWARE OR ITS DERIVATIVES.
 //=============================================================================
 
-import UIKit;
+import UIKit
 
 class NavigationControlller: UINavigationController {
 }
