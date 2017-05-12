@@ -4,86 +4,101 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/SwiftyJSON-Swift.h</key>
+		<key>Headers/AsyncSocket.h</key>
 		<data>
-		C9BkzaavWqADC3WE/AwwTEq9sTs=
+		vQCufVwen6Ajj0Ti0w60iSan3DE=
 		</data>
-		<key>Headers/SwiftyJSON.h</key>
+		<key>Headers/AsyncUdpSocket.h</key>
 		<data>
-		9h1asDru8J9y+Ot9YqUMd3Uqp2c=
+		qqC4cvVJU9/76V8UFaktJeG3SOY=
+		</data>
+		<key>Headers/CocoaAsyncSocket.h</key>
+		<data>
+		fwx/DHzHzUQhtlfC9ffKAK+SFx0=
+		</data>
+		<key>Headers/GCDAsyncSocket.h</key>
+		<data>
+		1HDXCah6kGOXWoWutvtEL9T7a8w=
+		</data>
+		<key>Headers/GCDAsyncUdpSocket.h</key>
+		<data>
+		mN0BX8QGrZbUAmev1TexMEH1Ros=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ixT1t0odkN0JxldJSa0DOp9Xcts=
-		</data>
-		<key>Modules/SwiftyJSON.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		Rw0JN0gHJB4xgssIk5LOyHP8Ydo=
-		</data>
-		<key>Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		00mQGhPOoyoSi617s2ZzkRKxxtw=
+		5P6NuEHmc7p3cx2k5f17TiIwYjI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		1GXV+34Deld62yvTP9esfhoOTpk=
+		+n94rYTWDjekX3imyh+PSyA9vgA=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/SwiftyJSON-Swift.h</key>
+		<key>Headers/AsyncSocket.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			C9BkzaavWqADC3WE/AwwTEq9sTs=
+			vQCufVwen6Ajj0Ti0w60iSan3DE=
 			</data>
 			<key>hash2</key>
 			<data>
-			O51DI1NdBpTr8vOzU25mOAeZu4sd/xZ3/13cBxEDTPw=
+			R3736LSX5z8RLRp9l2T8khkcHmQ3stoG7+v5ZSZaclQ=
 			</data>
 		</dict>
-		<key>Headers/SwiftyJSON.h</key>
+		<key>Headers/AsyncUdpSocket.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9h1asDru8J9y+Ot9YqUMd3Uqp2c=
+			qqC4cvVJU9/76V8UFaktJeG3SOY=
 			</data>
 			<key>hash2</key>
 			<data>
-			+MjvL+3LfvZ8KB6mUfc9yrSpdzulZn0Km/CrKxS+7IQ=
+			vf+GiELz6/O8x9n5phpbOqx1Gji1zyrRWI5SxdQTsHQ=
 			</data>
 		</dict>
-		<key>Modules/SwiftyJSON.swiftmodule/x86_64.swiftdoc</key>
+		<key>Headers/CocoaAsyncSocket.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Rw0JN0gHJB4xgssIk5LOyHP8Ydo=
+			fwx/DHzHzUQhtlfC9ffKAK+SFx0=
 			</data>
 			<key>hash2</key>
 			<data>
-			F6iBanO8GYNHtoeDBqxEtqH3qcJmPqj9cv/ReLSNqgw=
+			OeCNZd4h1R70nH11jcrFn8m1hnTuvTAHjDhMuhI/3Ao=
 			</data>
 		</dict>
-		<key>Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule</key>
+		<key>Headers/GCDAsyncSocket.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			00mQGhPOoyoSi617s2ZzkRKxxtw=
+			1HDXCah6kGOXWoWutvtEL9T7a8w=
 			</data>
 			<key>hash2</key>
 			<data>
-			VVzSCILgHK5O5SjrZoMEsaZkeFI9MV0XcUH/Y7jcd1k=
+			7dV5qGIjB0OSFw/BYzoH/wrJ09FECXznihYFR5MuGbo=
+			</data>
+		</dict>
+		<key>Headers/GCDAsyncUdpSocket.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			mN0BX8QGrZbUAmev1TexMEH1Ros=
+			</data>
+			<key>hash2</key>
+			<data>
+			2Pf7uADYzvSf8/lcSiVKsioPAbW/xXqVVCZ0Z6hVlyg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1GXV+34Deld62yvTP9esfhoOTpk=
+			+n94rYTWDjekX3imyh+PSyA9vgA=
 			</data>
 			<key>hash2</key>
 			<data>
-			wIznj7S5lfbm5ddzAZFxqgHEOj7Bouf+2ZacWwcTIkM=
+			RoVn8xMeEnU3Izg0DtYjYL/krI8V7qw0sa7Ggf+08Rs=
 			</data>
 		</dict>
 	</dict>

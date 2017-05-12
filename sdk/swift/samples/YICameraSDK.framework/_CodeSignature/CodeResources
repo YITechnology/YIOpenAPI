@@ -4,13 +4,9 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>.DS_Store</key>
-		<data>
-		pkwiWsCh0xyCd6DYmndO3cBsmUw=
-		</data>
 		<key>Headers/YICameraSDK-Swift.h</key>
 		<data>
-		RipKqdOnb/Z2gG582JTHZ5Hs44k=
+		hnlEapyBQMTcaWD7CY+HuLsLYog=
 		</data>
 		<key>Headers/YICameraSDK.h</key>
 		<data>
@@ -18,19 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		pTXMw8WXBAdYEYWdxSgkAdqPogE=
+		27FEKFGLhZsGdVa/hSD3sOQLNww=
 		</data>
-		<key>Modules/.DS_Store</key>
+		<key>Modules/YICameraSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		vdw5MPZ+o21FX94X+TjtHaDchg0=
+		2GZXrNOABYQgz02JRdhwYPFFzCE=
 		</data>
-		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftdoc</key>
+		<key>Modules/YICameraSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		0U1Iod4dyMCvPhlKW8RxsdeJC3c=
-		</data>
-		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		SMG+Siwj7HXmzTEMRQ8CsBl2I38=
+		O2T1jmw5zU4WHtyeAx9AzwSfH7M=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -43,11 +35,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RipKqdOnb/Z2gG582JTHZ5Hs44k=
+			hnlEapyBQMTcaWD7CY+HuLsLYog=
 			</data>
 			<key>hash2</key>
 			<data>
-			FeguC5yqk/n+rd06DgmjmWPmfRd3JukWNOGXMG+B1QE=
+			YXDpmf5fqTWJeRLlUFGkryHMGZDkY7bibqiN4clTHsM=
 			</data>
 		</dict>
 		<key>Headers/YICameraSDK.h</key>
@@ -61,26 +53,26 @@
 			FMtzwYhkAcDxu1Vd5v3gXpJ1v2VeARFjQMQ9IHLI91U=
 			</data>
 		</dict>
-		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftdoc</key>
+		<key>Modules/YICameraSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0U1Iod4dyMCvPhlKW8RxsdeJC3c=
+			2GZXrNOABYQgz02JRdhwYPFFzCE=
 			</data>
 			<key>hash2</key>
 			<data>
-			fUQieTb0hpXm+5zUY7UjjopVY5UV4JiiKj8FBMgf/Eg=
+			8RdFSJW/Z6Pda7M33cGf2Ohs5E3pu0ciewCciSnvKZs=
 			</data>
 		</dict>
-		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftmodule</key>
+		<key>Modules/YICameraSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			SMG+Siwj7HXmzTEMRQ8CsBl2I38=
+			O2T1jmw5zU4WHtyeAx9AzwSfH7M=
 			</data>
 			<key>hash2</key>
 			<data>
-			iyAbsLmiI+Hinx6yYPVO64N8vbdwwBRvgTydxAJxM4U=
+			o7I8hJFkMKFJE0RNo0BZq32nMx+SbUoXFIhjYQ7L8k8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

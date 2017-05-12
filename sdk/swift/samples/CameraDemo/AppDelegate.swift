@@ -19,15 +19,15 @@ import UIKit;
 import YICameraSDK;
 
 class MyLogger: YICameraSDK.Logger {
-    override func info(message message: String) {
+    override func info(message: String) {
         NSLog("YICameraSDK[info]: " + message);
     }
     
-    override func warning(message message: String) {
+    override func warning(message: String) {
         NSLog("YICameraSDK[warn]: " + message);
     }
     
-    override func error(message message: String) {
+    override func error(message: String) {
         NSLog("YICameraSDK[erro]: " + message);
     }
 }

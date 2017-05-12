@@ -79,14 +79,14 @@ class Camera: ActionCameraListener
                             _ = self.mYICamera.startRecording(hour: startTime.getHours(), minute: startTime.getMinutes(), second: startTime.getSeconds(),
                                 success: nil,
                                 fail: { error in
-                                    print("start recording failed: \(error.getCode())")
+                                    print("start recording failed: \(error.localizedDescription)")
                                     if (self.mState == .StartRecording) {
                                         self.setState(state: .Connected)
                                     }
                             })
                         },
                         fail: { error in
-                            print("set datetime failed: \(error.getCode())")
+                            print("set datetime failed: \(error.localizedDescription)")
                             if (self.mState == .StartRecording) {
                                 self.setState(state: .Connected)
                             }
@@ -135,7 +135,7 @@ class Camera: ActionCameraListener
         setState(state: .Connected)
     }
     
-    override func onClosed(error: YICameraSDKError?) {
+    override func onClosed(error: Error?) {
         print("disconnect from camera: \(mIP)")
         setState(state: .Disconnected)
     }
