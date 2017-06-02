@@ -1,0 +1,49 @@
+# Instruction explanation
+
+# mode: set camera mode; para: 0=photo, 4=video, 5=timelapse
+# video_res: set video resolution; para: 0=the first value of this parameter you see on the LCD screen, 1=the second, and so on
+# timelapse_video_res: timelapse resolution; para: the same as above
+# photo_shutter: photo shutter; para: the same as above
+# photo_iso: photo iso; para: the same as above
+# photo_ev: photo ev; para: the same as above
+# video_ev: video ev; para: the same as above
+# photo_wb: photo wb; para: the same as above
+# video_wb: video wb; para: the same as above
+# video_iso: video iso; para: the same as above
+# meter_mode: video/photo/timelapse metering mode; para: the same as above
+# photo_flat_color: photo flat color; para: the same as above
+# video_flat_color: video flat color; para: the same as above
+# timelapse_interval: timelapse interval; para: the same as above
+# timelapse_length: timelapse video length; para: the same as above
+# sleep: system wait; para: seconds
+# record: video/timelapse recording; para: seconds
+# shutter: photo shoot; para: none
+# sync: sync first camera setting to the others; para: none
+# format: format all the cameras' micro-SD cards (this instruction will delete v6_auto.txt file, and automation will be stopped. We will offer delete MP4&JPG files instruction next release)
+# ******* ALWAYS ADD AN ADDITIONAL BLANK LINE AFTER THE LAST INSTRUCTION, OR THE AUTOMATION WILL FAIL *******
+
+# put your v6_auto.txt in the root directory of your micro-SD card of first camera
+# short press the shutter of the first camera to start automation
+# the automation will loop if you don't stop it
+# long press the shutter of the first camera to stop automation
+# remove v6_auto.txt of the micro-SD card of first camera to make your cameras back to the user mode
+
+
+# sample
+
+mode 4
+sync
+sleep 10
+record 1800
+sleep 10
+
+mode 5
+sync
+sleep 10
+record 1800
+
+
+
+
+
+
