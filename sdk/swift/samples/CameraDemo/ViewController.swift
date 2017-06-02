@@ -65,6 +65,7 @@ class ViewController: UIViewController {
     private var mStatus: Status!;
     private var mCamera: ActionCamera!;
     private var mTimer: Timer!;
+    private var is4Kplus = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,7 +101,7 @@ class ViewController: UIViewController {
             mTimer.invalidate();
             mTimer = nil;
         }
-        
+
         // sync the datetime
         mCamera.setDateTime(datetime: NSDate() as Date,
             success: {
@@ -108,6 +109,20 @@ class ViewController: UIViewController {
             }, fail: {
                 error in
                 self.disconnect();
+            });
+
+
+        // check if 4k+.
+        mCamera.getSettings(
+            success: {
+                actCamSettings in
+                if (actCamSettings.serialNumber!.hasPrefix("Z18")) {
+                    self.is4Kplus = true;//
+                    self.updateCameraImage(imgName: "yiac3_4Kplus");
+                }
+            }, fail: {
+                error in
+//                self.disconnect();
             });
     }
     
@@ -130,11 +145,14 @@ class ViewController: UIViewController {
     
     private func setStatus(status: Status) {
         if (mStatus != nil && mStatus == status) {
+            print("status error");
             return;
         }
         
+        var cameraImgName = "inactive_camera";
+        
         if (status == Status.Disconnected) {
-            mCameraImg.image = UIImage(named: "inactive_camera");
+            cameraImgName = "inactive_camera";
             mStatusLabel.text = "Disconnected";
             mConnectBtn.setTitle("Connect", for: UIControlState.normal);
             mRecordingBtn.isHidden = true;
@@ -142,16 +160,24 @@ class ViewController: UIViewController {
             mStatusLabel.text = "Connecting...";
             mConnectBtn.setTitle("Disconnect", for: UIControlState.normal);
         } else if (status == Status.Connected) {
-            mCameraImg.image = UIImage(named: "white_camera");
+            cameraImgName = "white_camera";
             mStatusLabel.text = "Connected";
             mRecordingBtn.setTitle("StartRecording", for: UIControlState.normal);
             mRecordingBtn.isHidden = false;
         } else if (status == Status.Recording) {
-            mCameraImg.image = UIImage(named: "recording_camera");
+            cameraImgName = "recording_camera";
             mStatusLabel.text = "Recording";
             mRecordingBtn.setTitle("StopRecording", for: UIControlState.normal);
         }
+        
         mStatus = status;
+        
+        updateCameraImage(imgName: cameraImgName);
+    }
+    
+    //
+    private func updateCameraImage(imgName : String) {
+        mCameraImg.image = UIImage(named: imgName);
     }
     
     private func showMessageBox(message: String) {
