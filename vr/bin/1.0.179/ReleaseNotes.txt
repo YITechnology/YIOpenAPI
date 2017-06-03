@@ -1,0 +1,3 @@
+1. USB drive support.
+2. MP4 file recovery feature. If your recording stopped unexpectedly due to problems such as running out of battery the MP4 file can be automatically recovered after you restart the camera.
+3. Automation script support. Add script file in master's sd card, then press shutter button, automation will run. A sample script v6_auto.txt is shared as well.
