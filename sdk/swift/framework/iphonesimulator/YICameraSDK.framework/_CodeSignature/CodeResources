@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/YICameraSDK-Swift.h</key>
 		<data>
-		RdFCiIE/iqHSZpVHR5kpm2t/Dbw=
+		mpTxh7asRadVH8LiLH9guUu7BJk=
 		</data>
 		<key>Headers/YICameraSDK.h</key>
 		<data>
@@ -14,23 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		dxLlH7f6ZDAbP5XytpCCJoRWOkY=
+		KYJDA5WJ1nioY0dVFNcLfqfYmOE=
 		</data>
-		<key>Modules/YICameraSDK.swiftmodule/i386.swiftdoc</key>
+		<key>Modules/YICameraSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		j2iMrofBXtS4svjZqUkDo5koaQI=
+		LIWCrnyvvPyYnx9Ot/eZBvN3bk0=
 		</data>
-		<key>Modules/YICameraSDK.swiftmodule/i386.swiftmodule</key>
+		<key>Modules/YICameraSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		UujTOSfow2Ddkktfx+mULA5pEqI=
-		</data>
-		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		M7AT85IHsvQ0bdJP1grbXLCLXq8=
-		</data>
-		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		iggIAQBgNQGPshx/6kKWcV2m0Hk=
+		eOJzbduDqLkHy2BF0PPM5F9uy2E=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -43,11 +35,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RdFCiIE/iqHSZpVHR5kpm2t/Dbw=
+			mpTxh7asRadVH8LiLH9guUu7BJk=
 			</data>
 			<key>hash2</key>
 			<data>
-			4z4U3TQ6NW1M7n3n2si0eYeMkXNfq1SQPo4eIdIBy9A=
+			GA7dh4FBpavjTPCBIoFwjBdXbe3rQc7wqbqc7oJ4WTE=
 			</data>
 		</dict>
 		<key>Headers/YICameraSDK.h</key>
@@ -61,48 +53,26 @@
 			FMtzwYhkAcDxu1Vd5v3gXpJ1v2VeARFjQMQ9IHLI91U=
 			</data>
 		</dict>
-		<key>Modules/YICameraSDK.swiftmodule/i386.swiftdoc</key>
+		<key>Modules/YICameraSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			j2iMrofBXtS4svjZqUkDo5koaQI=
+			LIWCrnyvvPyYnx9Ot/eZBvN3bk0=
 			</data>
 			<key>hash2</key>
 			<data>
-			pY8UBT2seChRXIVj2juho/BnHug+/0oqG4akwWxu6mU=
+			8gp7UbPPGId2bJf+NBlWql4YHlYxp9/RieRBXNBXIbo=
 			</data>
 		</dict>
-		<key>Modules/YICameraSDK.swiftmodule/i386.swiftmodule</key>
+		<key>Modules/YICameraSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UujTOSfow2Ddkktfx+mULA5pEqI=
+			eOJzbduDqLkHy2BF0PPM5F9uy2E=
 			</data>
 			<key>hash2</key>
 			<data>
-			lPNr/VeV8nYPCtP0WCixICdEOb060FwFmnZs1gVQ+P8=
-			</data>
-		</dict>
-		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			M7AT85IHsvQ0bdJP1grbXLCLXq8=
-			</data>
-			<key>hash2</key>
-			<data>
-			Q3mHj/3Afa0uqvVdaJr2qvWmNGWSirUounYU4fSMK+0=
-			</data>
-		</dict>
-		<key>Modules/YICameraSDK.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			iggIAQBgNQGPshx/6kKWcV2m0Hk=
-			</data>
-			<key>hash2</key>
-			<data>
-			4N12z9ieDj9Y6u9gtXGK5x0fSBsScT1CGOaqk40b0XA=
+			4WGlXJZvfxw+dlmsMiUvy4Ds6uLUz73EtdoEGWvZdD0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -14,23 +14,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		pZ03Bg3WXR/u4fbDTsle7y8bdUw=
+		CQgxzsv3wJDSA2EJ33C8VRpc++s=
 		</data>
-		<key>Modules/SwiftyJSON.swiftmodule/i386.swiftdoc</key>
+		<key>Modules/SwiftyJSON.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		Q0cro+rOCOr9v9dffJIrOvJONjo=
+		EwaYM2VVGBiCUoyeh70lJf0wvWo=
 		</data>
-		<key>Modules/SwiftyJSON.swiftmodule/i386.swiftmodule</key>
+		<key>Modules/SwiftyJSON.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		m6RcWFDt4FmSedIZtMo7vSPSUcg=
-		</data>
-		<key>Modules/SwiftyJSON.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		lVpJ8SdH6nSFxmvUsAnaHky3zWY=
-		</data>
-		<key>Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		n4Hi2t1yOUCpjzpGVnQOiLmd0+4=
+		jnBZevFyf9ueuixbvmnAypIixKU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -61,48 +53,26 @@
 			+MjvL+3LfvZ8KB6mUfc9yrSpdzulZn0Km/CrKxS+7IQ=
 			</data>
 		</dict>
-		<key>Modules/SwiftyJSON.swiftmodule/i386.swiftdoc</key>
+		<key>Modules/SwiftyJSON.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Q0cro+rOCOr9v9dffJIrOvJONjo=
+			EwaYM2VVGBiCUoyeh70lJf0wvWo=
 			</data>
 			<key>hash2</key>
 			<data>
-			aTSxckhbE91pOFVBqtV45pzZl43LYE/YH+UZePIgjJQ=
+			G4YlzzHP0//0A1ajdCY82mwVd8dsrkYAGRG8EviyHiw=
 			</data>
 		</dict>
-		<key>Modules/SwiftyJSON.swiftmodule/i386.swiftmodule</key>
+		<key>Modules/SwiftyJSON.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			m6RcWFDt4FmSedIZtMo7vSPSUcg=
+			jnBZevFyf9ueuixbvmnAypIixKU=
 			</data>
 			<key>hash2</key>
 			<data>
-			i4V9RxjzdF0mM0hxTNmEadIKnSqhvYyH/DguAboV+NQ=
-			</data>
-		</dict>
-		<key>Modules/SwiftyJSON.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			lVpJ8SdH6nSFxmvUsAnaHky3zWY=
-			</data>
-			<key>hash2</key>
-			<data>
-			gw2qms+YpHCk4jqLRDGfXW79oF4TtN5wgXm7FiFCOks=
-			</data>
-		</dict>
-		<key>Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			n4Hi2t1yOUCpjzpGVnQOiLmd0+4=
-			</data>
-			<key>hash2</key>
-			<data>
-			6hQbH8X74nS2EKsQ5GuEnVaNxre6UvlMoNhCed6E1G8=
+			xmwF6+lukIHTx9TTRvzGiNX5yxhuz09Ad9WpbItCD58=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

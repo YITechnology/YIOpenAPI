@@ -154,7 +154,7 @@ enum LiveVideoBitrate : NSInteger;
 /// Any <code>success</code> or <code>fail</code> callback in commands are optional parameter. If you don’t care command
 /// execution result, you can pass <code>nil</code>.
 SWIFT_CLASS("_TtC11YICameraSDK12ActionCamera")
-@interface ActionCamera : NSObject <NSURLSessionDownloadDelegate>
+@interface ActionCamera : NSObject <NSURLSessionDelegate, NSURLSessionDownloadDelegate, NSURLSessionTaskDelegate>
 /// Connect to a YI action camera.
 /// Invoke this function to connect to a YI action camera. Param <code>connectionString</code> represents
 /// the address of the remote camera. Format is:
@@ -245,8 +245,30 @@ enum VideoResolution : NSInteger;
 - (ActionCamera * _Nonnull)stopRecordingWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail SWIFT_WARN_UNUSED_RESULT;
 @end
 
-enum CameraStatus : NSInteger;
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+/// Format sd card.
+/// \param success If command executes success, this callback will be invoked.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+///
+- (ActionCamera * _Nonnull)formatSDCardWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail SWIFT_WARN_UNUSED_RESULT;
+@end
+
+enum PhotoResolution : NSInteger;
 @class YICameraSDKError;
+
+@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
+/// Get current photo resolution.
+/// \param success If command executes success, this callback will be invoked and parameter is
+/// current photo size.
+///
+/// \param fail If command executes fail, this callback will be invoked.
+///
+- (ActionCamera * _Nonnull)getPhotoResolutionWithSuccess:(void (^ _Nullable)(enum PhotoResolution))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail SWIFT_WARN_UNUSED_RESULT;
+@end
+
+enum CameraStatus : NSInteger;
 
 @interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
 /// Get camera current status.
@@ -258,16 +280,16 @@ enum CameraStatus : NSInteger;
 - (ActionCamera * _Nonnull)getStatusWithSuccess:(void (^ _Nullable)(enum CameraStatus))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail SWIFT_WARN_UNUSED_RESULT;
 @end
 
-enum PhotoResolution : NSInteger;
 
 @interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-/// Get current photo resolution.
-/// \param success If command executes success, this callback will be invoked and parameter is
-/// current photo size.
+/// Set datetime to camera.
+/// \param datetime The datetime you want to set to camera.
+///
+/// \param success If command executes success, this callback will be invoked.
 ///
 /// \param fail If command executes fail, this callback will be invoked.
 ///
-- (ActionCamera * _Nonnull)getPhotoResolutionWithSuccess:(void (^ _Nullable)(enum PhotoResolution))success fail:(void (^ _Nullable)(YICameraSDKError * _Nonnull))fail SWIFT_WARN_UNUSED_RESULT;
+- (ActionCamera * _Nonnull)setDateTimeWithDatetime:(NSDate * _Nonnull)datetime success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -327,28 +349,6 @@ enum SystemMode : NSInteger;
 /// \param fail If command executes fail, this callback will be invoked.
 ///
 - (ActionCamera * _Nonnull)deleteFileWithFileName:(NSString * _Nonnull)fileName success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-/// Set datetime to camera.
-/// \param datetime The datetime you want to set to camera.
-///
-/// \param success If command executes success, this callback will be invoked.
-///
-/// \param fail If command executes fail, this callback will be invoked.
-///
-- (ActionCamera * _Nonnull)setDateTimeWithDatetime:(NSDate * _Nonnull)datetime success:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@interface ActionCamera (SWIFT_EXTENSION(YICameraSDK))
-/// Format sd card.
-/// \param success If command executes success, this callback will be invoked.
-///
-/// \param fail If command executes fail, this callback will be invoked.
-///
-- (ActionCamera * _Nonnull)formatSDCardWithSuccess:(void (^ _Nullable)(void))success fail:(void (^ _Nullable)(NSError * _Nonnull))fail SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -1075,30 +1075,6 @@ typedef SWIFT_ENUM(NSInteger, LiveVideoResolution) {
   LiveVideoResolutionR_1080p = 2,
 };
 
-
-/// Define the log interface.
-/// App can write a subclass inherited from this class to supply log functionality.
-SWIFT_CLASS("_TtC11YICameraSDK6Logger")
-@interface Logger : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-/// Output verbose level log.
-/// \param message The message will be outputted at verbose level.
-///
-- (void)verboseWithMessage:(NSString * _Nonnull)message;
-/// Output info level log.
-/// \param message The message will be outputted at info level.
-///
-- (void)infoWithMessage:(NSString * _Nonnull)message;
-/// Output warning level log.
-/// \param message The message will be outputted at warning level.
-///
-- (void)warningWithMessage:(NSString * _Nonnull)message;
-/// Output error level log.
-/// \param message The message will be outputted at error level.
-///
-- (void)errorWithMessage:(NSString * _Nonnull)message;
-@end
-
 /// Contains values that specify the MeteringMode of a camera.
 typedef SWIFT_ENUM(NSInteger, MeteringMode) {
 /// Unknown
@@ -1131,13 +1107,6 @@ typedef SWIFT_ENUM(NSInteger, PhotoResolution) {
 /// This class will be used to initialize/uninitialize the whole SDK platform.
 SWIFT_CLASS("_TtC11YICameraSDK8Platform")
 @interface Platform : NSObject
-/// Initialize SDK platform.
-/// This function should only be invoked once at the app startup. App shouldn’t invoke any
-/// functions before invoking this function.
-/// \param logger The log interface (app need implements this interface) used by the whole
-/// SDK platform. Pass <code>nil</code> will turn off the log.
-///
-+ (void)initializeWithLogger:(Logger * _Nullable)logger;
 /// Uninitialize SDK platform.
 /// This function should only be invoked once at the app ended. App shouldn’t invoke any
 /// functions after invoking this function.

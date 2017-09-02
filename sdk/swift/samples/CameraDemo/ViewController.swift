@@ -47,6 +47,10 @@ class CameraListener: ActionCameraListener {
     override func onRecordStopped() {
         mView.onRecordStopped();
     }
+    
+    override func onRecordStoppedWithFileName(fileName: String) {
+        print("file name: \(fileName)");
+    }
 }
 
 class ViewController: UIViewController {
